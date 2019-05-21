@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="complaint" namespace="/complaint" extends="centitbsdfw">
+
+		<action name="complaintTasksExecute" class="complaintTasksExecuteAction">
+			<result name="optframe">/page/powerruntime/optcommon/optCommonFrame.jsp
+			</result>
+			<result name="viewProcs">/page/powerruntime/optcommon/optIdeaInfoList.jsp
+			</result>
+			<result name="defaultTrans">/page/powerruntime/optcommon/buildingNode.jsp
+			</result>
+			<result name="optTrans">/page/complaint/common/complaintTransInfo.jsp
+			</result>
+
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/complaint</param>
+				<param name="actionName">vusertasklistcomplaint</param>
+				<param name="method">list</param>
+			</result>
+			<result name="gotoNext">/page/complaint/common/gotoNextStep.jsp</result>
+
+		</action>
+
+		<action name="complaint" class="complaintAction">
+			<result name="toSupervise">/page/supervise/superviseBasicForm.jsp</result>
+			<result name="optTrans">/page/complaint/common/complaintTransInfo.jsp
+			</result>
+			<result name="bulid">/page/complaint/complaintForm.jsp</result>
+			<result name="edit">/page/complaint/complaintForm.jsp</result>
+
+			<result name="selectList">/page/complaint/complaintslectList.jsp</result>
+
+			<result name="viewBizInfo">/page/complaint/optComplaintInfo.jsp</result>
+			<result name="list">/page/complaint/complaintList.jsp</result>
+			<result name="fgList">/page/complaint/complaintFgList.jsp</result>
+			<result name="view">/page/complaint/complaintView.jsp</result>
+			<result name="gotoNext">/page/complaint/common/gotoNextStep.jsp</result>
+			<result name="fromComplaint">/page/complaint/fromComplaint.jsp</result>
+			<result name="acceptComplaint">/page/complaint/optAcceptComplaint.jsp</result>
+
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/complaint</param>
+				<param name="actionName">vusertasklistcomplaint</param>
+				<param name="method">list</param>
+			</result>
+
+		</action>
+
+		<action name="vusertasklistcomplaint" class="vusertasklistcomplaintAction">
+			<result name="list">/page/complaint/VUserTaskListComplaintList.jsp
+			</result>
+		</action>
+		<action name="complaintsprocess" class="complaintsprocessAction">
+			<result name="viewList">/page/complaint/processView.jsp</result>
+
+		</action>
+		<action name="complaintsresult" class="complaintsresultAction">
+			<result name="viewList">/page/complaint/processView.jsp</result>
+			<result name="view">/page/complaint/complaintsResultView.jsp</result>
+		</action>
+		<action name="*" class="{1}Action">
+			<result name="list">/page/complaint/{1}List.jsp</result>
+			<result name="view">/page/complaint/{1}View.jsp</result>
+			<result name="edit">/page/complaint/{1}Form.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

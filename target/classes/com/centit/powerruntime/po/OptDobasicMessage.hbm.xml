@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.centit.powerruntime.po.OptDobasicMessage" table="OPT_DOBASIC_MESSAGE">
+		<id name="dobasicid" type="java.lang.String">
+			<column name="DOBASICID" length="32" />
+			<generator class="assigned" />
+		</id>
+		<property name="internalno" type="java.lang.String">
+			<column name="INTERNALNO" length="32" />
+		</property>
+		<property name="zwfwzxCode" type="java.lang.String">
+			<column name="ZWFWZX_CODE" length="32" />
+		</property>
+		<property name="expressid" type="java.lang.String">
+			<column name="EXPRESSID" length="32" />
+		</property>
+	</class>
+</hibernate-mapping>

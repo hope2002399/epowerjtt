@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.centit.poweritem.po.BpowerItem" table="b_power_item">
+
+		<id name="itemId" type="java.lang.String">
+			<column name="ITEM_ID" length="32" />
+		</id>
+
+		<property name="itemName" type="java.lang.String">
+			<column name="item_name" length="500" />
+		</property>
+		<property name="itemType" type="java.lang.String">
+			<column name="item_type" length="2" />
+		</property>
+		<property name="itemStatus" type="java.lang.String">
+			<column name="item_status" length="1" />
+		</property>
+		<property name="parentId" type="java.lang.String">
+			<column name="parent_id" length="32" />
+		</property>
+		<property name="parentName" type="java.lang.String">
+			<column name="parent_name" length="500" />
+		</property>
+		<property name="isContainSub" type="java.lang.String">
+			<column name="isContainSub" length="1" />
+		</property>
+		<property name="orgId" type="java.lang.String">
+			<column name="orgid" length="10" />
+		</property>
+		<property name="spObject" type="java.lang.String">
+			<column name="sp_object" length="200" />
+		</property>
+		<property name="useLevel" type="java.lang.String">
+			<column name="use_Level" length="200" />
+		</property>
+		<property name="useUnit" type="java.lang.String">
+			<column name="use_unit" length="500" />
+		</property>
+		<property name="linkPhone" type="java.lang.String">
+			<column name="link_phone" length="100" />
+		</property>
+		<property name="monitorPhone" type="java.lang.String">
+			<column name="monitor_phone" length="100" />
+		</property>
+		<property name="httpUrl" type="java.lang.String">
+			<column name="http_url" length="500" />
+		</property>
+		<property name="dealAddress" type="java.lang.String">
+			<column name="deal_Address" length="500" />
+		</property>
+		<property name="dealTime" type="java.lang.String">
+			<column name="deal_time" length="200" />
+		</property>
+		<property name="lawAccording" type="java.lang.String">
+			<column name="law_According" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="remark" />
+		</property>
+		<property name="isNetwork" type="java.lang.String">
+			<column name="isnetwork" length="1" />
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<column name="create_time" length="7" />
+		</property>
+		<property name="modifyTime" type="java.util.Date">
+			<column name="modify_time" length="7" />
+		</property>
+		<property name="itemQldyItemId" type="java.lang.String">
+			<column name="item_qldy_powerid" length="50" />
+		</property>
+	</class>
+
+</hibernate-mapping>

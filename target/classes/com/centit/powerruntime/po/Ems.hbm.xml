@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.centit.powerruntime.po.Ems" table="M_EMS">
+		<id name="emsId" type="java.lang.String">
+			<column name="EMS_ID" length="50" not-null="true" />
+		</id>
+		<property name="emsordno" type="java.lang.String">
+			<column name="EMS_ORD_NO" length="20" not-null="true" />
+		</property>
+		<property name="orgcode" type="java.lang.String">
+			<column name="ORGCODE" length="60" not-null="true" />
+		</property>
+		<property name="internalno" type="java.lang.String">
+			<column name="INTERNAL_NO" length="100" not-null="true" />
+		</property>
+		<property name="rcvname" type="java.lang.String">
+			<column name="RCV_NAME" length="30" />
+		</property>
+		<property name="rcvstrect" type="java.lang.String">
+			<column name="RCV_STRECT" length="200" />
+		</property>
+		<property name="rcvphone" type="java.lang.String">
+			<column name="RCV_PHONE" length="11" />
+		</property>
+		<property name="emscontent" type="java.lang.String">
+	<column name="EMS_CONTENT" length="4000" not-null="true" />
+		</property>
+		<property name="emsresultcode" type="java.lang.String">
+			<column name="EMS_RESULT_CODE" length="1" />
+		</property>
+		<property name="emsresultmsg" type="java.lang.String">
+			<column name="EMS_RESULT_MSG" length="1000" />
+		</property>
+	</class>
+</hibernate-mapping>

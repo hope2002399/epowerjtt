@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pmIndicatorManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.indicator.service.impl.PmIndicatorManagerImpl">
+				<property name="pmIndicatorDao" ref="pmIndicatorDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="pmTempletManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.indicator.service.impl.PmTempletManagerImpl">
+				<property name="pmTempletDao" ref="pmTempletDao" />
+				<property name="pmTempletIndicatorDao" ref="pmTempletIndicatorDao" />
+				<property name="pmIndicatorDao" ref="pmIndicatorDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="pmTempletIndicatorManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.indicator.service.impl.PmTempletIndicatorManagerImpl">
+				<property name="pmTempletIndicatorDao" ref="pmTempletIndicatorDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="serviceManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.indicator.service.impl.ServiceManagerImpl">
+				<property name="daoUtil" ref="daoUtil" />
+				<property name="pmTempletDao" ref="pmTempletDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="pmIndexExpressionManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.indicator.service.impl.PmIndexExpressionManagerImpl">
+				<property name="pmIndexExpressionDao" ref="pmIndexExpressionDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="pmIndexBasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.indicator.service.impl.PmIndexBasicManagerImpl">
+				<property name="pmIndexBasicDao" ref="pmIndexBasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="pmIndexTypeManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.indicator.service.impl.PmIndexTypeManagerImpl">
+				<property name="pmIndexTypeDao" ref="pmIndexTypeDao" />
+				<property name="pmIndexBasicDao" ref="pmIndexBasicDao" />
+				<property name="pmIndexTypeLogDao" ref="pmIndexTypeLogDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="pmIndexTypeLogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.indicator.service.impl.PmIndexTypeLogManagerImpl">
+				<property name="pmIndexTypeLogDao" ref="pmIndexTypeLogDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="pmIndexEvluationManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.indicator.service.impl.PmIndexEvluationManagerImpl">
+				<property name="pmIndexEvluationDao" ref="pmIndexEvluationDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="VEvluationManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.indicator.service.impl.VEvluationManagerImpl">
+				<property name="VEvluationDao" ref="VEvluationDao" />
+			</bean>
+		</property>
+	</bean>
+</beans>

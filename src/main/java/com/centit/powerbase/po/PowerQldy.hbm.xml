@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.centit.powerbase.po.PowerQldy" table="power_qldy">
+<id name="powerItemId" type="java.lang.String" >
+	<column name="B_POWER_ITEM_ID" length="100"/>
+</id>
+<property name="otherItemId" type="java.lang.String">
+	<column name="OTHER_ITEM_ID" length="100"/>
+</property>
+<property name="otherNbId" type="java.lang.String">
+	<column name="OTHER_NB_ID" length="100"/>
+</property>
+
+</class>
+
+</hibernate-mapping>

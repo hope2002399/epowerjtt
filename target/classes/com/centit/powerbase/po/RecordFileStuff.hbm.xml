@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.centit.powerbase.po.RecordFileStuff" table="s_recordfilestuff">
+ 	 	<id name="attachNo" type="java.lang.String">
+			<column name="attachNo" precision="10" scale="0" />
+			<generator class="assigned" />
+		</id>
+		<property name="operatorID" type="java.lang.String">
+			<column name="operatorID" length="8" />
+		</property>
+		<property name="recordCode" type="java.lang.String">
+			<column name="recordCode" length="8" />
+		</property>
+		<property name="processNo" type="java.lang.String">
+			<column name="processNo" length="8" />
+		</property>
+		<property name="attachmnetName" type="java.lang.String">
+			<column name="attachmnetName" length="100" />
+		</property>
+		<property name="fileName" type="java.lang.String">
+			<column name="fileName" length="200" />
+		</property>
+		<property name="fileType" type="java.lang.String">
+			<column name="fileType" length="20" />
+		</property>
+		<property name="memo" type="java.lang.String">
+			<column name="memo" length="500" />
+		</property>
+		<property name="uploadDate" type="java.util.Date">
+			<column name="uploadDate" length="7" />
+		</property>
+		<property name="context" type="binary" lazy="true">
+			<column name="context" />
+		</property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-12-17 16:44:14 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.centit.monitor.po.OutwayCJJC" table="SUP_DBYC_OUTWAY">
+        <id name="outwayid" type="long">
+            <column name="OUTWAYID" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="warnpointno" type="string">
+            <column name="WARNPOINTNO" length="4" not-null="true">
+                <comment>&#212;&#164;&#190;&#175;&#185;&#230;&#212;&#242;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="oldOutwayId" type="string">
+            <column name="OLD_OUTWAY_ID" length="100" not-null="true">
+                <comment>
+                &#200;&#168;&#193;&#166;&#212;&#203;&#208;&#208;&#212;&#164;&#177;&#168;&#190;&#175;&#214;&#247;&#188;&#252;&#187;&#242;&#182;&#189;&#176;&#236;&#177;&#237;&#214;&#247;&#188;&#252;&#211;&#201;IS_YJ&#199;&#248;&#183;&#214;</comment>
+            </column>
+        </property>
+        <property name="outwaytype" type="string">
+            <column name="OUTWAYTYPE" precision="1" scale="0" not-null="true">
+                <comment>&#212;&#164;&#190;&#175;&#192;&#224;&#208;&#205; 1:&#212;&#164;&#190;&#175; &#163;&#186;2&#177;&#168;&#190;&#175;
+                6&#163;&#186;&#204;&#225;&#208;&#209;</comment>
+            </column>
+        </property>
+        <property name="intime" type="java.util.Date">
+            <column name="INTIME" length="7" not-null="true" />
+        </property>
+        <property name="outtime" type="java.util.Date">
+            <column name="OUTTIME" length="7" />
+        </property>
+        <property name="outperson" type="string">
+            <column name="OUTPERSON" length="100" />
+        </property>
+        <property name="outreason" type="string">
+            <column name="OUTREASON" length="500" />
+        </property>
+        <property name="outwayinfo" type="string">
+            <column name="OUTWAYINFO" length="1000" />
+        </property>
+        <property name="updateDate" type="java.util.Date">
+            <column name="UPDATE_DATE" length="7" not-null="true" />
+        </property>
+        <property name="readDate" type="java.util.Date">
+            <column name="READ_DATE" length="7" />
+        </property>
+        <property name="syncSign" type="string">
+            <column name="SYNC_SIGN" length="1" />
+        </property>
+        <property name="errorDesc" type="string">
+            <column name="ERROR_DESC" length="1000" />
+        </property>
+        <property name="ischeck" type="java.lang.Boolean">
+            <column name="ISCHECK" precision="1" scale="0" />
+        </property>
+        <property name="issync" type="java.lang.Boolean">
+            <column name="ISSYNC" precision="1" scale="0" />
+        </property>
+        <!-- <property name="isYj" type="java.lang.Boolean">
+            <column name="IS_YJ" precision="1" scale="0">
+                <comment>1:&#200;&#168;&#193;&#166;&#212;&#203;&#208;&#208;&#212;&#164;&#177;&#168;&#190;&#175;&#214;&#247;&#188;&#252;
+                2&#163;&#186;&#182;&#189;&#176;&#236;&#177;&#237;&#214;&#247;&#188;&#252;</comment>
+            </column>
+        </property> -->
+        <property name="orgId" type="string">
+            <column name="ORG_ID" length="20" />
+        </property>
+        <property name="internalNo" type="string">
+            <column name="INTERNAL_NO" length="40" />
+        </property>
+        <property name="itemId" type="string">
+            <column name="ITEM_ID" length="100" />
+        </property>
+        <property name="oldOutwayType" type="string">
+            <column name="OLD_OUTWAY_TYPE" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

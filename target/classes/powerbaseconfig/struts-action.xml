@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="powerbase" namespace="/powerbase" extends="centitbsdfw">
+		<action name="lawExecutor" class="lawExecutorAction">
+			<result name="list">/page/powerbase/lawExecutor/lawExecutorList.jsp</result>
+			<result name="listCheck">/page/powerbase/lawExecutor/lawExecutorListCheck.jsp</result>
+			<result name="listRegister">/page/powerbase/lawExecutor/lawExecutorListRegister.jsp</result>
+			<result name="edit">/page/powerbase/lawExecutor/lawExecutorEdit.jsp</result>
+			<result name="built">/page/powerbase/lawExecutor/lawExecutorForm.jsp</result>
+			<result name="view">/page/powerbase/lawExecutor/lawExecutorView.jsp</result>
+			<result name="check">/page/powerbase/lawExecutor/lawExecutorCheck.jsp</result>
+			<result name="listInspect">/page/powerbase/lawExecutor/lawexecutorInspectList.jsp</result>
+			<result name="inspect">/page/powerbase/lawExecutor/lawexecutorInspectForm.jsp</result>
+			<result name="success" type="redirect">
+				${backurl}
+			</result>
+			<result name="checkSuccess" type="redirect">
+				${backurl}
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="lawexecutorInspectAction" class="lawexecutorInspectAction">
+			<result name="success" type="redirect">
+				${backurl}
+			</result>
+		</action>
+		<action name="powerOrgInfo" class="powerOrgInfoAction">
+			<result name="powerOrgInfoList">/page/powerbase/optcommon/powerOrgInfoSelectList.jsp
+			</result>
+			<result name="list">/page/powerbase/optcommon/powerOrgInfoList.jsp
+			</result>
+			<result name="edit">/page/powerbase/optcommon/powerOrgInfoForm.jsp
+			</result>
+			<result name="editInfo">/page/powerbase/optcommon/powerOrgInfoEditForm.jsp
+			</result>
+			<result name="built">/page/powerbase/optcommon/powerOrgInfoNewForm.jsp
+			</result>
+			<result name="listOrgList">/page/powerbase/optcommon/powerOrgInfolistOrgList.jsp
+			</result>
+			<result name="listSelectOrg">/page/powerbase/optcommon/powerOrgInfolistSelectOrg.jsp
+			</result>
+		</action>
+		<action name="vsuppowerinusing" class="vsuppowerinusingAction">
+			<result name="list">/page/powerbase/optcommon/vsuppowerinusingList.jsp
+			</result>
+		</action>
+		<action name="lawmen" class="lawmenAction">
+			<result name="lawmenManagementList">/page/powerbase/optcommon/lawmenManagementList.jsp</result>
+			<result name="initalEdit">/page/powerbase/optcommon/lawmenForm.jsp</result>
+			<result name="lawmenUpdate">/page/powerbase/optcommon/lawmenUpdate.jsp</result>
+			<result name="view">/page/powerbase/optcommon/lawmenView.jsp</result>
+			<result name="lawmenUpdateSh">/page/powerbase/optcommon/lawmenUpdateSh.jsp</result>
+			<result name="lawmenAllList">/page/powerbase/optcommon/lawmenAllList.jsp</result>
+			<result name="lawmenAnnualList">/page/powerbase/optcommon/lawmenAnnualList.jsp</result>
+			<result name="annualview">/page/powerbase/optcommon/lawmenAnnualView.jsp</result>
+		</action>
+		<action name="supPower" class="supPowerAction">
+			<result name="input">/page/powerbase/optcommon/suppowerList.jsp
+			</result>
+			<result name="listSupPowerForPowerItemQldy">/page/powerbase/optcommon/suppowerSelectListForPowerItemQldy.jsp
+			</result>
+			<result name="listSupPower">/page/powerbase/optcommon/suppowerSelectList.jsp
+			</result>
+			<result name="fromcf">/page/powerbase/optcommon/suppowerSelectfromcf.jsp
+			</result>
+			<result name="listSupPower_CF_faci">/page/powerbase/optcommon/listSelectSupPower_CF_faci.jsp
+			</result>
+			
+			<result name="listSupPowerSQ">/page/powerbase/optcommon/suppowerQlbgSqList.jsp
+			</result>
+			<result name="listSupPowerSH">/page/powerbase/optcommon/suppowerQlbgShList.jsp
+			</result>
+			<result name="listSupPowerReply">/page/powerbase/optcommon/suppowerQlbgReplyList.jsp
+			</result>
+			<result name="SuppowerQlbgView">/page/powerbase/optcommon/suppowerQlbgSqView.jsp
+			</result>
+			<result name="SuppowerQlbgSqXz">/page/powerbase/optcommon/suppowerQlbgSqXz.jsp
+			</result>
+			<result name="SuppowerQlbgSqXg">/page/powerbase/optcommon/suppowerQlbgSqXg.jsp
+			</result>
+			
+			<result name="SuppowerQlbgSqNXz">/page/powerbase/optcommon/suppowerQlbgSqNXz.jsp
+			</result>
+			<result name="SuppowerQlbgSqNXg">/page/powerbase/optcommon/suppowerQlbgSqNXg.jsp
+			</result>
+			
+			<result name="suppowerQlfbView">/page/powerbase/optcommon/suppowerQlfbView.jsp
+			</result>
+			<result name="list">/page/powerbase/optcommon/suppowerList.jsp
+			</result>
+			<result name="Qlfblist">/page/powerbase/optcommon/suppowerQlfbList.jsp
+			</result>
+			<result name="edit">/page/powerbase/optcommon/suppowerForm.jsp
+			</result>
+			<result name="nEdit">/page/powerbase/optcommon/suppowerNForm.jsp
+			</result>
+			<result name="view">/page/powerbase/optcommon/suppowerView.jsp
+			</result>
+			<result name="selectCF">/page/powerbase/optcommon/suppowerSelectCF.jsp
+			</result>
+			<result name="listCK">/page/powerbase/optcommon/suppowerListCK.jsp</result>
+			<result name="listCKByState">/page/powerbase/optcommon/suppowerListCKByState.jsp
+			</result>
+			<result name="editzycl">/page/powerbase/optcommon/zycledit.jsp</result>
+			<result name="viewzycl">/page/powerbase/optcommon/discretionaryView.jsp
+			</result>
+			<result name="viewcfcx">/page/powerbase/optcommon/DiscretionaryStandardView.jsp
+			</result>
+			<result name="editcfcx">/page/powerbase/optcommon/cfcxedit.jsp</result>
+			<result name="viewVersion">/page/powerbase/optcommon/suppowerChglogbyId.jsp
+			</result>
+			<result name="contrastlist">/page/powerbase/optcommon/suppowercontrastList.jsp
+			</result>
+			<result name="editContrast">/page/powerbase/optcommon/suppowercontrastEdit.jsp
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+
+		<action name="suppowerchglog" class="suppowerchglogAction">
+			<result name="list">/page/powerbase/optcommon/suppowerchglogList.jsp
+			</result>
+			<result name="edit">/page/powerbase/optcommon/suppowerchglogForm.jsp
+			</result>
+			<result name="view">/page/powerbase/optcommon/suppowerchglogView.jsp
+			</result>
+			<result name="suppowerQlbgShEdit">/page/powerbase/optcommon/suppowerQlbgShEdit.jsp
+			</result>
+			<result name="suppowerQlbgReplyEdit">/page/powerbase/optcommon/suppowerQlbgReplyEdit.jsp
+			</result>
+			<result name="listVersion">/page/powerbase/optcommon/suppowerChglogbyId.jsp
+			</result>
+			<result name="listNVersion">/page/powerbase/optcommon/suppowerNChglogbyId.jsp
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">supPower</param>
+				<param name="method">listSupPowerSH</param>
+			</result>
+			<result name="successReply" type="chain">
+				<param name="actionName">supPower</param>
+				<param name="method">listSupPowerReply</param>
+			</result>
+			<result name="listSupPowerSH" type="chain">
+				<param name="actionName">supPower</param>
+				<param name="method">listSupPowerSH</param>
+			</result>
+			<result name="listSupPowerReply" type="chain">
+				<param name="actionName">supPower</param>
+				<param name="method">listSupPowerReply</param>
+			</result>
+
+		</action>
+		<action name="*" class="{1}Action">
+			<result name="input">/page/powerbase/optcommon/{1}List.jsp</result>
+			<result name="list">/page/powerbase/optcommon/{1}List.jsp</result>
+			<result name="view">/page/powerbase/optcommon/{1}View.jsp</result>
+			<result name="edit">/page/powerbase/optcommon/{1}Form.jsp</result>
+			<result name="viewpcpunishStandard">/page/powerbase/optcommon/pcpunishStandardList.jsp
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/sampleflow</param>
+				<param name="actionName">flowUserTask</param>
+				<param name="method">list</param>
+			</result>
+			<result name="GroupID" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+				<action name="lawsuit" class="lawsuitAction">
+			<result name="Lawsuitlist">/page/powerbase/optcommon/lawsuitList.jsp</result>
+			<result name="dengjiEdit">/page/powerbase/optcommon/lawsuitForm.jsp</result>
+			<result name="selectList">/page/powerbase/optcommon/lawsuitselectList.jsp</result>
+			<result name="view">/page/powerbase/optcommon/lawsuitView.jsp</result>
+			<result name="success">/page/powerbase/optcommon/lawsuitList.jsp</result>
+			<result name="edit">/page/powerbase/optcommon/lawsuitForm.jsp</result>
+		</action>
+		
+			<action name="lawenforecase" class="lawenforecaseAction">
+			<result name="LawenforecaseList">/page/powerbase/optcommon/lawenforecaseList.jsp</result>
+			<result name="dengjiEdit">/page/powerbase/optcommon/lawenforecaseForm.jsp</result>
+			<result name="view">/page/powerbase/optcommon/lawenforecaseView.jsp</result>
+			<result name="success">/page/powerbase/optcommon/lawenforecaseList.jsp</result>
+			<result name="edit">/page/powerbase/optcommon/lawenforecaseFormupdate.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+			<action name="lawVehicle" class="lawVehicleAction">
+			<result name="list">/page/powerbase/optcommon/lawVehicleList.jsp</result>
+			<result name="dengjiEdit">/page/powerbase/optcommon/lawVehicleForm.jsp</result>
+			<result name="view">/page/powerbase/optcommon/lawVehicleView.jsp</result>
+			<result name="success">/page/powerbase/optcommon/lawenforecaseList.jsp</result>
+			<result name="edit">/page/powerbase/optcommon/lawVehicleForm.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="dataenterprise" class="dataenterpriseAction">
+			<result name="list">/page/powerbase/dataenterpriseList.jsp</result>
+			<result name="view">/page/powerbase/dataenterpriseView.jsp</result>
+			<result name="edit">/page/powerbase/dataenterpriseForm.jsp</result>
+			<result name="built" type="chain" />
+			<result name="delete" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="success" type="centitui">
+				<param name="newWin">false</param>
+				<param name="callbackType">closeCurrent</param>
+				<param name="navTabId"></param>
+			</result>
+		</action>
+		
+		<action name="dataindividual" class="dataindividualAction">
+			<result name="list">/page/powerbase/dataindividualList.jsp</result>
+			<result name="view">/page/powerbase/dataindividualView.jsp</result>
+			<result name="edit">/page/powerbase/dataindividualForm.jsp</result>
+			<result name="built" type="chain" />
+			<result name="delete" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="success" type="centitui">
+				<param name="newWin">false</param>
+				<param name="callbackType">closeCurrent</param>
+				<param name="navTabId"></param>
+			</result>
+		</action>
+		<action name="powerRisk" class="powerRiskAction">
+			<result name="xkList" >/page/powerbase/optcommon/powerRiskList.jsp</result>
+			<result name="edit">/page/powerbase/optcommon/powerRiskForm.jsp</result>
+			<result name="delete" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+			<result name="add">/page/powerbase/optcommon/powerRiskXZ.jsp</result>
+			<result name="view">/page/powerbase/optcommon/powerRiskView.jsp</result>
+		</action>
+		<action name="applyRecord" class="recordApplyBasicAction">
+			<result name="list">/page/powerbase/optcommon/applyRecordList.jsp</result>
+			<result name="form">/page/powerbase/optcommon/applyRecordForm.jsp</result>
+		</action>
+		<action name="punishRecord" class="punishRecordAction" >
+		<result>/page/powerbase/punishRecordList.jsp</result>
+		<result name="addPunishRecord">/page/powerbase/punishRecordAdd.jsp</result>
+		<result name="edit">/page/powerbase/punishRecordEdit.jsp</result>
+		<result name="delete">/page/powerbase/punishRecord.jsp</result>
+		<result name="input">/page/powerbase/punishRecordList.jsp</result>
+		</action>
+		<action name="punishRecordBasic" class="punishRecordBasicAction">
+		<result>/page/powerbase/punishRecordBasicList.jsp</result>
+		<result name="radio">/page/powerbase/PunishBasicRadio.jsp</result>
+		<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">recordBasicStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="recordFileBasic" class="recordFileBasicAction">
+			<result name="list">/page/powerbase/optcommon/RecordFileBasic.jsp</result>
+			<result name="view">/page/powerbase/optcommon/RecordFileBasicInfo.jsp</result>
+			<result name="edit">/page/powerbase/optcommon/RecordFileBasicEdit.jsp</result>
+			<result name="chooseDep">/page/powerbase/optcommon/FileRecordChooseDep.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="recordFileStuff" class="recordFileStuffAction">
+			<result name="list">/page/powerbase/optcommon/RecordFileStuff.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			</action>
+			
+			<action name="powerQldy" class="powerQldyAction">
+				<result name="list">/page/powerbase/vPowerQldyList.jsp</result>
+				<result name="edit">/page/powerbase/powerQldyForm.jsp</result>
+			</action>
+	</package>
+	
+
+</struts>

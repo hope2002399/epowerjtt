@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-lazy-init="true">
+	<bean name="punishTasksExecuteAction" class="com.centit.punish.action.PunishTasksExecuteAction"
+		scope="request">
+		<property name="punishobjectbasicManager" ref="punishobjectbasicManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+	</bean>
+	<bean name="pcdefAction" class="com.centit.punish.action.PcdefAction"
+		scope="request">
+		<property name="pcdefManager" ref="pcdefManager" />
+	</bean>		
+	<bean name="pctypeAction" class="com.centit.punish.action.PctypeAction"
+		scope="request">
+		<property name="pctypeManager" ref="pctypeManager" />
+		<property name="pcdefManager" ref="pcdefManager" />
+		<property name="pcfreeumpiretypeManager" ref="pcfreeumpiretypeManager" />
+	</bean>
+	<bean name="poapprovebasicAction" class="com.centit.punish.action.PoapprovebasicAction"
+		scope="request">
+		<property name="poapprovebasicManager" ref="poapprovebasicManager" />
+	</bean>
+	<bean name="poapprovepersonAction" class="com.centit.punish.action.PoapprovepersonAction"
+		scope="request">
+		<property name="poapprovepersonManager" ref="poapprovepersonManager" />
+	</bean>
+	<bean name="podiscussbasicAction" class="com.centit.punish.action.PodiscussbasicAction"
+		scope="request">
+		<property name="podiscussbasicManager" ref="podiscussbasicManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="punishobjectbasicManager" ref="punishobjectbasicManager" />
+		<property name="potranslawbasicManager" ref="potranslawbasicManager" />
+		<property name="popunishbasicManager" ref="popunishbasicManager" />
+		<property name="poindagaterepbasicManager" ref="poindagaterepbasicManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="pofinishbasicManager" ref="pofinishbasicManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+	</bean>
+	<bean name="poenterpriseAction" class="com.centit.punish.action.PoenterpriseAction"
+		scope="request">
+		<property name="poenterpriseManager" ref="poenterpriseManager" />
+	</bean>
+	<bean name="poexcucebasicAction" class="com.centit.punish.action.PoexcucebasicAction"
+		scope="request">
+		<property name="punishobjectbasicManager" ref="punishobjectbasicManager" />
+		<property name="poexcucebasicManager" ref="poexcucebasicManager" />
+		<property name="pounwitnessbasicManager" ref="pounwitnessbasicManager" />
+		<property name="powitnessbasicManager" ref="powitnessbasicManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="pofinishbasicAction" class="com.centit.punish.action.PofinishbasicAction"
+		scope="request">
+		<property name="pofinishbasicManager" ref="pofinishbasicManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="punishobjectbasicManager" ref="punishobjectbasicManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="riskInfoManager" ref="riskInfoManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+		<property name="vporegisterbasicManager" ref="vporegisterbasicManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="poindagaterepbasicManager" ref="poindagaterepbasicManager" />
+		<property name="podiscussbasicManager" ref="podiscussbasicManager" />
+	</bean>
+	<bean name="poindagaterepbasicAction" class="com.centit.punish.action.PoindagaterepbasicAction"
+		scope="request">
+		<property name="poindagaterepbasicManager" ref="poindagaterepbasicManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="potranslawbasicManager" ref="potranslawbasicManager" />
+		<property name="pcdefManager" ref="pcdefManager" />
+		<property name="pcFreeUmpireDegreeManager" ref="pcfreeumpiredegreeManager" />
+		<property name="pcFreeUmpireTypeManager" ref="pcfreeumpiretypeManager" />
+		<property name="poRadixBasicManager" ref="poradixbasicManager" />
+		<property name="punishObjectBasicManager" ref="punishobjectbasicManager" />
+		<property name="pcTypeManager" ref="pctypeManager" />
+		<property name="poPunishBasicManager" ref="popunishbasicManager" />
+		<property name="dictionaryManager" ref="dictionaryManager" />
+
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="riskInfoManager" ref="riskInfoManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+		<property name="vporegisterbasicManager" ref="vporegisterbasicManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="pcpunishStandardManager" ref="pcpunishStandardManager" />
+	</bean>
+	<bean name="poindividualAction" class="com.centit.punish.action.PoindividualAction"
+		scope="request">
+		<property name="poindividualManager" ref="poindividualManager" />
+	</bean>
+	<bean name="pomovebackbasicAction" class="com.centit.punish.action.PomovebackbasicAction"
+		scope="request">
+		<property name="pomovebackbasicManager" ref="pomovebackbasicManager" />
+	</bean>
+	<bean name="poprintdefAction" class="com.centit.punish.action.PoprintdefAction"
+		scope="request">
+		<property name="poprintdefManager" ref="poprintdefManager" />
+	</bean>
+	<bean name="popunishbasicAction" class="com.centit.punish.action.PopunishbasicAction"
+		scope="request">
+		<property name="popunishbasicManager" ref="popunishbasicManager" />
+	</bean>
+	<bean name="poreceiptinfoAction" class="com.centit.punish.action.PoreceiptinfoAction"
+		scope="request">
+		<property name="poreceiptinfoManager" ref="poreceiptinfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="vporegisterbasicManager" ref="vporegisterbasicManager" />
+		<property name="podiscussbasicManager" ref="podiscussbasicManager" />
+		<property name="pofinishbasicManager" ref="pofinishbasicManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+	</bean>
+	<bean name="poregisterbasicAction" class="com.centit.punish.action.PoregisterbasicAction"
+		scope="request">
+		<property name="poregisterbasicManager" ref="poregisterbasicManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="potranslawbasicManager" ref="potranslawbasicManager" />
+		<property name="pcdefManager" ref="pcdefManager" />
+		<property name="punishobjectbasicManager" ref="punishobjectbasicManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="riskInfoManager" ref="riskInfoManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+		<property name="poindagaterepbasicManager" ref="poindagaterepbasicManager" />
+		<property name="poradixbasicManager" ref="poradixbasicManager" />
+		<property name="vporegisterbasicManager" ref="vporegisterbasicManager" />
+		<property name="optWritdefManager" ref="optWritdefManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager"/>
+	</bean>
+	<bean name="poresultbasicAction" class="com.centit.punish.action.PoresultbasicAction"
+		scope="request">
+		<property name="poresultbasicManager" ref="poresultbasicManager" />
+	</bean>
+	<bean name="potranslawbasicAction" class="com.centit.punish.action.PotranslawbasicAction"
+		scope="request">
+		<property name="potranslawbasicManager" ref="potranslawbasicManager" />
+	</bean>
+	<bean name="poundertakebasicAction" class="com.centit.punish.action.PoundertakebasicAction"
+		scope="request">
+		<property name="poundertakebasicManager" ref="poundertakebasicManager" />
+	</bean>
+	<bean name="pounwitnessbasicAction" class="com.centit.punish.action.PounwitnessbasicAction"
+		scope="request">
+		<property name="punishobjectbasicManager" ref="punishobjectbasicManager" />
+		<property name="pounwitnessbasicManager" ref="pounwitnessbasicManager" />
+		<property name="poexcucebasicManager" ref="poexcucebasicManager" />
+		<property name="powitnessbasicManager" ref="powitnessbasicManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+	</bean>
+	<bean name="powitnessbasicAction" class="com.centit.punish.action.PowitnessbasicAction"
+		scope="request">
+		<property name="punishobjectbasicManager" ref="punishobjectbasicManager" />
+		<property name="powitnessbasicManager" ref="powitnessbasicManager" />
+		<property name="pounwitnessbasicManager" ref="pounwitnessbasicManager" />
+		<property name="poexcucebasicManager" ref="poexcucebasicManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+	</bean>
+	<bean name="punishobjectbasicAction" class="com.centit.punish.action.PunishobjectbasicAction"
+		scope="request">
+		<property name="punishobjectbasicManager" ref="punishobjectbasicManager" />
+		<property name="poindagaterepbasicManager" ref="poindagaterepbasicManager" />
+		<property name="poindividualManager" ref="poindividualManager" />
+		<property name="poenterpriseManager" ref="poenterpriseManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="functionManager" ref="functionManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="potranslawbasicManager" ref="potranslawbasicManager" />
+		<property name="poregisterbasicManager" ref="poregisterbasicManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="riskInfoManager" ref="riskInfoManager" />
+		<property name="appindividualManager" ref="appindividualManager" />
+		<property name="appenterpriseManager" ref="appenterpriseManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+		<property name="vporegisterbasicManager" ref="vporegisterbasicManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+		<property name="pofinishbasicManager" ref="pofinishbasicManager" />
+		<property name="poacceptinfoManager" ref="poacceptinfoManager" />
+		<property name="podecisioninfoManager" ref="podecisioninfoManager" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+		<property name="podiscussbasicManager" ref="podiscussbasicManager" />
+		<property name="pcfreeumpiredegreeManager" ref="pcfreeumpiredegreeManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+	</bean>
+	<bean name="punishCommonBizAction" class="com.centit.punish.action.PunishCommonBizAction"
+		scope="request">
+		<property name="flowManager" ref="flowManager" />
+		<property name="optProcInfoManager" ref="optProcInfoManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="templateFileManager" ref="templateFileManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="optProcAttentionManager" ref="optProcAttentionManager" />
+		<property name="riskInfoManager" ref="riskInfoManager" />
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+	</bean>
+
+	<bean name="userTaskListCFAction" class="com.centit.punish.action.VUserTaskListCFAction"
+		scope="request">
+		<property name="userTaskListCFManager" ref="userTaskListCFManager" />
+	</bean>
+	<!--<bean name="poradixbasicAction" class="com.centit.punish.action.PoradixbasicAction.java"
+		scope="request">
+		<property name="poradixbasicManager" ref="poradixbasicManager" />
+	</bean>-->
+	<bean name="vporegisterbasicAction" class="com.centit.punish.action.VporegisterbasicAction"
+		scope="request">
+		<property name="vporegisterbasicManager" ref="vporegisterbasicManager" />
+	</bean>
+
+	<bean name="appindividualAction" class="com.centit.punish.action.AppindividualAction"
+		scope="request">
+		<property name="appindividualManager" ref="appindividualManager" />
+	</bean>
+
+	<bean name="appenterpriseAction" class="com.centit.punish.action.AppenterpriseAction"
+		scope="request">
+		<property name="appenterpriseManager" ref="appenterpriseManager" />
+	</bean>
+	<bean name="podetainwpbasicinfoAction" class="com.centit.punish.action.PodetainwpbasicinfoAction"
+		scope="request">
+		<property name="podetainwpbasicinfoManager" ref="podetainwpbasicinfoManager" />
+		<property name="podetainwptransinfoManager" ref="podetainwptransinfoManager" />
+	</bean>
+	<bean name="podetainwptransinfoAction" class="com.centit.punish.action.PodetainwptransinfoAction"
+		scope="request">
+		<property name="podetainwpbasicinfoManager" ref="podetainwpbasicinfoManager" />
+		<property name="podetainwptransinfoManager" ref="podetainwptransinfoManager" />
+	</bean>
+	<bean name="optNewlyIdeaAction" class="com.centit.punish.action.OptNewlyIdeaAction"
+		scope="request">
+		<property name="optNewlyIdeaManager" ref="optNewlyIdeaManager" />
+	</bean>
+	<bean name="podecisioninfoAction" class="com.centit.punish.action.PodecisioninfoAction"
+		scope="request">
+		<property name="podecisioninfoManager" ref="podecisioninfoManager" />
+	</bean>
+	<bean name="poacceptinfoAction" class="com.centit.punish.action.PoacceptinfoAction"
+		scope="request">
+		<property name="poacceptinfoManager" ref="poacceptinfoManager" />
+	</bean>
+	<bean name="VPunishViewListAction" class="com.centit.punish.action.VPunishViewListAction">
+		<property name="VPunishViewListManager" ref="VPunishViewListManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+</beans>

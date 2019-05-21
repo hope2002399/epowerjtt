@@ -1,0 +1,1 @@
+alter table B_FreeUmpireDegree modify  (PUNISHFACTGRADE varchar2(1000) default 'unknown');

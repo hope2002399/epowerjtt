@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="supervise" namespace="/supervise" extends="centitbsdfw">
+
+		<!-- 以下为复议业务内容 -->
+		<action name="reconsider" class="reconsiderAction">
+			<result name="list">/page/supervise/reconsiderList.jsp</result>
+			<result name="edit">/page/supervise/reconsiderForm.jsp</result>
+			<result name="listsup">/page/supervise/reconsiderChooseList.jsp</result>
+			<result name="view">/page/supervise/reconsiderView.jsp</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/supervise</param>
+				<param name="actionName">VUserTaskListReconsider</param>
+				<param name="method">list</param>
+			</result>
+			<result name="gotoNext">/page/supervise/common/gotoNextStep_reconsider.jsp
+			</result>
+			<result name="optTrans">/page/supervise/common/reconsiderTransInfo.jsp
+			</result>
+			<result name="viewFrame">/page/supervise/reconsiderViewFrame.jsp</result>
+			<result name="reconsiderResult">/page/supervise/optReconsiderResult.jsp</result>
+			<result name="viewBizInfo">/page/supervise/common/bizInfoFrame.jsp</result>
+
+
+		</action>
+		<action name="reconsiderTasksExecute" class="reconsiderTasksExecuteAction">
+			<result name="optframe">/page/powerruntime/optcommon/optCommonFrame.jsp
+			</result>
+			<result name="viewProcs">/page/powerruntime/optcommon/optIdeaInfoList.jsp
+			</result>
+			<result name="defaultTrans">/page/powerruntime/optcommon/buildingNode.jsp
+			</result>
+			<result name="optTrans">/page/supervise/common/reconsiderTransInfo.jsp
+			</result>
+
+
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/supervise</param>
+				<param name="actionName">VUserTaskListReconsider</param>
+				<param name="method">list</param>
+			</result>
+			<result name="gotoNext">/page/supervise/common/gotoNextStep_reconsider.jsp
+			</result>
+		</action>
+		<action name="reconsiderprocess" class="reconsiderprocessAction">
+			<result name="viewList">/page/supervise/reconsiderprocessView.jsp
+			</result>
+		</action>
+		<!-- 以下为督办业务内容 -->
+		<action name="superviseTasksExecute" class="superviseTasksExecuteAction">
+			<result name="optframe">/page/powerruntime/optcommon/optCommonFrame.jsp
+			</result>
+			<result name="viewProcs">/page/powerruntime/optcommon/optIdeaInfoList.jsp
+			</result>
+			<result name="defaultTrans">/page/powerruntime/optcommon/buildingNode.jsp
+			</result>
+			<result name="optTrans">/page/supervise/common/superviseTransInfo.jsp
+			</result>
+
+
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/supervise</param>
+				<param name="actionName">VUserTaskListSupervise</param>
+				<param name="method">list</param>
+				<param name="s_monitorSource">${monitorSource}</param>
+			</result>
+			<result name="gotoNext">/page/supervise/common/gotoNextStep.jsp</result>
+		</action>
+		<action name="superviseBasic" class="superviseBasicAction">
+			<result name="list">/page/supervise/superviseBasicList.jsp</result>
+			<result name="listsup">/page/supervise/superviseChooseList.jsp</result>
+			<result name="edit">/page/supervise/superviseBasicForm.jsp</result>
+			<result name="view">/page/supervise/superviseBasicView.jsp</result>
+			<result name="DlfxInfo">/page/supervise/superviseBasicDlfxForm.jsp</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/supervise</param>
+				<param name="actionName">VUserTaskListSupervise</param>
+				<param name="method">list</param>
+				<param name="s_monitorSource">${s_monitorSource}</param>
+			</result>
+			
+			<result name="refreshfankui" type="redirectAction">
+				<param name="namespace">/supervise</param>
+				<param name="actionName">superviseBasic</param>
+				<param name="method">listTJ</param>
+				<param name="s_monitorSource">${s_monitorSource}</param>
+				<param name="caozuo">fankui</param>
+			</result>
+			<result name="fankuiedit">/page/supervise/processfankuiedit.jsp</result>
+			<result name="listtj">/page/supervise/superviseBasicListTj.jsp</result>
+			<result name="jielunedit">/page/supervise/resultjielunedit.jsp</result>
+			<result name="refreshjielun" type="redirectAction">
+				<param name="namespace">/supervise</param>
+				<param name="actionName">superviseBasic</param>
+				<param name="method">listTJ</param>
+				<param name="s_monitorSource">${s_monitorSource}</param>
+				<param name="caozuo">jielun</param>
+			</result>
+			
+			<result name="gotoNext">/page/supervise/common/gotoNextStep.jsp</result>
+			<result name="optTrans">/page/supervise/common/superviseTransInfo.jsp
+			</result>
+			<result name="viewFrame">/page/supervise/superviseViewFrame.jsp</result>
+			<result name="superviseResult">/page/supervise/optSuperviseResult.jsp</result>
+			<result name="superviseResultDlfx">/page/supervise/optSuperviseResultDlfx.jsp</result>
+			<result name="viewBizInfo">/page/supervise/common/bizInfoFrame.jsp</result>
+			<result name="backlogOfSupervise" type="redirectAction">
+				${forwardurl}
+			</result>
+			<result name="backlogOfSupervise2" type="redirectAction">
+				<param name="namespace">/monitor</param>
+				<param name="actionName">${bjtypestring}</param>
+				<param name="method">view</param>
+				<param name="internalNo">${intno}</param>
+				<param name="itemId">${itemid}</param>
+			</result>
+			<result name="success" type="redirectAction">
+				/superviseBasic!list.do?s_bizType=F
+			</result>
+		</action>
+		 <action name="supInfoBasicDlfx" class="supInfoBasicDlfxAction">
+			<result name="supDlfxInfo">/page/monitor/supDlfxOutwayInfo.jsp</result>
+			<result name="supDlfxFk">/page/monitor/supDlfxOutwayInfoFk.jsp</result>
+			<result name="supDlfxJl">/page/monitor/supDlfxOutwayInfoJl.jsp</result>
+			<result name="supDlfxCx">/page/monitor/supDlfxOutwayInfoCx.jsp</result>
+			<result name="fkList">/page/monitor/supDlfxOutwayFkList.jsp</result>
+			<result name="jlList">/page/monitor/supDlfxOutwayJlList.jsp</result>
+			<result name="cxList">/page/monitor/supDlfxOutwayCxList.jsp</result>
+			<result name="backSupDlfxOutway" type="redirectAction">
+				<param name="namespace">/monitor</param>
+				<param name="actionName">supDlfxOutway</param>
+				<param name="method">updateSupDlfxInfo</param>
+				<param name="orgId">${orgId}</param>
+				<param name="month">${supervisionMonth}</param>
+				<param name="year">${supervisionYear}</param>
+				<param name="outwayId">${no}</param>
+			</result>
+			<result name="SupDlfxOutwayFk" type="redirectAction">
+				<param name="namespace">/monitor</param>
+				<param name="actionName">supDlfxOutway</param>
+				<param name="method">updateSupDlfxInfoFk</param>
+				<param name="orgId">${orgId}</param>
+				<param name="month">${supervisionMonth}</param>
+				<param name="year">${supervisionYear}</param>
+				<param name="outwayId">${no}</param>
+			</result>
+			<result name="SupDlfxOutwayJl" type="redirectAction">
+				<param name="namespace">/monitor</param>
+				<param name="actionName">supDlfxOutway</param>
+				<param name="method">updateSupDlfxInfoJl</param>
+				<param name="orgId">${orgId}</param>
+				<param name="month">${supervisionMonth}</param>
+				<param name="year">${supervisionYear}</param>
+				<param name="outwayId">${no}</param>
+			</result>
+		</action> 
+		<action name="superviseReply" class="superviseReplyAction">
+			<result name="viewList">/page/supervise/processView.jsp</result>
+		</action>
+		
+		<action name="supervisecjjc" class="superviseCJJCAction">
+			<result name="outwaylist" type="chain">  
+            	<param name="namespace">/monitor</param>
+            	<param name="actionName">outwaycjjc</param>
+            	<param name="method">list</param>
+       	 	</result>
+			<result name="list">/page/supervise/superviseCJJCList.jsp</result>
+			<result name="edit">/page/supervise/superviseCJJCForm.jsp</result>
+			<result name="view">/page/supervise/superviseCJJCView.jsp</result>
+		</action>
+		
+		<action name="*" class="{1}Action">
+			<result name="list">/page/supervise/{1}List.jsp</result>
+			<result name="view">/page/supervise/{1}View.jsp</result>
+			<result name="edit">/page/supervise/{1}Form.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+
+		</action>
+
+	</package>
+
+</struts>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"><beans default-lazy-init="false" default-autowire="no" default-dependency-check="none">
+	<bean id="powerOrgInfoDao" class="com.centit.powerbase.dao.PowerOrgInfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="suppowerDao" class="com.centit.powerbase.dao.SuppowerDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+		<bean id="powerQldyDao" class="com.centit.powerbase.dao.PowerQldyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="vPowerQldyDao" class="com.centit.powerbase.dao.VPowerQldyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="zf_powerDao" class="com.centit.powerbase.dao.Zf_powerDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="suppowerstatechglogDao" class="com.centit.powerbase.dao.SuppowerstatechglogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="vsuppowerinusingDao" class="com.centit.powerbase.dao.VsuppowerinusingDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="suppowerchglogDao" class="com.centit.powerbase.dao.SuppowerchglogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="vsuppowerwithoutlobDao" class="com.centit.powerbase.dao.VsuppowerwithoutlobDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+
+
+	<bean id="pcfreeumpiredegreeDao" class="com.centit.powerbase.dao.PcfreeumpiredegreeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="pcfreeumpiretypeDao" class="com.centit.powerbase.dao.PcfreeumpiretypeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="pcpunishItemDao" class="com.centit.powerbase.dao.PcpunishItemDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="pcpunishStandardDao" class="com.centit.powerbase.dao.PcpunishStandardDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="suppowerqlbgsqDao" class="com.centit.powerbase.dao.SuppowerqlbgsqDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="lawmenDao" class="com.centit.powerbase.dao.LawmenDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="lawmenannualDao" class="com.centit.powerbase.dao.LawmenannualDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="lawsuitDao" class="com.centit.powerbase.dao.LawsuitDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="lawenforecaseDao" class="com.centit.powerbase.dao.LawenforecaseDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="lawVehicleDao" class="com.centit.powerbase.dao.LawVehicleDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="lawExecutorDao" class="com.centit.powerbase.dao.LawExecutorDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="dataenterpriseDao" class="com.centit.powerbase.dao.DataenterpriseDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="dataindividualDao" class="com.centit.powerbase.dao.DataindividualDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="lawexecutorInspectDao" class="com.centit.powerbase.dao.LawexecutorInspectDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="powerRiskDao" class="com.centit.powerbase.dao.PowerRiskDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="vpowerriskDao" class="com.centit.powerbase.dao.VpowerriskDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="recordApplyBasicDao" class="com.centit.powerbase.dao.RecordApplyBasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="vapplyrecordbasicDao" class="com.centit.powerbase.dao.VapplyrecordbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+		<bean id="punishRecordDao" class="com.centit.powerbase.dao.PunishRecordDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="punishBasicDao" class="com.centit.powerbase.dao.PunishBasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="recordBasicDao" class="com.centit.powerbase.dao.RecordBasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="recordFileBasicDao" class="com.centit.powerbase.dao.RecordFileBasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="recordFileStuffDao" class="com.centit.powerbase.dao.RecordFileStuffDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="recordFileDepDao" class="com.centit.powerbase.dao.RecordFileDepDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="vRecordFileBasicDao" class="com.centit.powerbase.dao.VRecordFileBasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+</beans>

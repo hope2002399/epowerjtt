@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-12-20 16:41:04 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.centit.supervise.po.SuperviseCJJC" table="SUPINFOCJJC">
+        <id name="supervisecode" type="string">
+            <column name="SUPERVISECODE" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="no" type="string">
+            <column name="NO" length="50" />
+        </property>
+        <property name="complaintid" type="string">
+            <column name="COMPLAINTID" length="50" />
+        </property>
+        <property name="supervisetype" type="java.lang.String">
+            <column name="SUPERVISETYPE" length="1" />
+        </property>
+        <property name="superviseoption" type="string">
+            <column name="SUPERVISEOPTION" length="200" />
+        </property>
+        <property name="superviseback" type="string">
+            <column name="SUPERVISEBACK" length="200" />
+        </property>
+        <property name="superviseresult" type="string">
+            <column name="SUPERVISERESULT" length="200" />
+        </property>
+        <property name="operatorid" type="string">
+            <column name="OPERATORID" length="8" />
+        </property>
+        <property name="superdate" type="java.util.Date">
+            <column name="SUPERDATE" length="7" />
+        </property>
+        <property name="receiptdate" type="java.util.Date">
+            <column name="RECEIPTDATE" length="7" />
+        </property>
+        <property name="enddate" type="java.util.Date">
+            <column name="ENDDATE" length="7" />
+        </property>
+        <property name="isexternal" type="java.lang.Boolean">
+            <column name="ISEXTERNAL" precision="1" scale="0" />
+        </property>
+        <property name="issuperviseupload" type="java.lang.Character">
+            <column name="ISSUPERVISEUPLOAD" length="1" />
+        </property>
+        <property name="isreceiptupload" type="java.lang.Character">
+            <column name="ISRECEIPTUPLOAD" length="1" />
+        </property>
+        <property name="isendupload" type="java.lang.Character">
+            <column name="ISENDUPLOAD" length="1" />
+        </property>
+        <property name="dealstep" type="java.lang.String">
+            <column name="DEALSTEP" length="1" />
+        </property>
+        <property name="backoperatorname" type="string">
+            <column name="BACKOPERATORNAME" length="100" />
+        </property>
+        <property name="endoperatorid" type="string">
+            <column name="ENDOPERATORID" length="8" />
+        </property>
+        <property name="promise" type="java.util.Date">
+            <column name="PROMISE" length="7" not-null="true" />
+        </property>
+        <property name="receiveoperatorlist" type="string">
+            <column name="RECEIVEOPERATORLIST" length="200" />
+        </property>
+        <property name="ischeck" type="java.lang.Character">
+            <column name="ISCHECK" length="1" />
+        </property>
+        <property name="supervisesource" type="string">
+            <column name="SUPERVISESOURCE" length="1" />
+        </property>
+        <property name="warnsortno" type="string">
+            <column name="WARNSORTNO" length="50" />
+        </property>
+        <property name="orgId" type="string">
+            <column name="ORG_ID" length="12" />
+        </property>
+        <property name="superviseuploadno" type="string">
+            <column name="SUPERVISEUPLOADNO" length="50" />
+        </property>
+        <property name="supervisiontype" type="string">
+            <column name="SUPERVISIONTYPE" length="1">
+                <comment>&#178;&#227;&#188;&#182;&#188;&#224;&#178;&#236;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="supervisionyear" type="string">
+            <column name="SUPERVISIONYEAR" length="4">
+                <comment>&#178;&#227;&#188;&#182;&#188;&#224;&#178;&#236;&#196;&#234;&#183;&#221;</comment>
+            </column>
+        </property>
+        <property name="supervisionmonth" type="string">
+            <column name="SUPERVISIONMONTH" length="2">
+                <comment>&#178;&#227;&#188;&#182;&#188;&#224;&#178;&#236;&#212;&#194;&#183;&#221;</comment>
+            </column>
+        </property>
+        <property name="oldOutwayType" type="string">
+            <column name="OLD_OUTWAY_TYPE" length="1" />
+        </property>
+        <property name="operatorname" type="string">
+            <column name="OPERATORNAME" length="100" />
+        </property>
+        <property name="endoperatorname" type="string">
+            <column name="ENDOPERATORNAME" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

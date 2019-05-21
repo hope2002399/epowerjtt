@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none">
+	
+	<import resource="../spring-hibernate.xml" />
+	<import resource="spring-dao.xml" />
+	<import resource="../sampleflowconfig\spring-dao.xml" />
+	
+	<bean id="superviseBasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.supervise.service.impl.SuperviseBasicManagerImpl">
+				<property name="superviseBasicDao" ref="superviseBasicDao" />
+				<property name="vsuperviseBasicDao" ref="vsuperviseBasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="superviseReplyManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.supervise.service.impl.SuperviseReplyManagerImpl">
+				<property name="superviseReplyDao" ref="superviseReplyDao" />
+				<property name="wfFlowInstanceDao" ref="flowInstanceDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="superviseResultManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.supervise.service.impl.SuperviseResultManagerImpl">
+				<property name="superviseResultDao" ref="superviseResultDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="VUserTaskListSuperviseManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.supervise.service.impl.VUserTaskListSuperviseManagerImpl">
+				<property name="VUserTaskListSuperviseDao" ref="VUserTaskListSuperviseDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="superviseOnworkManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.supervise.service.impl.SuperviseOnworkManagerImpl">
+				<property name="superviseOnworkDao" ref="superviseOnworkDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="reconsiderManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.supervise.service.impl.ReconsiderManagerImpl">
+				<property name="reconsiderDao" ref="reconsiderDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="reconsiderprocessManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.supervise.service.impl.ReconsiderprocessManagerImpl">
+				<property name="reconsiderprocessDao" ref="reconsiderprocessDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="reconsiderresultManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.supervise.service.impl.ReconsiderresultManagerImpl">
+				<property name="reconsiderresultDao" ref="reconsiderresultDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="VUserTaskListReconsiderManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean
+				class="com.centit.supervise.service.impl.VUserTaskListReconsiderManagerImpl">
+				<property name="VUserTaskListReconsiderDao" ref="VUserTaskListReconsiderDao" />
+			</bean>
+		</property>
+	</bean>
+</beans>

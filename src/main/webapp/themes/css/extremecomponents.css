@@ -1,0 +1,312 @@
+.eXtremeTable {
+	margin-top:10px;
+	padding: 0;
+}
+
+.eXtremeTable select {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	border: solid 1px #EEE;
+	width: 100px;
+}
+
+.eXtremeTable .tableRegion {
+	/* font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px; */
+	border-left: 1px solid #CACACA;
+	border-top: 1px solid #CACACA;
+	/* width: 99%; */
+	background-color: white;
+	/* margin-left: 5px; */
+	text-align: center;
+	border-collapse:collapse;
+}
+.eXtremeTable .tableRegion table { border:0; }
+.eXtremeTable .tableRegion thead {/*  height:20px; line-height:20px; */ }
+.eXtremeTable  thead td { border-bottom:0; }
+
+.eXtremeTable .filter {
+	background-color: #F4F4F4;
+}
+
+.eXtremeTable .filter td {
+	padding: 2px;
+}
+
+.eXtremeTable .title {
+	color: #444444;
+	font-weight: bold;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 15px;
+	vertical-align: middle;
+}
+
+.eXtremeTable .titleRow {
+	background-color: #F4F4F4;
+}
+
+.eXtremeTable .titleRow td {
+	border-bottom: 1px solid #308dbb;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.eXtremeTable .titleRow span {
+	color: #444444;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.eXtremeTable .filter input {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	border: solid 1px grey;
+	padding: 1px;
+}
+
+.eXtremeTable .filter select {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	border: solid 1px #EEE;
+}
+fieldset .eXtremeTable td { height:0; }
+.eXtremeTable thead .tableHeader {
+	/* color: white;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	padding-right: 3px;
+	padding-left: 3px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin: 0px;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-color: white; */
+	background-color: #2D80D2;
+	
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #CACACA;
+			white-space:nowrap;
+}
+
+.tableRegion td {
+	border-right: 1px solid #CACACA;
+	border-bottom: 1px solid #CACACA;
+	/* padding: 5px; */
+	font-size: 12px;
+}
+
+.eXtremeTable thead .tableHeaderSort {
+	
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 1px solid #CACACA;
+			white-space:nowrap;
+	/* border-right-style: solid;
+	border-right-width: 1px;
+	border-color: white; */
+}
+
+.eXtremeTable .fixedOverflow { /*width:30em;*/
+	table-layout: fixed; /* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */
+}
+
+.eXtremeTable .fixedOverflow tbody td { /*width:100%;*/
+	font-family: verdana, arial, helvetica, sans-serif;
+	word-break: keep-all; /* 不换行 */
+	white-space: nowrap; /* 不换行 */
+	overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow: ellipsis;
+	/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+
+.eXtremeTable .odd a,.even a {
+	color: Black;
+	font-size: 12px;
+}
+/* 增加了	white-space:nowrap */
+.eXtremeTable .odd td,.eXtremeTable .even td {
+	
+	line-height:16px;
+	padding:5px;
+	vertical-align: middle;
+	font-size: 12px;
+	
+}
+
+.eXtremeTable .odd {
+	background-color: #FFFFFF;
+/* 		white-space:nowrap; */
+}
+
+.eXtremeTable .even {
+	background-color: #dfe4e8;
+/* 		white-space:nowrap; */
+}
+
+.eXtremeTable .highlight td {
+	color: black;
+	vertical-align: middle;
+	background-color: #fdecae;
+	line-height:16px;
+	padding:5px;
+/* 	white-space:nowrap; */
+	
+}
+
+
+.eXtremeTable .highlight a,.highlight a {
+	color: black;
+	font-size: 12px;
+/* 		white-space:nowrap; */
+}
+
+.eXtremeTable .compactToolbar {
+	text-align:right;
+	border-bottom:none;
+	border-right:none;
+
+}
+
+.eXtremeTable .compactToolbar img{
+	float:right;
+}
+
+.eXtremeTable .toolbar {
+	background-color: #F4F4F4;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 9px;
+	margin-right: 1px;
+	border-right: 1px solid silver;
+	border-left: 1px solid silver;
+	border-top: 1px solid silver;
+	border-bottom: 1px solid silver;
+}
+
+.eXtremeTable .toolbar a:hover {
+	background-color: transparent;
+}
+
+.eXtremeTable .toolbar td {
+	color: #444444;
+	padding: 0px 3px 0px 3px;
+	text-align: center;
+}
+
+.eXtremeTable thead table { width:98%; margin:0 10px; display:none;}
+
+.eXtremeTable .separator {
+	width: 7px;
+}
+
+.eXtremeTable .statusBar {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	padding:6px;
+	border:0px;
+	
+	text-align:right;
+}
+
+.eXtremeTable .filterButtons {
+	text-align: right;
+}
+
+.eXtremeTable .title span {
+	margin-left: 7px;
+}
+
+.eXtremeTable .formButtons {
+	display: block;
+	margin-top: 12px;
+	margin-left: 5px;
+}
+
+.eXtremeTable .formButton {
+	cursor: pointer;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #308dbb;
+	color: white;
+	margin-top: 5px;
+	border: outset 1px #333;
+	vertical-align: middle;
+}
+
+.eXtremeTable .calcRow {
+	background-color: #F4F4F4;
+}
+
+.eXtremeTable .calcTitle {
+	background-color: #F4F4F4;
+	color: black;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.eXtremeTable .calcResult {
+	background-color: #F4F4F4;
+	color: black;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.eXtremeTable .odd td table tr td {
+	/* padding-top: 2px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 3px; */
+	padding:0px;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	text-align: left;
+	border:0px;
+}
+
+.eXtremeTable .even td table tr td {
+	/* padding-top: 2px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 3px; */
+	padding:0px;
+	font-size: 12px;
+	background-color: #dfe4e8;
+	text-align: left;
+	border:0px;
+}
+
+.withLink {
+	text-align: left;
+}
+
+.eXtremeTable .highlight td table tr td {
+	/* padding-top: 2px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 3px; */
+	padding:0px;
+	text-align: left;
+	border:0px;
+}
+
+.eXtremeTable .highlight td table td { text-align:left;  /* padding: 2px 3px; */ padding:0px;border:0px;}
+/*
+*  添加样式，针对列表文字操作变为图片操作
+*/
+.eXtremeTable .option-btn { display:inline-block: margin:0 auto; }
+.eXtremeTable .option-btn td { vertical-align:middle; }
+.eXtremeTable .option-btn a { margin-right:10px; }
+.eXtremeTable img { border:0; }
+.ui-datepicker-trigger { background:none; border:0; cursor:pointer; }
+
+#ui-datepicker-div {z-index:25000 !important;}
+DIV.show-dept {z-index:25000 !important;}

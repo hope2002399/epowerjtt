@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<CommitFlow>
+	<Flow id="test" formid="" filename="default" text="" password="">
+		<Procs>
+			<Proc>
+				<BaseProperties id="begin" text="开始" ProcType="begin"
+					SelectExit="1" WarnType="" TimeLimit="" Executer="" Aidancer="" />
+				<VMLProperties shapetype="Oval" width="40" height="40"
+					x="60" y="160" textWeight="9pt" strokeWeight="1" zIndex="1" />
+			</Proc>
+			<Proc>
+				<BaseProperties id="end" text="结束" ProcType="end"
+					SelectExit="1" WarnType="" TimeLimit="" Executer="" Aidancer="" />
+				<VMLProperties shapetype="Oval" width="40" height="40"
+					x="900px" y="430px" textWeight="9pt" strokeWeight="1" zIndex="1" />
+			</Proc>
+			<Proc>
+				<BaseProperties id="first" text="开始" ProcType="first"
+					SelectExit="1" WarnType="" TimeLimit="" Executer="" Aidancer="" />
+				<VMLProperties shapetype="roundrect" width="100"
+					height="40" x="180" y="160" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Proc>
+			<Proc>
+				<BaseProperties id="proc4" text="proc4" ProcType="andsign"
+					SelectExit="1" WarnType="" TimeLimit="" Executer="" Aidancer="" />
+				<VMLProperties shapetype="roundrect" width="100px"
+					height="40" x="480px" y="150px" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Proc>
+			<Proc>
+				<BaseProperties id="proc0" text="proc0" ProcType="andsign"
+					SelectExit="1" WarnType="" TimeLimit="" Executer="" Aidancer="" />
+				<VMLProperties shapetype="roundrect" width="100"
+					height="40" x="330px" y="160px" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Proc>
+			<Proc>
+				<BaseProperties id="proc1" text="proc1" ProcType="andsign"
+					SelectExit="1" WarnType="" TimeLimit="" Executer="" Aidancer="" />
+				<VMLProperties shapetype="roundrect" width="100"
+					height="40" x="670px" y="110px" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Proc>
+			<Proc>
+				<BaseProperties id="proc2" text="proc2" ProcType="andsign"
+					SelectExit="1" WarnType="" TimeLimit="" Executer="" Aidancer="" />
+				<VMLProperties shapetype="roundrect" width="100"
+					height="40" x="670px" y="230px" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Proc>
+			<Proc>
+				<BaseProperties id="proc3" text="proc3" ProcType="andsign"
+					SelectExit="1" WarnType="" TimeLimit="" Executer="" Aidancer="" />
+				<VMLProperties shapetype="roundrect" width="100"
+					height="40" x="870px" y="290px" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Proc>
+			<Proc>
+				<BaseProperties id="Pro5" text="pro5" ProcType="andsign"
+					SelectExit="1" WarnType="" TimeLimit="" Executer="" Aidancer="" />
+				<VMLProperties shapetype="roundrect" width="100" height="40"
+					x="900px" y="130px" textWeight="9pt" strokeWeight="1" zIndex="1" />
+			</Proc>
+		</Procs>
+		<Steps>
+			<Step>
+				<BaseProperties id="step0" text="流程开始" from="begin"
+					to="first" Cond="" Desc="" />
+				<VMLProperties points="75pt,135pt,135pt,135pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="0" />
+				<LabelProperties id="labstep0" width="60" height="20px"
+					x="119px" y="186px" />
+			</Step>
+			<Step>
+				<BaseProperties id="step2" text="step2" from="proc0"
+					to="pro4" Cond="" Desc="" />
+				<VMLProperties points="322.5pt,135pt,360pt,135pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep2" width="40px" height="20px"
+					x="437px" y="188px" />
+			</Step>
+			<Step>
+				<BaseProperties id="step3" text="step3" from="pro4"
+					to="proc1" Cond="" Desc="" />
+				<VMLProperties points="435pt,135pt,502.5pt,97.5pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep3" width="40px" height="20px"
+					x="594px" y="138px" />
+			</Step>
+			<Step>
+				<BaseProperties id="step4" text="step4" from="pro4"
+					to="proc2" Cond="" Desc="123" />
+				<VMLProperties points="435pt,135pt,502.5pt,172.5pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep4" width="40px" height="20px"
+					x="595px" y="200px" />
+			</Step>
+			<Step>
+				<BaseProperties id="step5" text="step5" from="proc2"
+					to="pro5" Cond="" Desc="" />
+				<VMLProperties points="577.5pt,187.5pt,675pt,135pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep5" width="40px" height="20px"
+					x="799px" y="211px" />
+			</Step>
+			<Step>
+				<BaseProperties id="step6" text="step6" from="proc1"
+					to="pro5" Cond="" Desc="" />
+				<VMLProperties points="577.5pt,90pt,675pt,135pt"
+					fromRelX="1" fromRelY="0.25" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep6" width="40px" height="20px"
+					x="809px" y="138px" />
+			</Step>
+			<Step>
+				<BaseProperties id="step7" text="step7" from="pro5"
+					to="proc3" Cond="" Desc="" />
+				<VMLProperties points="688.125pt,172.5pt,690pt,217.5pt"
+					fromRelX="0.5" fromRelY="1" toRelX="0.5" toRelY="0" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep7" width="40px" height="20px"
+					x="866px" y="257px" />
+			</Step>
+			<Step>
+				<BaseProperties id="step8" text="step8" from="proc3"
+					to="end" Cond="" Desc="" />
+				<VMLProperties points="690pt,247.5pt,690pt,322.5pt"
+					fromRelX="0.5" fromRelY="1" toRelX="0.5" toRelY="0" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep8" width="40px" height="20px"
+					x="882px" y="360px" />
+			</Step>
+			<Step>
+				<BaseProperties id="step1" text="step1" from="first"
+					to="proc0" Cond="我是条件" Desc="" />
+				<VMLProperties points="210pt,135pt,247.5pt,135pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep1" width="40px" height="20px"
+					x="287px" y="195px" />
+			</Step>
+		</Steps>
+	</Flow>
+	
+</CommitFlow>

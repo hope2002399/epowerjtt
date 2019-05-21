@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+ 	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-lazy-init="false">
+	<bean id="roleDefAction" class="com.centit.sys.action.RoleDefAction" scope="request">
+		<property name="sysRoleManager" ref="sysRoleManager" />
+		<property name="codeRepositoryManager" ref="codeRepositoryManager" />
+		<property name="roleSecurityMetadata"  ref="centitSecurityMetadataSource" />
+	</bean>
+
+	<bean id="optDefAction" class="com.centit.sys.action.OptDefAction" scope="request">
+		<property name="functionManager" ref="functionManager" />
+		<property name="optdefManager" ref="optdefManager" />
+		<property name="codeRepositoryManager" ref="codeRepositoryManager" />
+	</bean>
+
+	<bean id="optInfoAction" class="com.centit.sys.action.OptInfoAction" scope="request">	
+		<property name="functionManager" ref="functionManager" />
+		<property name="codeRepositoryManager" ref="codeRepositoryManager" />
+	</bean>
+	
+	<bean id="importdataAction" class="com.centit.jtt2xyb.web.ImportdataAction" scope="request">	
+		<property name="jtt2XybXkService" ref="jtt2XybXkService" />
+		<property name="jtt2XybCfService" ref="jtt2XybCfService" />
+	</bean>
+	
+	<bean id="exportExcel" class="com.centit.jtt2xyb.web.ExportExcel">
+		<property name="jtt2XybCfService" ref="jtt2XybCfService" />
+	</bean>
+	<bean id="exportSdbs" class="com.centit.jtt2xyb.web.ExportSdbs">
+		<property name="jtt2XybCfService" ref="jtt2XybCfService" />
+	</bean>
+	<bean id="exportWssbtj" class="com.centit.jtt2xyb.web.Exportwssbtj">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exportwssbtjsx" class="com.centit.jtt2xyb.web.Exportwssbtjsx">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exportwssbtjsxtraffic" class="com.centit.jtt2xyb.web.Exportwssbtjsxtraffic">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exportNotMeetsx" class="com.centit.jtt2xyb.web.ExportNotMeetsx">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exportZzxx" class="com.centit.jtt2xyb.web.ExportZzxx">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exporterror" class="com.centit.jtt2xyb.web.Exporterror">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exportLegarerror" class="com.centit.jtt2xyb.web.ExportLegarerror">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exportovertime" class="com.centit.jtt2xyb.web.Exportovertime">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exportZzxxPro" class="com.centit.jtt2xyb.web.ExportZzxxPro">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exportBjxxAll" class="com.centit.jtt2xyb.web.ExportBjxxAll">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exportYwHand" class="com.centit.jtt2xyb.web.ExportYwHand">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	
+	<bean id="exportBjxx" class="com.centit.jtt2xyb.web.ExportBjxx">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="dataStatistics" class="com.centit.jtt2xyb.web.DataStatistics">
+		<property name="jtt2XybCfService" ref="jtt2XybCfService" />
+		<property name="sysUserManager" ref="sysUserManager" />	
+	</bean>
+	<bean id="jttWssbtj" class="com.centit.jtt2xyb.web.jttWssbtj">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="jttWssbtjsx" class="com.centit.jtt2xyb.web.jttWssbtjsx">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="userDefAction" class="com.centit.sys.action.UserDefAction" scope="request">
+		<property name="sysUserMgr" ref="sysUserManager" />
+		<property name="codeRepositoryManager" ref="codeRepositoryManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />	
+	</bean>
+	
+	<bean id="applyUserAction" class="com.centit.sys.action.ApplyUserAction" scope="request">
+		<property name="applyUserMgr" ref="applyUserManager" />
+	</bean>
+
+	<bean id="unitAction" class="com.centit.sys.action.UnitAction" scope="request">
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysRoleManager" ref="sysRoleManager" />
+		<property name="codeRepositoryManager" ref="codeRepositoryManager" />
+		<property name="addressBookManager" ref="addressBookManager"></property>
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+
+	<bean id="deptManagerAction" class="com.centit.sys.action.DeptManagerAction" scope="request">
+		<property name="codeRepositoryManager" ref="codeRepositoryManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysRoleManager" ref="sysRoleManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+
+	<bean id="mainFrameAction" class="com.centit.sys.action.MainFrameAction" scope="request">
+		<property name="functionMgr" ref="functionManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		
+		<property name="firstPageManager" ref="firstPageManager" />
+		
+	</bean>
+
+	<bean id="dictionaryAction" class="com.centit.sys.action.DictionaryAction" scope="request">
+		<property name="dictManger" ref="dictionaryManager" />
+		<property name="codeRepoManager" ref="codeRepositoryManager" />
+	</bean>
+
+	<bean name="userSettingAction" class="com.centit.sys.action.UserSettingAction" scope="request">
+		<property name="functionMgr" ref="functionManager" />
+		<property name="sysUserMgr" ref="sysUserManager" />
+		<property name="userSettingMgr" ref="userSettingManager" />
+
+	</bean>
+	<bean name="addressBookAction" class="com.centit.sys.action.AddressBookAction" scope="request">
+		<property name="addressBookManager" ref="addressBookManager" />
+	</bean>
+
+	<bean name="optRunRecAction" class="com.centit.sys.action.OptRunRecAction" scope="request">
+		<property name="optRunRecManager" ref="optRunRecManager" />
+	</bean>
+	<bean name="optVariableAction" class="com.centit.sys.action.OptVariableAction" scope="request">
+		<property name="optVariableManager" ref="optVariableManager" />
+	</bean>
+	<bean name="optLogAction" class="com.centit.sys.action.OptLogAction"
+		scope="request">
+		<property name="optLogManager" ref="optLogManager" />
+	</bean>
+	<bean id="jttWssbxzxk" class="com.centit.jtt2xyb.web.jttWssbxzxk">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exportBxzxk" class="com.centit.jtt2xyb.web.ExportBxzxk">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="jttWssbxzcf" class="com.centit.jtt2xyb.web.jttWssbxzcf">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+	<bean id="exportBxzcf" class="com.centit.jtt2xyb.web.ExportBxzcf">
+		<property name="wssbtjService" ref="wssbtjService" />
+	</bean>
+</beans>

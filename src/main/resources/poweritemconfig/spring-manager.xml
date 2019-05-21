@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"><beans default-lazy-init="false" default-autowire="no" default-dependency-check="none">
+	<bean id="bpowerItemManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.poweritem.service.impl.BpowerItemManagerImpl">
+				<property name="bpowerItemDao" ref="bpowerItemDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="bpowerItemServiceManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.poweritem.service.impl.BpowerItemServiceManagerImpl">
+				<property name="suppowerDao" ref="bpowerItemServiceDao"/>
+				<property name="vSupPowerDao" ref="vpoweritemservicewithoutlobDao"/>
+				<property name="vsuppowerwithoutlobDao" ref="vpoweritemservicewithoutlobDao"/>
+				<property name="suppowerqlbgsqDao" ref="vpowerItemServiceChangeDao"/>
+				<property name="pcpunishStandardDao" ref="pcpunishStandardDao"/>
+				<property name="pcfreeumpiredegreeDao" ref="pcfreeumpiredegreeDao"/>
+				<property name="pcfreeumpiretypeDao" ref="pcfreeumpiretypeDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="bpowerItemQldyManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.poweritem.service.impl.BpowerItemQldyManagerImpl">
+				<property name="bpowerItemQldyDao" ref="bpowerItemQldyDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+	<bean id="pcdefDao" class="com.centit.punish.dao.PcdefDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pctypeDao" class="com.centit.punish.dao.PctypeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poapprovebasicDao" class="com.centit.punish.dao.PoapprovebasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poapprovepersonDao" class="com.centit.punish.dao.PoapprovepersonDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="podiscussbasicDao" class="com.centit.punish.dao.PodiscussbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vPODiscussDao" class="com.centit.punish.dao.VPODiscussDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poenterpriseDao" class="com.centit.punish.dao.PoenterpriseDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poexcucebasicDao" class="com.centit.punish.dao.PoexcucebasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pofinishbasicDao" class="com.centit.punish.dao.PofinishbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poindagaterepbasicDao" class="com.centit.punish.dao.PoindagaterepbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poindividualDao" class="com.centit.punish.dao.PoindividualDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pomovebackbasicDao" class="com.centit.punish.dao.PomovebackbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poprintdefDao" class="com.centit.punish.dao.PoprintdefDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="popunishbasicDao" class="com.centit.punish.dao.PopunishbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poreceiptinfoDao" class="com.centit.punish.dao.PoreceiptinfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poregisterbasicDao" class="com.centit.punish.dao.PoregisterbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poresultbasicDao" class="com.centit.punish.dao.PoresultbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="potranslawbasicDao" class="com.centit.punish.dao.PotranslawbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vPotranslawbasicDao" class="com.centit.punish.dao.VPotranslawbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poundertakebasicDao" class="com.centit.punish.dao.PoundertakebasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pounwitnessbasicDao" class="com.centit.punish.dao.PounwitnessbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="powitnessbasicDao" class="com.centit.punish.dao.PowitnessbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="punishobjectbasicDao" class="com.centit.punish.dao.PunishobjectbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userTaskListCFDao" class="com.centit.punish.dao.VUserTaskListCFDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poradixbasicDao" class="com.centit.punish.dao.PoradixbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vporegisterbasicDao" class="com.centit.punish.dao.VporegisterbasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="appindividualDao" class="com.centit.punish.dao.AppindividualDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="appenterpriseDao" class="com.centit.punish.dao.AppenterpriseDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="podetainwpbasicinfoDao" class="com.centit.punish.dao.PodetainwpbasicinfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="podetainwptransinfoDao" class="com.centit.punish.dao.PodetainwptransinfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="optNewlyIdeaDao" class="com.centit.punish.dao.OptNewlyIdeaDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="podecisioninfoDao" class="com.centit.punish.dao.PodecisioninfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="poacceptinfoDao" class="com.centit.punish.dao.PoacceptinfoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VPunishViewListDao" class="com.centit.punish.dao.VPunishViewListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.centit.powerbase.po.PunishBasic" table="V_PUNISH_REORDBASIC">
+		<id name="no" type="java.lang.String">
+			<column name="NO" length="50" />
+			<generator class="assigned" />
+		</id>
+		<property name="update_date" type="java.util.Date">
+			<column name="UPDATE_DATE" />
+		</property>
+
+		<property name="internal_no" type="java.lang.String">
+			<column name="INTERNAL_NO" length="100" />
+		</property>
+		<property name="org_id" type="java.lang.String">
+			<column name="org_id" length="10" />
+		</property>
+		<property name="department" type="java.lang.String">
+			<column name="DEPARTMENT" length="100" />
+		</property>
+		<property name="source" type="java.lang.String">
+			<column name="SOURCE" length="1" />
+		</property>
+		<property name="fact" type="java.lang.String">
+			<column name="FACT" length="4000" />
+		</property>
+		<property name="content" type="java.lang.String">
+			<column name="CONTENT" length="200" />
+		</property>
+		<property name="punish_time" type="java.util.Date">
+			<column name="PUNISH_TIME" />
+		</property>
+		<property name="punish_target" type="java.lang.String">
+			<column name="PUNISH_TARGET" length="200" />
+		</property>
+		<property name="target_type" type="java.lang.String">
+			<column name="TARGET_TYPE" length="1" />
+		</property>
+		<property name="target_code" type="java.lang.String">
+			<column name="TARGET_CODE" length="50" />
+		</property>
+		<property name="target_phone" type="java.lang.String">
+			<column name="TARGET_PHONE" length="40" />
+		</property>
+		<property name="target_mobile" type="java.lang.String">
+			<column name="TARGET_MOBILE" length="20" />
+		</property>
+
+		<property name="target_email" type="java.lang.String">
+			<column name="TARGET_EMAIL" length="100" />
+		</property>
+
+		<property name="reporter" type="java.lang.String">
+			<column name="REPORTER" length="200" />
+		</property>
+		<property name="bookDate" type="java.util.Date">
+			<column name="BOOKDATE" />
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="CREATE_DATE" />
+		</property>
+		<!-- <property name="personNum" type="java.lang.Long"> <column name="PERSONNUM" 
+			/> </property> <property name="corpNum" type="java.lang.Long"> <column name="CORPNUM" 
+			/> </property> -->
+
+		<property name="recodeStyle" type="java.lang.String">
+			<column name="RECODESTYLE" length="10" />
+		</property>
+		<property name="punish_class" type="java.lang.String">
+			<column name="PUNISH_CLASS" length="100" />
+		</property>
+		<property name="isRecord" type="java.lang.String">
+			<column name="ISRECORD" length="1" />
+		</property>
+		<property name="punish_result_fine" type="java.lang.Long">
+			<column name="PUNISH_RESULT_FINE" />
+		</property>
+		<property name="punish_result_expropriatton_v" type="java.lang.Long">
+			<column name="PUNISH_RESULT_EXPROPRIATION_V" />
+		</property>
+
+		<property name="item_id" type="java.lang.String">
+			<column name="item_id" length="50" />
+		</property>
+		<property name="parentDepno" type="java.lang.String">
+			<column name="PARENTDEPNO" length="20" />
+		</property>
+		<property name="itemName" type="java.lang.String">
+			<column name="ITEM_NAME" length="1000" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-lazy-init="true">
+	<bean name="complaintAction" scope="request"
+		class="com.centit.complaint.action.ComplaintAction">
+		<property name="complaintManager" ref="complaintManager" />
+		<property name="functionManager" ref="functionManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="punishManager" ref="punishManager" />
+		<property name="applyManager" ref="applyManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="complaintsresultManager" ref="complaintsresultManager" />
+		<property name="complaintsprocessManager" ref="complaintsprocessManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+	</bean>
+	<bean name="complaintsprocessAction" scope="request"
+		class="com.centit.complaint.action.ComplaintsprocessAction">
+		<property name="complaintsprocessManager" ref="complaintsprocessManager" />
+	</bean>
+	<bean name="complaintsresultAction" scope="request"
+		class="com.centit.complaint.action.ComplaintsresultAction">
+		<property name="complaintsresultManager" ref="complaintsresultManager" />
+	</bean>
+	<bean name="complaintTasksExecuteAction"
+		class="com.centit.complaint.action.ComplaintTasksExecuteAction" scope="request">
+		<property name="complaintsprocessManager" ref="complaintsprocessManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="complaintManager" ref="complaintManager" />
+		<property name="complaintsresultManager" ref="complaintsresultManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="functionManager" ref="functionManager" />
+		<property name="superviseBasicManager" ref="superviseBasicManager" />
+		<property name="superviseReplyManager" ref="superviseReplyManager" />
+		<property name="punishManager" ref="punishManager" />
+		<property name="applyManager" ref="applyManager" />
+	</bean>
+	<bean name="vusertasklistcomplaintAction" scope="request"
+		class="com.centit.complaint.action.VUserTaskListComplaintAction">
+		<property name="vusertasklistcomplaintMag" ref="vusertasklistcomplaintManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="epowerCommonBizAction" scope="request"
+		class="com.centit.complaint.action.EpowerCommonBizAction">
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+	</bean>
+</beans>

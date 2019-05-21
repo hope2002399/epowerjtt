@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="dispatchDocManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.DispatchDocManagerImpl">
+				<property name="dispatchDocDao" ref="dispatchDocDao" />
+				<property name="docRelativeDao" ref="docRelativeDao" />
+				<property name="vDispatchDocListDao" ref="vDispatchDocListDao" />				
+			</bean>
+		</property>
+	</bean>
+	<bean id="incomeDocManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.IncomeDocManagerImpl">
+				<property name="incomeDocDao" ref="incomeDocDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="ioDocTasksManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.IODocTasksManagerImpl">
+				<property name="dispatchDocTaskDao" ref="dispatchDocTaskDao" />
+				<property name="incomeDocTaskDao" ref="incomeDocTaskDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="VIncomeDocListManager"
+		class="com.centit.dispatchdoc.service.impl.VIncomeDocListManagerImpl">
+		<property name="VIncomeDocListDao" ref="VIncomeDocListDao" />
+	</bean>
+	
+	<bean id="docRelativeManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.DocRelativeManagerImpl">				
+				<property name="docRelativeDao" ref="docRelativeDao" />
+			</bean>
+		</property>
+	</bean>
+		<bean id="ioDocArchiveNoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.dispatchdoc.service.impl.IODocArchiveNoManagerImpl">				
+				<property name="ioDocArchiveNoDao" ref="ioDocArchiveNoDao" />
+			</bean>
+		</property>
+	</bean>
+	
+	
+</beans>

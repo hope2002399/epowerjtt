@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.centit.powerbase.po.Vapplyrecordbasic" table="V_apply_recordbasic">
+		<id name="internalNo" type="java.lang.String">
+			<column name="internal_No" precision="0" scale="0" />
+			<generator class="assigned" />
+		</id>
+		<property name="orgId" type="java.lang.String">
+			<column name="org_id" length="10" />
+		</property>
+		<property name="department" type="java.lang.String">
+			<column name="department" length="100" />
+		</property>
+		<property name="bookDate" type="java.util.Date">
+			<column name="BOOKDATE" />
+		</property>
+		<property name="applyDate" type="java.util.Date">
+			<column name="apply_date" />
+		</property>
+		<property name="transactAffairName" type="java.lang.String">
+			<column name="transact_Affair_Name" length="200" />
+		</property>
+		<property name="itemId" type="java.lang.String">
+			<column name="item_Id" length="100" />
+		</property>
+		<property name="itemName" type="java.lang.String">
+			<column name="item_Name" length="1000"/>
+		</property>
+		<property name="itemType" type="java.lang.String">
+			<column name="item_Type" length="2" />
+		</property>
+		<property name="applicant" type="java.lang.String">
+			<column name="applicant" length="100" />
+		</property>
+		<property name="applicantType" type="java.lang.String">
+			<column name="applicant_Type" length="1" />
+		</property>
+		<property name="content" type="java.lang.String">
+			<column name="content" length="200" />
+		</property>
+		<property name="no" type="java.lang.String">
+			<column name="no" length="200" />
+		</property>
+	</class>
+</hibernate-mapping>

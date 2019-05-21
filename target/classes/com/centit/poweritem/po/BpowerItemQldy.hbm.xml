@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.centit.poweritem.po.BpowerItemQldy" table="b_power_item_qldy">
+
+		<id name="serviceId" type="java.lang.String">
+			<column name="serviceID" length="34" />
+		</id>
+
+		<property name="serviceName" type="java.lang.String">
+			<column name="servicename" length="500" />
+		</property>
+		<property name="itemMainId" type="java.lang.String">
+			<column name="item_Main_Id" length="32" />
+		</property>
+		<property name="itemMainName" type="java.lang.String">
+			<column name="item_Main_name" length="500" />
+		</property>
+		<property name="itemSubId" type="java.lang.String">
+			<column name="item_Sub_Id" length="32" />
+		</property>
+		<property name="itemSubName" type="java.lang.String">
+			<column name="item_Sub_Name" length="500" />
+		</property>
+		<property name="itemQldyItemId" type="java.lang.String">
+			<column name="item_qldy_powerid" length="50" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="1" />
+		</property>
+	
+	</class>
+
+</hibernate-mapping>

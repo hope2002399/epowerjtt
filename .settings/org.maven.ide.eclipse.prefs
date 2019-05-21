@@ -1,0 +1,8 @@
+#Tue Mar 13 09:21:23 CST 2012
+activeProfiles=pom.xml
+eclipse.preferences.version=1
+fullBuildGoals=process-test-resources
+resolveWorkspaceProjects=true
+resourceFilterGoals=process-resources resources\:testResources
+skipCompilerPlugin=true
+version=1

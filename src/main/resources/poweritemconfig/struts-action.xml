@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="poweritem" namespace="/poweritem" extends="centitbsdfw">
+		<action name="bpowerItem" class="bpowerItemAction">
+			<result name="list">/page/poweritem/item/bpowerItemList.jsp</result>
+			<result name="view">/page/poweritem/item/bpowerItemInfo.jsp</result>
+			<result name="add">/page/poweritem/item/bpowerItemFormNew.jsp</result>
+			<result name="form">/page/poweritem/item/bpowerItemForm.jsp</result>
+			<result name="addQldy">/page/poweritem/qldy/bpowerItemQldyFormNew.jsp</result>
+			<result name="editQldy">/page/poweritem/qldy/bpowerItemQldyForm.jsp</result>
+			<result name="viewQldy">/page/poweritem/qldy/bpowerItemQldyInfo.jsp</result>
+			<result name="listQldy">/page/poweritem/qldy/bpowerItemQldyList.jsp</result>
+			<result name="checkitemid" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	<action name="bpowerItemService" class="bpowerItemServiceAction">
+			
+			
+			<result name="listSupPowerSQ">/page/poweritem/service/suppowerQlbgSqList.jsp
+			</result>
+			<result name="listSupPowerSH">/page/poweritem/service/suppowerQlbgShList.jsp
+			</result>
+			<result name="SuppowerQlbgSqNXz">/page/poweritem/service/suppowerQlbgSqNXz.jsp
+			</result>
+			<result name="nEdit">/page/poweritem/service/suppowerNForm.jsp
+			</result>
+			
+			<result name="SuppowerQlbgSqNXg">/page/poweritem/service/suppowerQlbgSqNXg.jsp
+			</result>
+			
+			<result name="suppowerQlbgShEdit">/page/poweritem/service/suppowerQlbgShEdit.jsp
+			</result>
+			<!-- <result name="suppowerQlbgReplyEdit">/page/powerbase/optcommon/suppowerQlbgReplyEdit.jsp
+			</result> -->
+			<result name="listNVersion">/page/poweritem/service/suppowerNChglogbyId.jsp
+			</result>
+			
+			<result name="editzycl">/page/poweritem/service/zycledit.jsp</result>
+			<result name="viewzycl">/page/poweritem/service/discretionaryView.jsp
+			</result>
+			<result name="viewcfcx">/page/poweritem/service/DiscretionaryStandardView.jsp
+			</result>
+			<result name="editcfcx">/page/poweritem/service/cfcxedit.jsp</result>
+		
+			<result name="checkitemid" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<!-- <result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result> -->
+		</action>
+
+
+	</package>
+	
+
+</struts>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<TopFlow>
+<Procs>
+  <Proc id="proc0" inststate="complete" instcount="3">
+  		<inst id="1213" />
+  		<inst id="1214" />
+  		<inst id="1215" />
+  </Proc> 
+  <Proc id="proc1" inststate="waiting" /> 
+  <Proc id="proc2" inststate="ready" /> 
+  <Proc id="proc3" inststate="ready" /> 
+  <Proc id="proc4" inststate="ready" /> 
+  
+  </Procs>
+<Steps>
+  <Step id="step0" inststate="1" /> 
+  <Step id="step1" inststate="1" /> 
+  <Step id="step2" inststate="-1" /> 
+  <Step id="step3" inststate="-1" /> 
+  <Step id="step4" inststate="-1" /> 
+  <Step id="step5" inststate="-1" /> 
+  <Step id="step6" inststate="-1" /> 
+
+  </Steps>
+</TopFlow>

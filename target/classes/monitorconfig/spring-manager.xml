@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"><beans>
+	<bean id="applyManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.ApplyManagerImpl">
+				<property name="applyDao" ref="applyDao"/>
+				<property name="vApplyDao" ref="vApplyDao"/>
+				<property name="vApplyForListDao" ref="vApplyForListDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="sendMessageManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.SendMessageManagerImpl">
+				<property name="smsLogDao" ref="smsLogDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="applyDocManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.ApplyDocManagerImpl">
+				<property name="applyDocDao" ref="applyDocDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="applyLogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.ApplyLogManagerImpl">
+				<property name="applyLogDao" ref="applyLogDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="applyProcessManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.ApplyProcessManagerImpl">
+				<property name="applyProcessDao" ref="applyProcessDao"/>
+				<property name="applyDocDao" ref="applyDocDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="applyResultManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.ApplyResultManagerImpl">
+				<property name="applyResultDao" ref="applyResultDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="applyResultLogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.ApplyResultLogManagerImpl">
+				<property name="applyResultLogDao" ref="applyResultLogDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="punishManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.PunishManagerImpl">
+				<property name="punishDao" ref="punishDao"/>
+				<property name="vPunishDao" ref="vPunishDao"/>
+				<property name="vPunishForListDao" ref="vPunishForListDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="punishDocManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.PunishDocManagerImpl">
+				<property name="punishDocDao" ref="punishDocDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="punishLogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.PunishLogManagerImpl">
+				<property name="punishLogDao" ref="punishLogDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="punishProcessManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.PunishProcessManagerImpl">
+				<property name="punishProcessDao" ref="punishProcessDao"/>
+				<property name="punishDocDao" ref="punishDocDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="punishResultManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.PunishResultManagerImpl">
+				<property name="punishResultDao" ref="punishResultDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="punishResultLogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.PunishResultLogManagerImpl">
+				<property name="punishResultLogDao" ref="punishResultLogDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="trackLogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.TrackLogManagerImpl">
+				<property name="trackLogDao" ref="trackLogDao"/>
+				<property name="vTrackLogDao" ref="vTrackLogDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="paPerformanceResultManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.PaPerformanceResultManagerImpl">
+				<property name="paPerformanceResultDao" ref="paPerformanceResultDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="paMonthCheckupManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.PaMonthCheckupManagerImpl">
+				<property name="paMonthCheckupDao" ref="paMonthCheckupDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="superviselogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.SuperviselogManagerImpl">
+				<property name="superviselogDao" ref="superviselogDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="supervisorypersonnelManager" parent="baseTransactionProxy">
+
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.SupervisorypersonnelManagerImpl">
+				<property name="supervisorypersonnelDao" ref="supervisorypersonnelDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="pacheckupparamManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.PacheckupparamManagerImpl">
+				<property name="pacheckupparamDao" ref="pacheckupparamDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="pamonthpunishManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.PamonthpunishManagerImpl">
+				<property name="pamonthpunishDao" ref="pamonthpunishDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="outwayManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.OutwayManagerImpl">
+				<property name="outwayDao" ref="outwayDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="outwayCJJCManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.OutwayCJJCManagerImpl">
+				<property name="outwayCJJCDao" ref="outwayCJJCDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="outwayparamManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.OutwayparamManagerImpl">
+				<property name="outwayparamDao" ref="outwayparamDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="outwaycalcManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.OutwaycalcManagerImpl">
+				<property name="outwaycalcDao" ref="outwaycalcDao"/>
+				<property name="outwayDao" ref="outwayDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="outwayWarnpointManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.OutwayWarnpointManagerImpl">
+				<property name="outwayWarnpointDao" ref="outwayWarnpointDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="supDlfxOutwayManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.monitor.service.impl.SupDlfxOutwayManagerImpl">
+				<property name="supDlfxOutwayDao" ref="supDlfxOutwayDao"/>
+			</bean>
+		</property>
+	</bean>
+</beans>

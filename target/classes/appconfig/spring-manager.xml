@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+
+	<!-- 文件管理与全文检索 -->
+	<bean id="fileinfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.FileinfoManagerImpl">
+				<property name="fileinfoDao" ref="fileinfoDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="workCalendar" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.WorkCalendarImpl">
+				<property name="oaStatMonthDao" ref="oaStatMonthDao" />
+				<property name="oaWorkDayDao" ref="oaWorkDayDao" />
+				<property name="oaWorkingTimeDao" ref="oaWorkingTimeDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="innermsgManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.InnermsgManagerImpl">
+				<property name="innermsgDao" ref="innermsgDao" />
+				<property name="fileinfoDao" ref="fileinfoDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="emailMsgSender" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.EmailMessageSenderImpl">
+				<property name="addressBookDao" ref="addressBookDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="oaWorkDayManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.app.service.impl.OaWorkDayManagerImpl">
+				<property name="oaWorkDayDao" ref="oaWorkDayDao" />
+			</bean>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,66 @@
+#cronContainer {
+	MARGIN: 40px auto auto; WIDTH: 700px
+}
+SPAN {
+	DISPLAY: inline-block
+}
+#cChoice {
+	
+}
+#btnFan {
+	WIDTH: 120px; HEIGHT: 30px
+}
+#cronNav {
+	POSITION: absolute; LINE-HEIGHT: 34px; WIDTH: 100%; BACKGROUND: url(http://www.becron.com/imgs/bai-Index2_03.gif); HEIGHT: 34px; MARGIN-LEFT: 0px; TOP: 0px; LEFT: 0px
+}
+#cronNav A {
+	TEXT-ALIGN: center; MARGIN-TOP: 10px; COLOR: black; MARGIN-LEFT: 15px; FONT-SIZE: 13px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+#tt {
+	
+}
+#usefulDiv {
+	FONT-SIZE: 13px
+}
+#Cres FIELDSET {
+	BORDER-BOTTOM: #95b8e7 1px solid; BORDER-LEFT: #95b8e7 1px solid; WIDTH: 678px; FONT-SIZE: 13px; BORDER-TOP: #95b8e7 1px solid; BORDER-RIGHT: #95b8e7 1px solid
+}
+#Cres INPUT {
+	WIDTH: 80px
+}
+#Cbuttons {
+	BORDER-BOTTOM: #95b8e7 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #95b8e7 1px solid; MARGIN-TOP: 10px; WIDTH: 100%; BORDER-TOP: #95b8e7 1px solid; BORDER-RIGHT: #95b8e7 1px solid
+}
+#btnGen {
+	WIDTH: 180px; HEIGHT: 50px
+}
+#btnCopy {
+	WIDTH: 180px; HEIGHT: 50px
+}
+#testContainer {
+	MARGIN: 40px auto; WIDTH: 400px
+}
+.fixed {
+	
+}
+#testText {
+	WIDTH: 270px
+}
+#textTxtArea {
+	WIDTH: 100%
+}
+#minPanel SPAN {
+	WIDTH: 20px
+}
+#hourPanel SPAN {
+	WIDTH: 20px
+}
+#dayPanel SPAN {
+	WIDTH: 20px
+}
+#monPanel SPAN {
+	WIDTH: 20px
+}
+#weekPanel SPAN {
+	WIDTH: 20px
+}

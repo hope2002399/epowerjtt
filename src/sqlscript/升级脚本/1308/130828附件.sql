@@ -1,0 +1,1 @@
+alter table OPT_STUFF_INFO modify(STUFFNAME VARCHAR2(256));

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="job_everyDay" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.monitor.job.WarnPointJob</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="wpExeRule" value="D" />
+				<entry key="outwaycalcManager" value-ref="outwaycalcManager" />
+				<entry key="outwayWarnpointManager" value-ref="outwayWarnpointManager" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="job_send_message" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.monitor.job.SendMessageJob</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="sendMessageManager" value-ref="sendMessageManager" />
+				<entry key="optApplyNetManager" value-ref="optApplyNetManager" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="job_everyMonth" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.monitor.job.WarnPointJob</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="wpExeRule" value="M" />
+				<entry key="outwaycalcManager" value-ref="outwaycalcManager" />
+				<entry key="outwayWarnpointManager" value-ref="outwayWarnpointManager" />
+			</map>
+		</property>
+	</bean>
+	
+	
+	<!-- 配置触发器,每隔两小时发送 -->
+	<bean id="trigger_send_message" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_send_message" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 0/3 * * ?</value>
+			<!-- <value>0 0 */2 * * ?</value> -->
+		</property>
+	</bean>
+	
+	<!-- 配置触发器,早上6点 -->
+	<bean id="trigger_everyDay" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_everyDay" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 6 * * ?</value>
+			<!-- <value>0 0 1 * * ?</value> -->
+		</property>
+	</bean>
+	
+		<!-- 配置触发器,每月三号六点 -->
+	<bean id="trigger_everyMonth" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_everyMonth" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 6 3 * ?</value>
+			<!-- <value>0 0 1 * * ?</value> -->
+		</property>
+	</bean>
+	
+	<bean id="job_Records" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.powerbase.job.RecordJob</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="punishRecordManager" value-ref="punishRecordManager" />
+			</map>
+		</property>
+	</bean>
+	<bean id="trigger_Records" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_Records" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/60 8-20 * * ? </value>
+		</property>
+	</bean>
+	
+	<bean id="job_firstpage" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.centit.sys.util.FirstPageDataJob</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="firstPageManager" value-ref="firstPageManager" />
+			</map>
+		</property>
+	</bean>
+	<!--每天早上5点1分执行  -->
+	<bean id="trigger_firstpage" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="job_firstpage" />
+		</property>
+		<property name="cronExpression">
+			<value>0 22 * * * ? </value>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<!-- 添加触发器 -->
+		<property name="triggers">
+			<list>
+				<ref local="trigger_send_message" />
+				<!-- <ref local="trigger_everyDay" />
+				<ref local="trigger_everyMonth" />
+				<ref local="trigger_Records" />-->
+				<ref local="trigger_firstpage" /> 
+			</list>
+		</property>
+	</bean>
+</beans>

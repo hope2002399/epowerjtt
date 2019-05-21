@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none">
+
+	<!-- 工作流程引擎 -->
+	<bean id="actionLogDao" class="com.centit.workflow.sample.dao.WfActionLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="actionTaskDao" class="com.centit.workflow.sample.dao.WfActionTaskDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="flowDefineDao" class="com.centit.workflow.sample.dao.WfFlowDefineDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="flowInstanceDao" class="com.centit.workflow.sample.dao.WfFlowInstanceDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="manageActionDao" class="com.centit.workflow.sample.dao.WfManageActionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="flowNodeDao" class="com.centit.workflow.sample.dao.WfNodeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="flowTeamDao" class="com.centit.workflow.sample.dao.WfTeamDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="nodeInstanceDao" class="com.centit.workflow.sample.dao.WfNodeInstanceDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="flowTransitionDao" class="com.centit.workflow.sample.dao.WfTransitionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="flowRoleRelegateDao" class="com.centit.workflow.sample.dao.WfRoleRelegateDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="flowVariableDao" class="com.centit.workflow.sample.dao.WfFlowVariableDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vNodeInstDetailDao" class="com.centit.workflow.sample.dao.VNodeInstDetailDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="flowTaskMoveDao" class="com.centit.workflow.sample.dao.WfTaskMoveDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="flowAttentionDao" class="com.centit.workflow.sample.dao.WfInstAttentionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="vUserTasksDao" class="com.centit.workflow.sample.dao.VUserTasksDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+<!-- 	<bean id="wfFlowStageDao" class="com.centit.workflow.sample.dao.WfFlowStageDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean> -->
+
+	<bean id="flowOrganizeDao" class="com.centit.workflow.sample.dao.WfOrganizeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="wfStageInstanceDao" class="com.centit.workflow.sample.dao.WfStageInstanceDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+</beans>

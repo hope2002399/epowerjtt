@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-lazy-init="true">
+	<bean name="powerOrgInfoAction" class="com.centit.powerbase.action.PowerOrgInfoAction"
+		scope="request">
+		<property name="powerOrgInfoManager" ref="powerOrgInfoManager" />
+		<property name="flowDefine" ref="flowDefine" />
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+	</bean>
+	<bean name="powerQldyAction" class="com.centit.powerbase.action.PowerQldyAction"
+		scope="request">
+		<property name="powerQldyManager" ref="powerQldyManager" />
+		<property name="vPowerQldyManager" ref="vPowerQldyManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="supPowerAction" class="com.centit.powerbase.action.SupPowerAction"
+		scope="request">
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="suppowerstatechglogManager" ref="suppowerstatechglogManager" />
+		<property name="suppowerchglogManager" ref="suppowerchglogManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="vsuppowerinusingAction" scope="request"
+		class="com.centit.powerbase.action.VsuppowerinusingAction">
+		<property name="vsuppowerinusingManager" ref="vsuppowerinusingManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="suppowerchglogAction" scope="request"
+		class="com.centit.powerbase.action.SuppowerchglogAction">
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="suppowerchglogManager" ref="suppowerchglogManager" />
+	</bean>
+
+	<bean name="pcfreeumpiredegreeAction" class="com.centit.powerbase.action.PcfreeumpiredegreeAction"
+		scope="request">
+		<property name="pcfreeumpiredegreeManager" ref="pcfreeumpiredegreeManager" />
+		<!-- <property name="pcpunishItemManager" ref="pcpunishItemManager" /> -->
+		<property name="suppowerManager" ref="suppowerManager" />
+	</bean>
+	<bean name="pcfreeumpiretypeAction" class="com.centit.powerbase.action.PcfreeumpiretypeAction"
+		scope="request">
+		<property name="pcfreeumpiretypeManager" ref="pcfreeumpiretypeManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="pcpunishStandardManager" ref="pcpunishStandardManager" />
+		<property name="pcfreeumpiredegreeManager" ref="pcfreeumpiredegreeManager" />
+	</bean>
+	<!-- <bean name="pcpunishItemAction" class="com.centit.powerbase.action.PcpunishItemAction" 
+		scope="request"> <property name="pcpunishItemManager" ref="pcpunishItemManager" 
+		/> </bean> -->
+	<bean name="pcpunishStandardAction" class="com.centit.powerbase.action.PcpunishStandardAction"
+		scope="request">
+		<property name="pcpunishStandardManager" ref="pcpunishStandardManager" />
+		<property name="pcpunishItemManager" ref="pcpunishItemManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="pcfreeumpiretypeManager" ref="pcfreeumpiretypeManager" />
+	</bean>
+	<bean name="lawmenAction" scope="request"
+		class="com.centit.powerbase.action.LawmenAction">
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="lawmenManager" ref="lawmenManager" />
+	</bean>
+
+	<bean name="lawsuitAction" scope="request"
+		class="com.centit.powerbase.action.LawsuitAction">
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="punishManager" ref="punishManager" />
+		<property name="applyManager" ref="applyManager" />
+		<property name="lawsuitManager" ref="lawsuitManager" />
+	</bean>
+	<bean name="lawenforecaseAction" scope="request"
+		class="com.centit.powerbase.action.LawenforecaseAction">
+		<property name="lawenforecaseManager" ref="lawenforecaseManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+
+	<bean name="lawVehicleAction" scope="request"
+		class="com.centit.powerbase.action.LawVehicleAction">
+		<property name="lawVehicleManager" ref="lawVehicleManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+
+	<bean name="lawExecutorAction" class="com.centit.powerbase.action.LawExecutorAction"
+		scope="request">
+		<property name="lawExecutorManager" ref="lawExecutorManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="lawexecutorInspectManager" ref="lawexecutorInspectManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+	<bean name="dataenterpriseAction" class="com.centit.powerbase.action.DataenterpriseAction"
+		scope="request">
+		<property name="dataenterpriseManager" ref="dataenterpriseManager" />
+	</bean>
+	<bean name="dataindividualAction" class="com.centit.powerbase.action.DataindividualAction"
+		scope="request">
+		<property name="dataindividualManager" ref="dataindividualManager" />
+	</bean>
+	<bean name="lawexecutorInspectAction" class="com.centit.powerbase.action.LawexecutorInspectAction">
+		<property name="lawexecutorInspectManager" ref="lawexecutorInspectManager" />
+	</bean>
+	<bean name="powerRiskAction" class="com.centit.powerbase.action.PowerRiskAction">
+		<property name="powerRiskManager" ref="powerRiskManager"/>
+		<property name="vpowerriskManager" ref="vpowerriskManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+		<property name="suppowerManager" ref="suppowerManager"></property>
+	</bean>
+	<bean name="recordApplyBasicAction" class="com.centit.powerbase.action.RecordApplyBasicAction">
+		<property name="recordApplyBasicManager" ref="recordApplyBasicManager"/>
+		<property name="vapplyrecordbasicManager" ref="vapplyrecordbasicManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+		<!-- <property name="lawexecutorInspectManager" ref="lawexecutorInspectManager" /> -->
+	</bean>
+	<bean name="punishRecordAction" class="com.centit.powerbase.action.PunishRecordAction">
+		<property name="punishRecordManager" ref="punishRecordManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="punishRecordBasicAction" class="com.centit.powerbase.action.PunishRecordBasicAction">
+		<property name="punishBasicManager" ref="punishBasicManager" />
+		<property name="punishRecordManager" ref="punishRecordManager" />
+		<property name="recordBasicManager" ref="recordBasicManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="suppowerManager" ref="suppowerManager" />
+		<property name="punishResultManager" ref="punishResultManager"></property>
+	</bean>
+	<bean name="recordFileBasicAction" class="com.centit.powerbase.action.RecordFileBasicAction">
+		<property name="recordFileBasicManager" ref="recordFileBasicManager"/>
+		<property name="vRecordFileBasicManager" ref="vRecordFileBasicManager"/>
+		<property name="recordFileDepManager" ref="recordFileDepManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+		<property name="recordFileStuffManager" ref="recordFileStuffManager"/>
+	</bean>
+	<bean name="recordFileStuffAction" class="com.centit.powerbase.action.RecordFileStuffAction">
+		<property name="recordFileStuffManager" ref="recordFileStuffManager"/>
+	</bean>
+	<bean name="recordFileDepAction" class="com.centit.powerbase.action.RecordFileDepAction">
+		<property name="recordFileDepManager" ref="recordFileDepManager"/>
+	</bean>
+</beans>

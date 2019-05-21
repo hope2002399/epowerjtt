@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"><beans>
+	<bean id="applyDao" class="com.centit.monitor.dao.ApplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="smsLogDao" class="com.centit.monitor.dao.SmsLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="vApplyDao" class="com.centit.monitor.dao.VApplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="vApplyForListDao" class="com.centit.monitor.dao.VApplyForListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+
+	<bean id="applyDocDao" class="com.centit.monitor.dao.ApplyDocDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="applyLogDao" class="com.centit.monitor.dao.ApplyLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="applyProcessDao" class="com.centit.monitor.dao.ApplyProcessDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="applyResultDao" class="com.centit.monitor.dao.ApplyResultDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="applyResultLogDao" class="com.centit.monitor.dao.ApplyResultLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="punishDao" class="com.centit.monitor.dao.PunishDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="vPunishDao" class="com.centit.monitor.dao.VPunishDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="vPunishForListDao" class="com.centit.monitor.dao.VPunishForListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="punishDocDao" class="com.centit.monitor.dao.PunishDocDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="punishLogDao" class="com.centit.monitor.dao.PunishLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="punishProcessDao" class="com.centit.monitor.dao.PunishProcessDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="punishResultDao" class="com.centit.monitor.dao.PunishResultDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="punishResultLogDao" class="com.centit.monitor.dao.PunishResultLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="trackLogDao" class="com.centit.monitor.dao.TrackLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="paPerformanceResultDao" class="com.centit.monitor.dao.PaPerformanceResultDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="paMonthCheckupDao" class="com.centit.monitor.dao.PaMonthCheckupDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="pacheckupparamDao" class="com.centit.monitor.dao.PacheckupparamDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="superviselogDao" class="com.centit.monitor.dao.SuperviselogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="supervisorypersonnelDao" class="com.centit.monitor.dao.SupervisorypersonnelDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="pamonthpunishDao" class="com.centit.monitor.dao.PamonthpunishDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="outwayDao" class="com.centit.monitor.dao.OutwayDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="outwayCJJCDao" class="com.centit.monitor.dao.OutwayCJJCDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="vTrackLogDao" class="com.centit.monitor.dao.VTrackLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="outwayparamDao" class="com.centit.monitor.dao.OutwayparamDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="outwaycalcDao" class="com.centit.monitor.dao.OutwaycalcDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="supDlfxOutwayDao" class="com.centit.monitor.dao.SupDlfxOutwayDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="outwayWarnpointDao" class="com.centit.monitor.dao.OutwayWarnpointDao">
+		<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+	</bean>
+</beans>

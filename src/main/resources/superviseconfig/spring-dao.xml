@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"><beans default-lazy-init="false" default-autowire="no" default-dependency-check="none">
+	<bean id="superviseBasicDao" class="com.centit.supervise.dao.SuperviseBasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vsuperviseBasicDao" class="com.centit.supervise.dao.VSuperviseBasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="superviseReplyDao" class="com.centit.supervise.dao.SuperviseReplyDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="superviseResultDao" class="com.centit.supervise.dao.SuperviseResultDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VUserTaskListSuperviseDao" class="com.centit.supervise.dao.VUserTaskListSuperviseDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="superviseOnworkDao" class="com.centit.supervise.dao.SuperviseOnworkDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="reconsiderDao" class="com.centit.supervise.dao.ReconsiderDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="reconsiderprocessDao" class="com.centit.supervise.dao.ReconsiderprocessDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="reconsiderresultDao" class="com.centit.supervise.dao.ReconsiderresultDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VUserTaskListReconsiderDao" class="com.centit.supervise.dao.VUserTaskListReconsiderDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="superviseCJJCDao" class="com.centit.supervise.dao.SuperviseCJJCDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	 <bean id="supInfoBasicDlfxDao" class="com.centit.supervise.dao.SupInfoBasicDlfxDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+</beans>

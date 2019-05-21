@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="monitor" namespace="/monitor" extends="centitbsdfw">
+
+		<action name="pacheckupparam" class="pacheckupparamAction">
+			<result name="list">/page/monitor/pacheckupparamList.jsp</result>
+			<result name="checkupxz">/page/monitor/pacheckupparamForm.jsp</result>
+			<result name="success" type="redirectAction">
+				/pacheckupparam!list.do
+			</result>
+			<result name="delete" type="redirectAction">
+				/pacheckupparam!list.do
+			</result>
+		</action>
+		<action name="paPerformanceResult" class="paPerformanceResultAction">
+			<result name="list">/page/monitor/paPerformanceResultForm.jsp
+			</result>
+			<result name="auditsh">/page/monitor/paPerformanceResultView.jsp
+			</result>
+			<result name="clist">/page/monitor/paMonthCheckupList.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		<action name="pamonthpunish" class="pamonthpunishAction">
+			<result name="list">/page/monitor/pamonthpunishList.jsp</result>
+			<result name="addscore">/page/monitor/pamonthpunishForm.jsp</result>
+			<result name="auditsh">/page/monitor/pamonthpunishAuditsh.jsp</result>
+			<result name="view">/page/monitor/pamonthpunishview.jsp</result>
+
+			<result name="success" type="redirectAction">
+				/pamonthpunish!list.do
+			</result>
+			<result name="delete" type="redirectAction">
+				/pacheckupparam!list.do
+			</result>
+		</action>
+		<action name="paMonthCheckup" class="paMonthCheckupAction">
+			<result name="clist">/page/monitor/paMonthCheckupList.jsp</result>
+				<result name="sup">/page/monitor/supervisoryviewAll.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		<action name="supervisorypersonnel" class="supervisorypersonnelAction">
+			<result name="list">/page/monitor/supervisoryPersonnelList.jsp
+			</result>
+			<result name="view">/page/monitor/supervisoryPersonnelView.jsp
+			</result>
+			<result name="edit">/page/monitor/supervisoryPersonnelForm.jsp
+			</result>
+			<result name="editInital">/page/monitor/supervisoryPersonnelAdd.jsp
+			</result>
+			<result name="SBList">/page/monitor/supervisoryPersonnelSBList.jsp
+			</result>
+			<result name="SHList">/page/monitor/supervisoryPersonnelSHList.jsp
+			</result>
+			<result name="CXList">/page/monitor/supervisoryPersonnelCXList.jsp
+			</result>
+			<result name="SBEdit">/page/monitor/supervisoryPersonnelSBEdit.jsp
+			</result>
+			<result name="SHEdit">/page/monitor/supervisoryPersonnelSHEdit.jsp
+			</result>
+			<result name="SHForm">/page/monitor/supervisoryPersonnelSHForm.jsp
+			</result>
+			<result name="built" type="chain" />
+			<result name="delete" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+			<result name="success" type="centitui">
+				<param name="newWin">false</param>
+				<param name="callbackType">closeCurrent</param>
+				<param name="navTabId"></param>
+			</result>
+		</action>
+		<action name="*" class="{1}Action">
+			<result name="list">/page/monitor/{1}List.jsp</result>
+			<result name="view">/page/monitor/{1}View.jsp</result>
+			<result name="edit">/page/monitor/{1}Form.jsp</result>
+			<result name="built" type="chain" />
+			<result name="delete" type="centitui">
+				<param name="newWin">false</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="success" type="centitui">
+				<param name="newWin">false</param>
+				<param name="callbackType">closeCurrent</param>
+				<param name="navTabId"></param>
+			</result>
+		</action>
+		<action name="apply" class="applyAction">
+			<result name="list">/page/monitor/applyList.jsp</result>
+			<result name="fgList">/page/monitor/applyFgList.jsp</result>
+			<result name="result">/page/monitor/applyResultList.jsp</result>
+			<result name="edit">/page/monitor/applyForm.jsp</result>
+			<result name="view">/page/monitor/applyView.jsp</result>
+			<result name="applyView">/page/monitor/applyInfoView.jsp</result>
+			<result name="formView">/page/monitor/applyFormView.jsp</result>
+			<result name="punish" type="redirect">
+			<param name="location">${url}</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			<result name="flowChart">/page/monitor/flowChart.jsp</result>
+			<result name="flowChart_L">/page/monitor/flowChart_L.jsp</result>
+			<result name="compare">/page/monitor/applyCompare.jsp</result>
+		</action>
+		<action name="applyLog" class="applyLogAction">
+		<result name="view">/page/monitor/applyLogView.jsp</result>
+			<result name="formView">/page/monitor/applyFormView.jsp</result>
+		</action>
+		<action name="punish" class="punishAction">
+			<result name="list">/page/monitor/punishList.jsp</result>
+			<result name="result">/page/monitor/punishResultList.jsp</result>
+			<result name="edit">/page/monitor/punishForm.jsp</result>
+			<result name="view">/page/monitor/punishView.jsp</result>
+			<result name="punishView">/page/monitor/punishInfoView.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			<result name="flowChart">/page/monitor/flowChart.jsp</result>
+			<result name="flowChart_L">/page/monitor/flowChart_L.jsp</result>
+			<result name="compare">/page/monitor/punishCompare.jsp</result>
+		</action>
+		<action name="trackLog" class="trackLogAction">
+			<result name="view">/page/monitor/trackLogView.jsp</result>
+			<result name="trackLogSetList">/page/monitor/trackLogSetList.jsp</result>
+			<result name="trackLogTrack">/page/monitor/trackLogTrack.jsp</result>
+			<result name="trackLogTracks">/page/monitor/trackLogTrackList.jsp</result>
+			<result name="trackLogList">/page/monitor/trackLogList.jsp</result>
+			<result name="trackLogCancel">/page/monitor/trackLogCancel.jsp</result>
+			<result name="trackLogCancels">/page/monitor/trackLogCancelList.jsp</result>
+			<result name="trackLogViewList">/page/monitor/trackLogViewList.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			<result name="apply_view" type="chain">
+				<param name="actionName">apply</param>
+				<param name="method">view</param>
+			</result>
+			<result name="trackfromsup" type="redirectAction">
+	            ${trackurl}
+			</result>
+		</action>
+		<action name="outwayparam" class="outwayparamAction">
+			<result name="view">/page/monitor/outwayparamView.jsp</result>
+			<result name="edit">/page/monitor/outwayparamForm.jsp</result>
+			<result name="list">/page/monitor/outwayparamList.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="supDlfxOutway" class="supDlfxOutwayAction">
+			<!-- <result name="view">/page/monitor/supDlfxOutwayView.jsp</result> -->
+			<result name="edit">/page/monitor/supDlfxOutwayForm.jsp</result>
+			<result name="list">/page/monitor/supDlfxOutwayList.jsp</result>
+			<result name="supDlfxInfo">/page/monitor/supDlfxOutwayInfo.jsp</result>
+			<result name="forList" type="redirectAction">
+			<param name="namespace">/monitor</param>
+				<param name="actionName">supDlfxOutway</param>
+				<param name="method">list</param>
+			</result>
+			<result name="fkForList" type="redirectAction">
+				<param name="namespace">/supervise</param>
+				<param name="actionName">supInfoBasicDlfx</param>
+				<param name="method">fkList</param>
+				<param name="dealStep">2</param>
+				<param name="orgId">${orgId}</param>
+				<param name="supervisionMonth">${month}</param>
+				<param name="supervisionYear">${year}</param>
+			</result>
+			<result name="jlForList" type="redirectAction">
+				<param name="namespace">/supervise</param>
+				<param name="actionName">supInfoBasicDlfx</param>
+				<param name="method">jlList</param>
+				<param name="dealStep">3</param>
+				<param name="orgId">${orgId}</param>
+				<param name="supervisionMonth">${month}</param>
+				<param name="supervisionYear">${year}</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="outwaycalc" class="outwaycalcAction">
+			<result name="view">/page/monitor/outwaycalcView.jsp</result>
+			<result name="edit">/page/monitor/outwaycalcForm.jsp</result>
+			<result name="list">/page/monitor/outwaycalcList.jsp</result>
+			<result name="outwaylist">/page/monitor/outwayListT.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		
+		<action name="outwaycjjc" class="outwayCJJCAction">
+			<result name="list">/page/monitor/outwayCJJCList.jsp</result>
+			<result name="success">/page/monitor/outwayCJJCList.jsp</result>
+		</action>
+		
+		<action name="outwayWarnpoint" class="outwayWarnpointAction">
+			<result name="list">/page/monitor/outwayWarnpointList.jsp</result>
+			<result name="view">/page/monitor/outwayWarnpointView.jsp</result>
+			<result name="edit">/page/monitor/outwayWarnpointForm.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">outwayWarnpoint</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		<action name="outway" class="outwayAction">
+			<result name="list">/page/monitor/outwayList.jsp</result>
+			<result name="edit">/page/monitor/outwayForm.jsp</result>
+			<result name="DlfxEdit">/page/monitor/outwayDlfxForm.jsp</result>
+			<result name="view">/page/monitor/outwayView.jsp</result>
+			<result name="DlfxList">/page/monitor/outwayDlfxList.jsp</result>
+			<result name="success">/page/monitor/outwayList.jsp</result>
+		</action>
+	</package>
+</struts>

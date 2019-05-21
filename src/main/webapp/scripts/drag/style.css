@@ -1,0 +1,25 @@
+/*
+
+Darko Bunic
+http://www.redips.net/
+Feb, 2010.
+
+*/
+
+/* drag objects (DIV elements inside table cells) */
+.drag{
+	cursor: move;
+	margin: auto;
+	z-index: 10;
+	background-color: white;
+	text-align: center;
+	filter: alpha(opacity=70);
+	/* without width, IE6/7 will not apply filter/opacity to the element ?! */
+}
+
+
+/* cells from the right table (forbidden cells) */
+.mark{
+	color: #444;
+	background-color: #e0e0e0;
+}

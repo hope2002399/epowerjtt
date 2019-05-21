@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none">
+	
+	<import resource="..\spring-hibernate.xml" />
+	<import resource="spring-dao.xml" />
+	<import resource="..\sysconfig\spring-dao.xml" />
+	<!-- <import resource=".\spring-action.xml" />
+	<import resource=".\struts-action.xml" /> -->
+
+	
+	<!-- 工作流程引擎 -->
+	<bean id="flowModelData" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.workflow.sample.SampleFlowModelData">
+				<property name="flowDefineDao" ref="flowDefineDao" />
+				<property name="optDefDao" ref="optdefDao"></property>
+				<property name="optVariableDao" ref="optVariableDao"></property>
+			</bean>
+		</property>
+	</bean>
+	<bean id="flowDefine" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.workflow.sample.SampleFlowDefine">
+				<property name="flowDefineDao" ref="flowDefineDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="flowEngine" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.workflow.sample.SampleFlowEngine">
+				<property name="flowInstanceDao" ref="flowInstanceDao" />
+				<property name="nodeInstanceDao" ref="nodeInstanceDao" />
+				<property name="flowNodeDao" ref="flowNodeDao" />
+				<property name="flowTransitionDao" ref="flowTransitionDao" />
+				<property name="actionTaskDao" ref="actionTaskDao" />
+				<property name="actionLogDao" ref="actionLogDao" />
+				<property name="flowDefDao" ref="flowDefineDao" />
+				<property name="flowTeamDao" ref="flowTeamDao" />
+				<property name="flowVariableDao" ref="flowVariableDao" />
+				<property name="flowAttentionDao" ref="flowAttentionDao" />
+				<property name="flowOrganizeDao" ref="flowOrganizeDao" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="flowManager" parent="baseTransactionProxy">
+		<property name="proxyTargetClass">  
+ 			<value>true</value>  
+		</property>
+		<property name="target">
+			<bean class="com.centit.workflow.sample.SampleFlowManager">
+				<property name="flowInstanceDao" ref="flowInstanceDao" />
+				<property name="nodeInstanceDao" ref="nodeInstanceDao" />
+				<property name="flowNodeDao" ref="flowNodeDao" />
+				<property name="flowTransitionDao" ref="flowTransitionDao" />
+				<property name="manageActionDao" ref="manageActionDao" />
+				<property name="actionTaskDao" ref="actionTaskDao" />
+				<property name="actionLogDao" ref="actionLogDao" />
+				<property name="flowDefDao" ref="flowDefineDao" />
+				<property name="vNodeInstDetailDao" ref="vNodeInstDetailDao"/>
+				<property name="flowTeamDao" ref="flowTeamDao" />
+				<property name="flowTaskMoveDao" ref="flowTaskMoveDao" />
+				<property name="vUserTasksDao" ref="vUserTasksDao"/>
+			</bean>
+		</property>
+	</bean>	
+	
+	<bean id="flowTask"  parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.workflow.sample.SampleFlowTask">
+			<property name="flowInstanceDao" ref="flowInstanceDao" />
+			<property name="nodeInstanceDao" ref="nodeInstanceDao" />
+			<property name="actionTaskDao" ref="actionTaskDao" />
+			<property name="flowNodeDao" ref="flowNodeDao" />
+			<property name="flowDefDao" ref="flowDefineDao" />
+			<property name="msgSenders">
+				<map>
+					<entry key="email">
+						<ref bean="emailMsgSender" />
+					</entry>
+					<entry key="message">
+						<ref bean="innermsgManager" />
+					</entry>
+				</map>
+			</property>
+			<property name="workCalendar" ref="workCalendar" />
+			 
+			
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="flowRoleRelegate" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.workflow.sample.SampleFlowRoleRelegate">
+				<property name="flowRoleRelegateDao" ref="flowRoleRelegateDao" />
+			</bean>
+		</property>
+	</bean>
+
+</beans>

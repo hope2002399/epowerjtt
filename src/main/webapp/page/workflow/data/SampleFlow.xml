@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE CommitFlow []>
+<CommitFlow>
+	<Flow code="test" name="测试流程定义" type="n" desc="这是一个测试流程图形定义界面的示例" >
+		<Nodes>
+			<Node>
+				<!--所有属性全部小写 -->
+				<!--nodetype  节点类别 A:开始 B:首节点 C:一般 D:分支 E:汇聚 F:结束  H:并行   这个也必须填写，原来的通过计算的想法有漏洞 -->
+				<!--opttype 操作类别 A:一般 B:抢先机制 C:多人操作  D:子流程 -->
+				<!--roletype 角色类别 en:权限引擎 bj:办件角色 gw:岗位角色  xz:行政角色 -->
+				<!-- 添加几个属性 
+					预期时间   timelimit 过期处理方法  expireopt
+					机构表达式  uintexp  权限表达式 powerexp
+				 -->
+				<BaseProperties id="1" name="开始" nodetype="A" desc="开始节点描述"
+				  opttype="A" optcode="" roletype="" rolecode=""  subwfcode=""/>
+				<VMLProperties shapetype="Oval" width="40" height="40"
+					x="60" y="160" textWeight="9pt" strokeWeight="1" zIndex="1" />
+			</Node>
+			<Node>
+				<BaseProperties id="2" name="结束" nodetype="F" desc="结束节点描述" 
+				  opttype="A" optcode="" roletype="" rolecode=""  subwfcode=""/>
+				<VMLProperties shapetype="Oval" width="40" height="40"
+					x="900px" y="430px" textWeight="9pt" strokeWeight="1" zIndex="1" />
+			</Node>
+			<Node>
+				<BaseProperties id="3" name="开始" nodetype="B" desc="第一个工作节点描述"
+				  opttype="A" optcode="" roletype="" rolecode=""  subwfcode=""/>
+				<VMLProperties shapetype="roundrect" width="100"
+					height="40" x="180" y="160" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Node>
+			<Node>
+				<BaseProperties id="4" name="工作步骤1" nodetype="C" desc="工作步骤1节点描述" 
+				  opttype="A" optcode="" roletype="" rolecode=""  subwfcode=""/>
+				<VMLProperties shapetype="roundrect" width="100"
+					height="40" x="330px" y="160px" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Node>			
+			<Node>
+				<BaseProperties id="5" name="分支节点" nodetype="D" desc="分支节点描述" 
+				  opttype="A" optcode="" roletype="" rolecode=""  subwfcode=""/>
+				<VMLProperties shapetype="diamond" width="100px"
+					height="60px" x="480px" y="150px" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Node>
+			<Node>
+				<BaseProperties id="6" name="工作步骤2" nodetype="C" desc="工作步骤2节点描述" 
+				  opttype="A" optcode="" roletype="" rolecode=""  subwfcode=""/>
+				<VMLProperties shapetype="roundrect" width="100"
+					height="40" x="670px" y="110px" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Node>
+			<Node>
+				<BaseProperties id="7" name="工作步骤3" nodetype="C" desc="工作步骤3节点描述" 
+				  opttype="A" optcode="" roletype="" rolecode=""  subwfcode=""/>
+				<VMLProperties shapetype="roundrect" width="100"
+					height="40" x="670px" y="230px" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Node>
+			<Node>
+				<BaseProperties id="8" name="汇聚节点" nodetype="E" desc="汇聚节点描述"
+				  opttype="A" optcode="" roletype="" rolecode=""  subwfcode=""/>
+				<VMLProperties shapetype="rect" width="35" height="100"
+					x="900px" y="130px" textWeight="9pt" strokeWeight="1" zIndex="1" />
+			</Node>
+			<Node>
+				<BaseProperties id="9" name="工作步骤4" nodetype="C" desc="工作步骤4节点描述" 
+				  opttype="A" optcode="" roletype="" rolecode=""  subwfcode=""/>
+				<VMLProperties shapetype="roundrect" width="100"
+					height="40" x="870px" y="290px" textWeight="9pt" strokeWeight="1"
+					zIndex="1" />
+			</Node>
+
+		</Nodes>
+		<Transitions>
+			<Transition>
+				<BaseProperties id="1" name="流程开始" from="1"
+					to="3" cond="" desc="" />
+				<VMLProperties points="75pt,135pt,135pt,135pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="0" >
+					<cond>money>500</cond>
+					</VMLProperties>
+				<LabelProperties id="labstep0" width="60" height="20px"
+					x="119px" y="186px" />
+			</Transition>
+			<Transition>
+				<BaseProperties id="2" name="step1" from="3"
+					to="4" cond="" desc="" />
+				<cond></cond>
+				<VMLProperties points="210pt,135pt,247.5pt,135pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep1" width="40px" height="20px"
+					x="287px" y="195px" />
+			</Transition>			<Transition>
+				<BaseProperties id="3" name="step2" from="4"
+					to="5" cond="" desc="" />
+				<VMLProperties points="322.5pt,135pt,360pt,135pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep2" width="40px" height="20px"
+					x="437px" y="188px" />
+					
+			</Transition>
+			<Transition>
+				<BaseProperties id="4" name="step3" from="5"
+					to="6" cond="" desc="" />
+				<VMLProperties points="435pt,135pt,502.5pt,97.5pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep3" width="40px" height="20px"
+					x="594px" y="138px" />
+			</Transition>
+			<Transition>
+				<BaseProperties id="5" name="step4" from="5"
+					to="7" cond="" desc="123" />
+				<VMLProperties points="435pt,135pt,502.5pt,172.5pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep4" width="40px" height="20px"
+					x="595px" y="200px" />
+			</Transition>
+			<Transition>
+				<BaseProperties id="6" name="step5" from="7"
+					to="8" cond="" desc="" />
+				<VMLProperties points="577.5pt,187.5pt,675pt,135pt"
+					fromRelX="1" fromRelY="0.5" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep5" width="40px" height="20px"
+					x="799px" y="211px" />
+			</Transition>
+			<Transition>
+				<BaseProperties id="7" name="step6" from="6"
+					to="8" cond="a &gt;= 500 &amp;&amp; a&lt;=1000 " desc="" />
+				<VMLProperties points="577.5pt,90pt,675pt,135pt"
+					fromRelX="1" fromRelY="0.25" toRelX="0" toRelY="0.5" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep6" width="40px" height="20px"
+					x="809px" y="138px" />
+			</Transition>
+			<Transition>
+				<BaseProperties id="8" name="step7" from="8"
+					to="9" cond="" desc="" />
+				<VMLProperties points="688.125pt,172.5pt,690pt,217.5pt"
+					fromRelX="0.5" fromRelY="1" toRelX="0.5" toRelY="0" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep7" width="40px" height="20px"
+					x="866px" y="257px" />
+			</Transition>
+			<Transition>
+				<BaseProperties id="9" name="step8" from="9"
+					to="2" cond="" desc="" />
+				<VMLProperties points="690pt,247.5pt,690pt,322.5pt"
+					fromRelX="0.5" fromRelY="1" toRelX="0.5" toRelY="0" shapetype="PolyLine"
+					startArrow="none" endArrow="Classic" strokeWeight="1" zIndex="2" />
+				<LabelProperties id="labstep8" width="40px" height="20px"
+					x="882px" y="360px" />
+			</Transition>
+
+		</Transitions>
+	</Flow>
+	
+</CommitFlow>

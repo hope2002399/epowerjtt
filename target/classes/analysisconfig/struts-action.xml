@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="analysis" namespace="/analysis" extends="centitbsdfw">
+
+	
+
+	<action name="analysis" class="analysisAction">
+			<result name="viewmain">/page/analysis/mainView.jsp</result>
+			<result name="powerview">/page/analysis/powerView.jsp</result>
+			<result name="outwayview">/page/analysis/outwayView.jsp</result>
+			<result name="superviseview">/page/analysis/superviseView.jsp</result>
+			<result name="datachangeview">/page/analysis/datachangeView.jsp</result>
+			<result name="attachview">/page/analysis/attachView.jsp</result>
+			
+			
+		</action>
+
+
+		
+	</package>
+
+</struts>

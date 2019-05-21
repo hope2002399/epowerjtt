@@ -1,0 +1,9 @@
+.tt {
+	border: 0px solid;
+	width: 20px;
+	height: 20px;
+	display: block;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}

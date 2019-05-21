@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pmIndicatorDao" class="com.centit.indicator.dao.PmIndicatorDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pmTempletDao" class="com.centit.indicator.dao.PmTempletDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pmTempletIndicatorDao" class="com.centit.indicator.dao.PmTempletIndicatorDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="daoUtil" class="com.centit.indicator.dao.DaoUtil">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pmIndexExpressionDao" class="com.centit.indicator.dao.PmIndexExpressionDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pmIndexBasicDao" class="com.centit.indicator.dao.PmIndexBasicDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pmIndexTypeDao" class="com.centit.indicator.dao.PmIndexTypeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pmIndexTypeLogDao" class="com.centit.indicator.dao.PmIndexTypeLogDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="pmIndexEvluationDao" class="com.centit.indicator.dao.PmIndexEvluationDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VEvluationDao" class="com.centit.indicator.dao.VEvluationDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="dispatchdoc" namespace="/dispatchdoc" extends="centitbsdfw">
+
+		<action name="ioDocArchiveNo" class="ioDocArchiveNoAction">
+			<result name="edit">/page/dispatchdoc/IODocArchiveNoForm.jsp</result>
+			<result name="gotoNext">/page/powerruntime/optcommon/gotoNextStep.jsp</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/dispatchdoc</param>
+				<param name="actionName">ioDocTasks</param>
+				<param name="method">refreshTasks</param>
+				<param name="flowInstId">${flowInstId}</param>
+			</result>
+			<result name="fwh" type="json">
+				<param name="root">whresult</param>
+			</result>
+			<result name="fwhlsh" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="ioDocTasks" class="ioDocTasksAction">
+			<result name="DispatchDocTask">/page/dispatchdoc/dispatchDocTaskList.jsp
+			</result>
+			<result name="IncomeDocTask">/page/dispatchdoc/incomeDocTaskList.jsp
+			</result>
+			<result name="ioSelectFlow">/page/dispatchdoc/IODocFlowStart.jsp</result>
+		</action>
+		<action name="ioDocTasksExcute" class="ioDocTasksExcuteAction">
+			<result name="gotoNext">/page/powerruntime/optcommon/gotoNextStep.jsp</result>
+			<result name="optframe">/page/powerruntime/optcommon/optCommonFrame.jsp
+			</result>
+			<result name="IODOcTransForm">/page/dispatchdoc/IODOcTransInfo.jsp</result>
+			<result name="defaultTrans">/page/powerruntime/optcommon/buildingNode.jsp
+			</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="actionName">ioDocTasks</param>
+				<param name="method">refreshTasks</param>
+				<param name="flowInstId">${flowInstId}</param>
+			</result>
+			<result name="ioDocPF">/page/dispatchdoc/IODocPF.jsp</result>
+			<result name="ListWorkGroup" type="redirectAction">
+				<param name="actionName">ioDocTasksExcute</param>
+				<param name="method">ioDocPF</param>
+				<param name="djId">${djId}</param>
+				<param name="flowInstId">${flowInstId}</param>
+				<param name="nodeInstId">${nodeInstId}</param>
+			</result>
+			
+			<!-- <result name="success" type="chain">
+				<param name="actionName">ioDocTasksExcute</param>
+				<param name="method">genDispatchDocFrame</param>
+				
+				<param name="nodeInstId">${nodeInstId}</param>
+				<param name="flowInstId">${flowInstId}</param>
+				<param name="moduleCode">${moduleCode}</param>
+				<param name="frameType">${frameType}</param>
+				<param name="djId">${djId}</param>
+			</result> -->
+		</action>
+
+		<action name="dispatchDoc" class="dispatchDocAction">
+			<result name="startDispatchDoc">/page/dispatchdoc/dispatchDocForm.jsp</result>
+			<result name="fList">/page/dispatchdoc/dispatchDocFList.jsp</result>
+			<result name="cList">/page/dispatchdoc/dispatchDocCList.jsp</result>
+			<result name="rList">/page/dispatchdoc/dispatchDocRList.jsp</result>
+			<result name="view">/page/dispatchdoc/dispatchDocView.jsp</result>
+			<result name="fEdit">/page/dispatchdoc/dispatchDocFEdit.jsp</result>
+			<result name="procEdit">/page/dispatchdoc/dispatchDocEdit.jsp</result>
+			
+			<result name="IODocSubFlow">/page/dispatchdoc/IODocSubFlowForm.jsp</result>			
+			<result name="dispatchDocTask" type="redirectAction">/ioDocTasks!listDispatchDocTasks.do</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">dispatchDoc</param>
+				<param name="method">list</param>
+			</result>
+			
+			<result name="refreshTasks" type="redirectAction">/dispatchdoc/ioDocTasks!listIncomeDocTasks.do</result>
+		</action>
+
+
+		<action name="incomeDoc" class="incomeDocAction">
+			<result name="fList">/page/dispatchdoc/incomeDocFList.jsp</result>
+			<result name="view">/page/dispatchdoc/incomeDocView.jsp</result>
+			<result name="edit">/page/dispatchdoc/incomeDocForm.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">dispatchDoc</param>
+				<param name="method">list</param>
+			</result>
+			<result name="refreshIncomeTasks" type="redirectAction">
+				<param name="actionName">ioDocTasks</param>
+				<param name="method">refreshTasks</param>
+				<param name="flowInstId">${flowInstId}</param>
+			</result>			
+		</action>
+		
+		
+		<action name="*" class="{1}Action">
+			<result name="list">/page/dispatchdoc/{1}List.jsp</result>
+			<result name="view">/page/dispatchdoc/{1}View.jsp</result>
+			<result name="edit">/page/dispatchdoc/{1}Form.jsp</result>
+			<result name="built" type="chain" />
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://util.webservice.centit.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://util.webservice.centit.com" xmlns:intf="http://util.webservice.centit.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://util.webservice.centit.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="sendDBS">
+    <complexType>
+     <sequence>
+      <element name="loginname" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendDBSResponse">
+    <complexType>
+     <sequence>
+      <element name="sendDBSReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="sendDBSResponse">
+
+      <wsdl:part element="impl:sendDBSResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendDBSRequest">
+
+      <wsdl:part element="impl:sendDBS" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DbNum">
+
+      <wsdl:operation name="sendDBS">
+
+         <wsdl:input message="impl:sendDBSRequest" name="sendDBSRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendDBSResponse" name="sendDBSResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DbNumSoapBinding" type="impl:DbNum">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="sendDBS">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendDBSRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendDBSResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DbNumService">
+
+      <wsdl:port binding="impl:DbNumSoapBinding" name="DbNum">
+
+         <wsdlsoap:address location="http://localhost:8888/epower-jtt/services/DbNum"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

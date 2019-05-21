@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="no" default-dependency-check="none">
+
+	<bean id="optBaseInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptBaseInfoManagerImpl">
+				<property name="optBaseInfoDao" ref="optBaseInfoDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optExpressMessageManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptExpressMessageManagerImpl">
+				<property name="optExpressMessageDao" ref="optExpressMessageDao"/>
+				<property name="optDobasicMessageDao" ref="optDobasicMessageDao"/>
+				<property name="emsDao" ref="emsDao"/>
+				<property name="optBaseInfoDao" ref="optBaseInfoDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optDobasicMessageManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptDobasicMessageManagerImpl">
+				<property name="optDobasicMessageDao" ref="optDobasicMessageDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optProcInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptProcInfoManagerImpl">
+				<property name="optProcInfoDao" ref="optProcInfoDao"/>
+				<property name="optStuffInfoDao" ref="optStuffInfoDao"/>
+				<property name="optProcAttentionDao" ref="optProcAttentionDao"/>
+				<property name="optIdeaInfoDao" ref="optIdeaInfoDao"/>
+				<property name="vOptStuffInfoDao" ref="vOptStuffInfoDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="tZzZmdyInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.EIdPhoto.service.impl.TZzZmdyInfoManagerImpl">
+				<property name="tZzZmdyInfoDao" ref="tZzZmdyInfoDao"/>
+				<property name="tZzMetadataInfoDao" ref="tZzMetadataInfoDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="tZzZmInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.EIdPhoto.service.impl.TZzZmInfoManagerImpl">
+				<property name="tZzZmInfoDao" ref="tZzZmInfoDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optProcAttentionManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptProcAttentionManagerImpl">
+				<property name="optProcAttentionDao" ref="optProcAttentionDao"/>
+				<property name="vProcAttentionDao" ref="vProcAttentionDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="generalModuleParamManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.GeneralModuleParamManagerImpl">
+				<property name="generalModuleParamDao" ref="generalModuleParamDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="riskInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.RiskInfoManagerImpl">
+				<property name="riskInfoDao" ref="riskInfoDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="powerOptInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.PowerOptInfoManagerImpl">
+				<property name="powerOptInfoDao" ref="powerOptInfoDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="suppowerManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.SuppowerManagerImpl">
+				<property name="suppowerDao" ref="suppowerDao"/>
+				<property name="vSupPowerDao" ref="vSupPowerDao"/>
+				<property name="vOrgSupPowerDao" ref="vOrgSupPowerDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="templateFileManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.TemplateFileManagerImpl">
+				<property name="templateFileDao" ref="templateFileDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="suppowerstuffgroupManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.SuppowerstuffgroupManagerImpl">
+				<property name="suppowerstuffgroupDao" ref="suppowerstuffgroupDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="suppowerstuffinfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.SuppowerstuffinfoManagerImpl">
+				<property name="suppowerstuffinfoDao" ref="suppowerstuffinfoDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="YwFilesManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.YwFilesManagerImpl">
+				<property name="ywFilesDao" ref="ywFilesDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="vRegNoFileNameManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.VRegNoFileNameManagerImpl">
+				<property name="vRegNoFileNameDao" ref="vRegNoFileNameDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optWritdefManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptWritdefManagerImpl">
+				<property name="optWritdefDao" ref="optWritdefDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="optApplyManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptApplyManagerImpl">
+				<property name="optProcInfoDao" ref="optProcInfoDao"/>
+				<!-- <property name="sysuserDao" ref="sysUserDao" /> -->
+				<property name="optApplyDao" ref="optApplyDao"/>
+				<property name="optBaseInfoDao" ref="optBaseInfoDao"/>
+				<property name="optStuffInfoDao" ref="optStuffInfoDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="vOptApplyTaskManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.VOptApplyTaskManagerImpl">
+				<property name="vOptApplyTaskDao" ref="vOptApplyTaskDao"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="optApplyNetManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptApplyNetManagerImpl">
+				<property name="optApplyNetDao" ref="optApplyNetDao"/>
+				<property name="optBaseInfoNetDao" ref="optBaseInfoNetDao"/>
+				<property name="optStuffInfoNetDao" ref="optStuffInfoNetDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optStuffInfoNetManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptStuffInfoNetManagerImpl">
+				<property name="optStuffInfoNetDao" ref="optStuffInfoNetDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optBaseInfoNetManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptBaseInfoNetManagerImpl">
+				<property name="optBaseInfoNetDao" ref="optBaseInfoNetDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optSendMessageManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptSendMessageManagerImpl">
+				<property name="optSendMessageDao" ref="optSendMessageDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optStuffInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptStuffInfoManagerImpl">
+				<property name="optStuffInfoDao" ref="optStuffInfoDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="optPickupMessageManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.OptPickupMessageManagerImpl">
+				<property name="optPickupMessageDao" ref="optPickupMessageDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="emsManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerruntime.service.impl.EmsManagerImpl">
+				<property name="emsDao" ref="emsDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="deptQlInfManager" class="com.centit.powerruntime.service.impl.DeptQlInfManagerImpl">
+		<property name="deptQlInfDao" ref="deptQlInfDao"/>
+	</bean>
+	<bean id="deptYwInfManager" class="com.centit.powerruntime.service.impl.DeptYwInfManagerImpl">
+		<property name="deptYwInfDao" ref="deptYwInfDao"/>
+		<property name="ywFileDao" ref="ywFileDao"/>
+		<property name="deptYwInfExpandDao" ref="deptYwInfExpandDao"/>
+	</bean>
+	<bean id="vDeptYwBmdyManager" class="com.centit.powerruntime.service.impl.VDeptYwBmdyManagerImpl">
+		<property name="vDeptYwBmdyDao" ref="vDeptYwBmdyDao"/>
+	</bean>
+	<bean id="vDeptYwBmdy2Manager" class="com.centit.powerruntime.service.impl.VDeptYwBmdy2ManagerImpl">
+		<property name="vDeptYwBmdy2Dao" ref="vDeptYwBmdy2Dao"/>
+	</bean>
+	<bean id="deptStInfManager" class="com.centit.powerruntime.service.impl.DeptStInfManagerImpl">
+		<property name="deptStInfDao" ref="deptStInfDao"/>
+	</bean>
+	<bean id="ywFileManager" class="com.centit.powerruntime.service.impl.YwFileManagerImpl">
+		<property name="ywFileDao" ref="ywFileDao"/>
+	</bean>
+	<bean id="deptYwInfExpandManager" class="com.centit.powerruntime.service.impl.DeptYwInfExpandManagerImpl">
+		<property name="deptYwInfExpandDao" ref="deptYwInfExpandDao"/>
+	</bean>
+	<bean id="amOrgManager" class="com.centit.powerruntime.service.impl.AmOrgManagerImpl">
+		<property name="amOrgDao" ref="amOrgDao"/>
+	</bean>
+	<bean id="qlQdtjManager" class="com.centit.powerruntime.service.impl.QlQdtjManagerImpl">
+		<property name="qlQdtjDao" ref="qlQdtjDao"/>
+	</bean>
+	<bean id="qlQdsxtjManager" class="com.centit.powerruntime.service.impl.QlQdsxtjManagerImpl">
+		<property name="qlQdsxtjDao" ref="qlQdsxtjDao"/>
+	</bean>
+	<bean id="qlQdzxtjManager" class="com.centit.powerruntime.service.impl.QlQdzxtjManagerImpl">
+		<property name="qlQdzxtjDao" ref="qlQdzxtjDao"/>
+	</bean>
+	<bean id="qlQdzxsxtjManager" class="com.centit.powerruntime.service.impl.QlQdzxsxtjManagerImpl">
+		<property name="qlQdzxsxtjDao" ref="qlQdzxsxtjDao"/>
+	</bean>
+	<bean id="qlQdywtjManager" class="com.centit.powerruntime.service.impl.QlQdywtjManagerImpl">
+		<property name="qlQdywtjDao" ref="qlQdywtjDao"/>
+	</bean>
+	<bean id="qlQdywsxtjManager" class="com.centit.powerruntime.service.impl.QlQdywsxtjManagerImpl">
+		<property name="qlQdywsxtjDao" ref="qlQdywsxtjDao"/>
+	</bean>
+	<bean id="qlQdsjsttjManager" class="com.centit.powerruntime.service.impl.QlQdsjsttjManagerImpl">
+		<property name="qlQdsjsttjDao" ref="qlQdsjsttjDao"/>
+	</bean>
+	<bean id="qlQdsjstsxtjManager" class="com.centit.powerruntime.service.impl.QlQdsjstsxtjManagerImpl">
+		<property name="qlQdsjstsxtjDao" ref="qlQdsjstsxtjDao"/>
+	</bean>
+	<bean id="vLicensesSubManager" class="com.centit.powerruntime.service.impl.VLicensesSubManagerImpl">
+		<property name="vLicensesSubDao" ref="vLicensesSubDao"/>
+	</bean>
+	<bean id="optApplyResultManager" class="com.centit.powerruntime.service.impl.OptApplyResultManagerImpl">
+		<property name="optApplyResultDao" ref="optApplyResultDao"/>
+	</bean>
+	<bean id="optRelevancyResultManager" class="com.centit.powerruntime.service.impl.OptRelevancyResultManagerImpl">
+		<property name="optRelevancyResultDao" ref="optRelevancyResultDao"/>
+	</bean>
+</beans>

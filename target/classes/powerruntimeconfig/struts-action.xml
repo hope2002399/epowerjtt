@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="powerruntime" namespace="/powerruntime" extends="centitbsdfw">
+		<action name="applyTask" class="applyTaskAction">
+			<result name="list">/page/powerruntime/optapply/optApplyTaskList.jsp
+			</result>
+			<result name="selectlist">/page/powerruntime/optApplyTaskSelectList.jsp
+			</result>
+		</action>
+		<action name="eIdPhoto" class="eIdPhotoAction">
+			<result name="list">/page/EIdPhoto/eIdPhotoList.jsp
+			</result>
+			<result name="edit">/page/EIdPhoto/eIdPhoto.jsp</result>
+		</action>
+		<action name="optApply" class="optApplyAction">
+			<result name="viewInfo">/page/dofc/trPermitApplyView.jsp</result>
+			<result name="edit">/page/powerruntime/optapply/optApplyForm.jsp
+			</result>
+			<result name="optframe">/page/powerruntime/optcommon/optCommonFrame.jsp
+			</result>
+			<result name="view">/page/powerruntime/optapply/optApplyView.jsp
+			</result>
+			<result name="applyView">/page/powerruntime/optapply/optApplyView.jsp
+			</result>
+			<result name="applyTrans">/page/powerruntime/optcommon/optTransactInfo.jsp
+			</result>
+			<result name="list">/page/powerruntime/optapply/optApplyList.jsp
+			</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="actionName">applyTask</param>
+				<param name="method">list</param>
+			</result>
+			<result name="riskFrame">/page/powerruntime/optcommon/riskFrame.jsp
+			</result>
+			<result name="generalOptView">/page/powerruntime/optcommon/optTransAffairView.jsp
+			</result>
+		</action>
+		<action name="optExpressMessage" class="optExpressMessageAction">
+			<result name="list">/page/powerruntime/optExpressMessageList.jsp
+			</result>
+			<result name="edit">/page/powerruntime/optExpressMessageForm.jsp
+			</result>
+			<result name="qyedit">/page/powerruntime/optExpressMessageQyForm.jsp
+			</result>
+			<result name="view">/page/powerruntime/optExpressMessageView.jsp
+			</result>
+			<result name="bjEdit">/page/powerruntime/optExpressMessagebjForm.jsp
+			</result>
+			<result name="signlist">/page/powerruntime/optExpressMessageSignList.jsp
+			</result>
+			<result name="logistics">/page/powerruntime/logistics.jsp</result>
+			<result name="export" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="cades" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="templateFile" class="templateFileAction">
+			<result name="listSelect">/page/powerruntime/optcommon/templateFileSelectList.jsp
+			</result>
+			<result name="list">/page/powerruntime/optcommon/templateFileList.jsp
+			</result>
+		</action>
+		<action name="riskInfo" class="riskInfoAction">
+			<result name="riskList">/page/powerruntime/optcommon/riskInfoSelectList.jsp
+			</result>
+			<result name="list">/page/powerruntime/optcommon/riskInfoList.jsp
+			</result>
+			<result name="edit">/page/powerruntime/optcommon/riskInfoForm.jsp
+			</result>
+		</action>
+		<action name="generalOperator" class="generalOperatorAction">
+			<result name="optframe">/page/powerruntime/optcommon/optCommonFrame.jsp
+			</result>
+			<result name="listIdeaLogs">/page/powerruntime/optcommon/optIdeaInfoList.jsp
+			</result>
+			<result name="listStuffs">/page/powerruntime/optcommon/clsqTab.jsp
+			</result>
+			<result name="listStuffs_new">/page/powerruntime/optcommon/clsqTab_new.jsp
+			</result>
+			<result name="viewListStuffs">/page/powerruntime/optcommon/optStuffsView.jsp
+			</result>
+			<result name="optForm">/page/powerruntime/optcommon/optTransactInfo.jsp
+			</result>
+			<result name="ioDocPF">/page/powerruntime/iodoc/ioDocPF.jsp</result>
+			<result name="ioDocZwh">/page/powerruntime/iodoc/zwhFrom.jsp</result>
+			<result name="ListWorkGroup" type="redirectAction">
+				<param name="actionName">generalOperator</param>
+				<param name="method">ioDocPF</param>
+				<param name="djId">${djId}</param>
+				<param name="flowInstId">${flowInstId}</param>
+				<param name="nodeInstId">${nodeInstId}</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${stuffInfo.filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="actionName">applyTask</param>
+				<param name="method">list</param>
+			</result>
+			<result name="viewGroupInfo">/page/powerruntime/optcommon/viewGroupInfo.jsp
+			</result>
+			<result name="stuffinfobuilt">/page/powerruntime/optcommon/suppowerStuffinfoForm.jsp
+			</result>
+			<result name="sqclList">/page/powerruntime/optcommon/generalCqsl.jsp
+			</result>
+			<result name="cFsqclList">/page/powerruntime/optcommon/cFCqsl.jsp</result>
+			<result name="gotosqcl" type="redirectAction">
+				<param name="actionName">generalOperator</param>
+				<param name="method">gotosqcl</param>
+				<param name="stuffInfo.djId">${stuffInfo.djId}</param>
+				<param name="stuffInfo.nodeInstId">${stuffInfo.nodeInstId}</param>
+				<param name="stuffInfo.filetype">${stuffInfo.filetype}</param>
+				<param name="stuffInfo.archivetype">${stuffInfo.archivetype}</param>
+				<param name="stuffInfo.groupid">${stuffInfo.groupid}</param>
+			</result>
+			<result name="gotoCFsqcl" type="redirectAction">
+				<param name="actionName">generalOperator</param>
+				<param name="method">gotoCFsqcl</param>
+				<param name="stuffInfo.djId">${stuffInfo.djId}</param>
+				<param name="stuffInfo.nodeInstId">${stuffInfo.nodeInstId}</param>
+				<param name="suppowerstuffinfo.groupId">${stuffInfo.groupid}</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="selectstuffGroup">/page/powerruntime/optcommon/selectStuffGroup.jsp
+			</result>
+			<result name="stuffdivide">/page/powerruntime/optcommon/stuffGroup.jsp
+			</result>
+			<result name="groupbuilt">/page/powerruntime/optcommon/suppowerStuffGropFrom.jsp
+			</result>
+			<result name="groupSuccess" type="redirectAction">
+				<param name="actionName">generalOperator</param>
+				<param name="method">stuffdivide</param>
+			</result>
+			<result name="saveStuffinfo" type="redirectAction">
+				<param name="actionName">generalOperator</param>
+				<param name="method">viewGroupInfo</param>
+				<param name="s_groupId">${suppowerstuffinfo.groupId}</param>
+			</result>
+			<result name="ioSelectFlow">/page/powerruntime/iodoc/ioSelectFlow.jsp
+			</result>
+
+			<result name="gotoyslsqcl" type="redirectAction">
+				<param name="actionName">generalOperator</param>
+				<param name="method">gotoyslsqcl</param>
+				<param name="optStuffInfoNet.netId">${yslnetid}</param>
+				<param name="optStuffInfoNet.nodeInstId">0</param>
+				<param name="optStuffInfoNet.groupid">${yslgroupid}</param>
+			</result>
+			<result name="yslsqclList">/page/powerruntime/optcommon/yslCqsl.jsp</result>
+		</action>
+		<action name="optzwh" class="optZwhAction">
+			<result name="edit">/page/powerruntime/optcommon/optZwhForm.jsp
+			</result>
+			<result name="gotoNext">/page/powerruntime/optcommon/gotoNextStep.jsp
+			</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/dispatchdoc</param>
+				<param name="actionName">ioDocTasks</param>
+				<param name="method">refreshTasks</param>
+				<param name="flowInstId">${flowInstId}</param>
+			</result>
+			<result name="fwh" type="json">
+				<param name="root">whresult</param>
+			</result>
+			<result name="fwhlsh" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="*" class="{1}Action">
+			<result name="input">/page/powerruntime/optcommon/{1}List.jsp</result>
+			<result name="list">/page/powerruntime/optcommon/{1}List.jsp</result>
+			<result name="view">/page/powerruntime/optcommon/{1}View.jsp</result>
+			<result name="edit">/page/powerruntime/optcommon/{1}Form.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/sampleflow</param>
+				<param name="actionName">flowUserTask</param>
+				<param name="method">list</param>
+			</result>
+			<result name="GroupID" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="optApplyNet" class="optApplyNetAction">
+			<result name="optframe">/page/powerruntime/optcommon/optCommonFrame.jsp
+			</result>
+			<result name="shencha">/page/powerruntime/optapply/optApplyNetShencha.jsp
+			</result>
+			<result name="view">/page/powerruntime/optapply/optApplyNetView.jsp
+			</result>
+			<result name="applyNetView">/page/powerruntime/optapply/optApplyNetView.jsp
+			</result>
+			<result name="applyTrans">/page/powerruntime/optcommon/optTransactInfo.jsp
+			</result>
+			<result name="list">/page/powerruntime/optapply/optApplyNetList.jsp
+			</result>
+			<result name="showlist">/page/powerruntime/optapply/optApplyNetShowList.jsp
+			</result>
+			<result name="refreshlist" type="redirectAction">
+				<param name="actionName">optApplyNet</param>
+				<param name="method">list</param>
+			</result>
+			<result name="generalOptView">/page/powerruntime/optcommon/optTransAffairView.jsp
+			</result>
+			<result name="viewListStuffs">/page/powerruntime/optcommon/optStuffNetsView.jsp
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="optSendMessage" class="optSendMessageAction">
+			<result name="list">/page/powerruntime/optSendMessageList.jsp
+			</result>
+			<result name="selectlist">/page/powerruntime/optSendMessageSelectList.jsp
+			</result>
+			<result name="edit">/page/powerruntime/optSendMessageForm.jsp
+			</result>
+			<result name="view">/page/powerruntime/optSendMessageView.jsp
+			</result>
+		</action>
+		<action name="optPickupMessage" class="optPickupMessageAction">
+			<result name="list">/page/powerruntime/optPickupMessageList.jsp
+			</result>
+			<result name="selectlist">/page/powerruntime/optPickupMessageSelectList.jsp
+			</result>
+			<result name="edit">/page/powerruntime/optPickupMessageForm.jsp
+			</result>
+			<result name="view">/page/powerruntime/optPickupMessageView.jsp
+			</result>
+		</action>
+		<action name="deptQlInf" class="deptQlInfAction">
+			<result name="qlml">/page/powerruntime/deptQlInfList.jsp</result>
+			<result name="qlmlfy" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="deptStInf" class="deptStInfAction">
+			<result name="qlml">/page/powerruntime/deptQlInfList.jsp</result>
+			<result name="qlmlNoType">/page/powerruntime/deptQlInfListNoType.jsp</result>
+			<result name="qlyw">/page/powerruntime/deptQlInfView.jsp</result>
+			<result name="qlmlYwType">/page/powerruntime/deptYwNoTypeList.jsp</result>
+			<result name="qlmlYw">/page/powerruntime/deptYwList.jsp</result>
+			<result name="qlmlfy" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="check" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="deptYwInf" class="deptYwInfAction">
+			<result name="getywById">/page/powerruntime/deptYwInfView.jsp</result>
+		</action>
+		<action name="qlQdtj" class="qlQdtjAction">
+			<result name="qlml">/page/powerruntime/QlQdtjList.jsp</result>
+		</action>
+		<action name="qlQdzxtj" class="qlQdzxtjAction">
+			<result name="qlmlzx">/page/powerruntime/QlQdzxsxtjList.jsp</result>
+		</action>
+		<action name="qlQdywtj" class="qlQdywtjAction">
+			<result name="qlmlyw">/page/powerruntime/QlQdywtjList.jsp</result>
+			<result name="daoxccs">/page/powerruntime/QlQdywtjList.jsp</result>
+		</action>
+		<action name="qlQdsjsttj" class="qlQdsjsttjAction">
+			<result name="qlmlsjst">/page/powerruntime/QlQdtjList.jsp</result>
+		</action>
+		<action name="vLicensesSub" class="vLicensesSubAction">
+			<result name="licensesSub">/page/powerruntime/licensesSubList.jsp</result>
+			<result name="export" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="length">10000</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+		<action name="optApplyResult" class="optApplyResultAction">
+			<result name="list">/page/powerruntime/optApplyResultList.jsp</result>
+			<result name="view">/page/powerruntime/optApplyResultView.jsp</result>
+		</action>
+		
+		<action name="optRelevancyResult" class="optRelevancyResultAction">
+			<result name="edit">/page/powerruntime/optApplyResultForm.jsp</result>
+			<result name="list">/page/powerruntime/optApplyResultList.jsp</result>
+		</action>
+	</package>
+</struts>

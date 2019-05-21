@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.centit.powerbase.po.RecordBasic" table="S_RECORDBASIC">
+		<id name="recordCode" type="java.lang.String">
+			<column name="RECORDCODE" length="10" />
+			<generator class="assigned" />
+		</id>
+		<property name="no" type="java.lang.String">
+			<column name="NO" length="50" />
+		</property>
+
+		<property name="operatorId" type="java.lang.String">
+			<column name="OPERATORID" length="8" />
+		</property>
+		<property name="bookDate" type="java.util.Date">
+			<column name="bookDate" length="7" />
+		</property>
+		<property name="recodeStyle" type="java.lang.String">
+			<column name="RECODESTYLE" length="7" />
+		</property>
+		<property name="applyFile" type="binary" lazy="true">
+			<column name="APPLYFILE" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="REMARK" length="2000" />
+		</property>
+		<property name="dealStep" type="java.lang.String">
+			<column name="DEALSTEP" length="1" />
+		</property>
+		<property name="fileName" type="java.lang.String">
+			<column name="FILENAME" length="100" />
+		</property>
+		<property name="recodeSource" type="java.lang.String">
+			<column name="RECODESOURCE" length="2" />
+		</property>
+
+	</class>
+</hibernate-mapping>

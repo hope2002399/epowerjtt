@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="punish" namespace="/punish" extends="centitbsdfw">
+		<action name="punishTasksExecute" class="punishTasksExecuteAction">
+			<result name="optframe">/page/powerruntime/optcommon/optCommonFrame.jsp
+			</result>
+			<result name="listIdeaLogs">/page/powerruntime/optcommon/optIdeaInfoList.jsp
+			</result>
+			<result name="defaultTrans">/page/powerruntime/optcommon/buildingNode.jsp
+			</result>
+			<result name="viewPunishOptInfo">/page/powerruntime/optcommon/viewPunishOptInfo.jsp
+			</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">userTaskListCF</param>
+				<param name="method">list</param>
+			</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+		</action>
+
+		<action name="punishobjectbasic" class="punishobjectbasicAction">
+			<result name="punishfacilitydes_">/page/punish/optPunishFacilityDes.jsp</result>
+			<result name="edit">/page/punish/punishobjectbasicForm.jsp</result>
+			<result name="facilityFlow">/page/punish/POFacilityFlowRegister.jsp</result>
+			<result name="punishInfo">/page/punish/POFacilityFlowPunishInfo.jsp</result>
+			<result name="list">/page/punish/punishobjectbasicList.jsp</result>
+			<result name="PermitView">/page/punish/punishobjectbasicRegView.jsp</result>
+			<result name="view">/page/punish/punishobjectbasicView.jsp</result>
+			<result name="success">/page/punish/punishobjectbasicList.jsp</result>
+			<result name="AcceptPO">/page/punish/optAcceptPO.jsp</result>
+			<result name="commonFrame">/page/punish/optCommonFrame.jsp</result>
+			<result name="isAcceptPO">/page/punish/optIsAcceptPO.jsp</result>
+			<result name="punishDecision">/page/punish/optPunishDecision.jsp</result>
+			<result name="isPunishDecision">/page/punish/optIsPunishDecision.jsp</result>
+			<result name="pORegister">/page/punish/optTransactInfo.jsp</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+			<result name="basicFrame">/page/punish/optBasicDetail.jsp</result>
+			<result name="poresultFrame">/page/punish/optFinalPunishResult.jsp</result>
+			<result name="generalOptView">/page/powerruntime/optcommon/optTransAffairView.jsp</result>
+			<result name="viewPunishOptInfo">/page/punish/viewPunishOptInfo.jsp</result>
+			<result name="AllPunishView">/page/powerruntime/optcommon/allInfoView.jsp</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">userTaskListCF</param>
+				<param name="method">list</param>
+			</result>
+			<result name="punishAllInfo">/page/powerruntime/optcommon/optCommonFrame.jsp</result>			
+		</action>
+		
+		<action name="poregisterbasic" class="poregisterbasicAction">
+			<result name="pORegister">/page/punish/optPORegister.jsp</result>
+			<result name="commonFrame">/page/punish/optCommonFrame.jsp</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">userTaskListCF</param>
+				<param name="method">list</param>
+			</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+			<result name="ispORegister">/page/punish/optIsPoRegister.jsp</result>
+			<result name="initialAndApproval">/page/punish/optiInitialAndApproval.jsp</result>
+		</action>
+
+		<action name="pcdef" class="pcdefAction">
+			<result name="edit">/page/punish/pcdefForm.jsp</result>
+			<result name="listPcdef">/page/punish/pcdefSelectList.jsp</result>
+			<result name="listPcdef4XCCF">/page/punish/pcdefSelect4XCCFList.jsp</result>
+		</action>
+
+		<action name="pctype" class="pctypeAction">
+			<result name="viewpctype">/page/punish/pctypeList.jsp</result>
+			<result name="scucessedit" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">pcdef</param>
+				<param name="method">edit</param>
+				<param name="punishclasscode">${punishclasscode}</param>
+			</result>
+			<result name="edit">/page/punish/pctypeForm.jsp</result>
+		</action>
+
+		<action name="pofinishbasic" class="pofinishbasicAction">
+			<result name="doBookfinish">/page/punish/optDoBookfinish.jsp</result>
+			<result name="commonFrame">/page/punish/optCommonFrame.jsp</result>
+			<result name="isPOFinish">/page/punish/optIsPOFinish.jsp</result>
+			<result name="poFinish">/page/punish/optPoFinish.jsp</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+			<result name="view">/page/punish/pofinishbasicView.jsp</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">userTaskListCF</param>
+				<param name="method">list</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+		<action name="podiscussbasic" class="podiscussbasicAction">
+			<result name="PODiscuss">/page/punish/optDiscussInfo.jsp</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+			<result name="view">/page/punish/podiscussbasicView.jsp</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">userTaskListCF</param>
+				<param name="method">list</param>
+			</result>
+			<result name="punishinfo2">/page/punish/optPunishOpinion2.jsp</result>
+			<result name="allpunishinfo2">/page/punish/optPunishFinalOpinion2.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+		<action name="poreceiptinfo" class="poreceiptinfoAction">
+			<result name="sendPunishDoc">/page/punish/optSendPunishDoc.jsp</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+				<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">userTaskListCF</param>
+				<param name="method">list</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<result name="view">/page/punish/poreceiptinfoView.jsp</result>
+		</action>
+		<action name="poexcucebasic" class="poexcucebasicAction">
+				<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">userTaskListCF</param>
+				<param name="method">list</param>
+			</result>
+			<result name="view">/page/punish/poexcucebasicView.jsp</result>
+			<result name="csSbTz">/page/punish/csSbTz.jsp</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+		</action>
+		<action name="pounwitnessbasic" class="pounwitnessbasicAction">
+				<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">userTaskListCF</param>
+				<param name="method">list</param>
+			</result>
+			<result name="view">/page/punish/pounwitnessbasicView.jsp</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+		</action>
+
+		<action name="powitnessbasic" class="powitnessbasicAction">
+				<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">userTaskListCF</param>
+				<param name="method">list</param>
+			</result>
+			<result name="view">/page/punish/powitnessbasicView.jsp</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+		</action>
+
+		<action name="poindagaterepbasic" class="poindagaterepbasicAction">
+			<result name="inquireproof">/page/punish/optInquireProof.jsp</result>
+			<result name="saveinquire">/page/punish/optIsInquireProof.jsp</result>
+			<result name="inquireopinion">/page/punish/optIsInquireOpinion.jsp</result>
+			<result name="proofresult">/page/punish/optProofResult.jsp</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+			<result name="generalOptView">/page/powerruntime/optcommon/optTransAffairView.jsp
+			</result>
+			<result name="punishlist">/page/punish/pcdefchooseList.jsp</result>
+			<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">userTaskListCF</param>
+				<param name="method">list</param>
+			</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+			<result name="generalOptView">/page/powerruntime/optcommon/optTransAffairView.jsp
+			</result>
+			<result name="punishlist">/page/punish/pcdefchooseList.jsp</result>
+			<result name="punishinfo">/page/punish/optPunishOpinion.jsp</result>
+			<result name="allpunishinfo">/page/punish/optPunishFinalOpinion.jsp</result>
+			<result name="punishinfo2">/page/punish/optPunishOpinion2.jsp</result>
+			<result name="allpunishinfo2">/page/punish/optPunishFinalOpinion2.jsp</result>
+			<result name="viewinquireproof">/page/punish/optInquireProofViewFrame.jsp
+			</result>
+			<result name="commonFrame">/page/punish/optCommonFrame.jsp</result>
+		</action>
+
+		<action name="pcfreeumpiretype" class="pcfreeumpiretypeAction">
+			<result name="deletescucess" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">pcfreeumpiretype</param>
+				<param name="method">viewpcfreeumpiretype</param>
+				<param name="punishclassid">${object.punishclassid}</param>
+				<param name="degreeno">${object.degreeno}</param>
+				<param name="isPctype">${isPctype}</param>
+			</result>
+			<result name="deletescucess2" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">pcfreeumpiretype</param>
+				<param name="method">viewpcfreeumpiretype</param>
+				<param name="punishclassid">${object.punishclassid}</param>
+				<param name="punishtypeid">${object.punishtypeid}</param>
+				<param name="isPctype">${isPctype}</param>
+			</result>
+			<result name="list">/page/punish/pcfreeumpiretypeList.jsp</result>
+			<result name="edit">/page/punish/pcfreeumpiretypeForm.jsp</result>
+			<result name="view">/page/punish/pcfreeumpiretypeView.jsp</result>
+
+			<result name="success" type="chain">
+				<param name="actionName">pcfreeumpiretype</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		<action name="pcfreeumpiredegree" class="pcfreeumpiredegreeAction">
+			<result name="scucessedit" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">pcdef</param>
+				<param name="method">edit</param>
+				<param name="punishclasscode">${punishclasscode}</param>
+			</result>
+			<result name="edit">/page/punish/pcfreeumpiredegreeForm.jsp</result>
+			<result name="list">/page/punish/pcfreeumpiredegreeList.jsp</result>
+		</action>
+
+		<action name="*" class="{1}Action">
+			<result name="payView">/page/punish/reimbursePayView.jsp</result>
+			<result name="auditing">/page/punish/reimburseauditingForm.jsp</result>
+			<result name="list">/page/punish/{1}List.jsp</result>
+			<result name="view">/page/punish/{1}View.jsp</result>
+			<result name="edit">/page/punish/{1}Form.jsp</result>
+			<result name="viewpctype">/page/punish/{1}List.jsp</result>
+			<result name="viewPunishOptInfo">/page/punish/viewPunishOptInfo.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+				<result name="refreshTasks" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">userTaskListCF</param>
+				<param name="method">list</param>
+			</result>
+			<result name="nextstep" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">sampleFlowManager</param>
+				<param name="method">nextStep</param>
+				<param name="flowInstId">${object.wfinstid}</param>
+			</result>
+			<result name="gotoNext">/page/punish/gotoNextStep.jsp</result>
+		</action>
+		<action name="appindividual" class="appindividualAction">
+			<result name="list">/page/punish/appindividualList.jsp</result>
+		</action>
+		<action name="appenterprise" class="appenterpriseAction">
+			<result name="list">/page/punish/appenterpriseList.jsp</result>
+		</action>
+		<action name="podetainwpbasicinfo" class="podetainwpbasicinfoAction">
+			<result name="wplist" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">podetainwpbasicinfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="list">/page/punish/podetainwpbasicinfoList.jsp</result>
+			<result name="edit">/page/punish/podetainwpbasicinfoForm.jsp</result>
+			<result name="view">/page/punish/podetainwptransinfoView.jsp</result>
+		</action>
+		<action name="podetainwptransinfo" class="podetainwptransinfoAction">
+			<result name="wplist" type="redirectAction">
+				<param name="namespace">/punish</param>
+				<param name="actionName">podetainwpbasicinfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="edit">/page/punish/podetainwptransinfoForm.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"><beans default-lazy-init="false" default-autowire="no" default-dependency-check="none">
+	<bean id="powerOrgInfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.PowerOrgInfoManagerImpl">
+				<property name="powerOrgInfoDao" ref="powerOrgInfoDao"/>
+				<property name="vPowerOrgInfoDao" ref="vPowerOrgInfoDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="suppowerManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.SuppowerManagerImpl">
+				<property name="suppowerDao" ref="suppowerDao"/>
+				<property name="vSupPowerDao" ref="vSupPowerDao"/>
+				<property name="vOrgSupPowerDao" ref="vOrgSupPowerDao"/>
+				<property name="suppowerstatechglogDao" ref="suppowerstatechglogDao"/>
+				<property name="vsuppowerwithoutlobDao" ref="vsuppowerwithoutlobDao"/>
+				<!-- <property name="suppowerqlbgsqDao" ref="suppowerqlbgsqDao"/> -->
+				<property name="suppowerchglogDao" ref="suppowerchglogDao"/>
+				<property name="pcpunishStandardDao" ref="pcpunishStandardDao"/>
+				<property name="pcfreeumpiredegreeDao" ref="pcfreeumpiredegreeDao"/>
+				<property name="pcfreeumpiretypeDao" ref="pcfreeumpiretypeDao"/>
+				<!-- <property name="vsuppowerwithoutlobDao" ref="vsuppowerwithoutlobDao" 
+					/> <property name="suppowerqlbgsqDao" ref="suppowerqlbgsqDao" /> -->
+			</bean>
+		</property>
+	</bean>
+		<bean id="powerQldyManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.PowerQldyManagerImpl">
+				<property name="powerQldyDao" ref="powerQldyDao"/>
+			</bean>
+		</property>
+	</bean>
+		<bean id="vPowerQldyManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.VPowerQldyManagerImpl">
+				<property name="vPowerQldyDao" ref="vPowerQldyDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="suppowerstatechglogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.SuppowerstatechglogManagerImpl">
+				<property name="suppowerstatechglogDao" ref="suppowerstatechglogDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="vsuppowerinusingManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.VsuppowerinusingManagerImpl">
+				<property name="vsuppowerinusingDao" ref="vsuppowerinusingDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="suppowerchglogManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.SuppowerchglogManagerImpl">
+				<property name="suppowerchglogDao" ref="suppowerchglogDao"/>
+				<property name="suppowerqlbgsqDao" ref="suppowerqlbgsqDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="pcfreeumpiredegreeManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.PcfreeumpiredegreeManagerImpl">
+				<property name="pcfreeumpiredegreeDao" ref="pcfreeumpiredegreeDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="pcfreeumpiretypeManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.PcfreeumpiretypeManagerImpl">
+				<property name="pcfreeumpiretypeDao" ref="pcfreeumpiretypeDao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- <bean id="pcpunishItemManager" parent="baseTransactionProxy"> <property 
+		name="target"> <bean class="com.centit.powerbase.service.impl.PcpunishItemManagerImpl"> 
+		<property name="pcpunishItemDao" ref="pcpunishItemDao" /> <property name="poradixbasicDao" 
+		ref="poradixbasicDao" /> <property name="pcpunishStandardDao" ref="pcpunishStandardDao" 
+		/> </bean> </property> </bean> -->
+	<bean id="pcpunishStandardManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.PcpunishStandardManagerImpl">
+				<property name="pcpunishStandardDao" ref="pcpunishStandardDao"/>
+				<property name="poradixbasicDao" ref="poradixbasicDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="lawmenManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.LawmenManagerImpl">
+				<property name="lawmenDao" ref="lawmenDao"/>
+				<property name="lawmenannualDao" ref="lawmenannualDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="lawsuitManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.LawsuitManagerImpl">
+				<property name="lawsuitDao" ref="lawsuitDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="lawenforecaseManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.LawenforecaseManagerImpl">
+				<property name="lawenforecaseDao" ref="lawenforecaseDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="lawVehicleManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.LawVehicleManagerImpl">
+				<property name="lawVehicleDao" ref="lawVehicleDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="lawExecutorManager" parent="baseTransactionProxy">
+		<property name="target">
+		<bean class="com.centit.powerbase.service.impl.LawExecutorManagerImpl">
+			<property name="lawExecutorDao" ref="lawExecutorDao"/>
+		</bean>
+		</property>
+	</bean>
+	<bean id="dataenterpriseManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.DataenterpriseManagerImpl">
+				<property name="dataenterpriseDao" ref="dataenterpriseDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="dataindividualManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.DataindividualManagerImpl">
+				<property name="dataindividualDao" ref="dataindividualDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="dataBasicInfo" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.util.DataBasicInfoImpl">
+				<property name="dataindividualDao" ref="dataindividualDao"/>
+				<property name="dataenterpriseDao" ref="dataenterpriseDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="lawexecutorInspectManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.LawexecutorInspectManagerImpl">
+				<property name="lawexecutorInspectDao" ref="lawexecutorInspectDao"/>
+				<property name="lawExecutorDao" ref="lawExecutorDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="vpowerriskManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.VpowerriskManagerImpl">
+				<property name="vpowerriskDao" ref="vpowerriskDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="powerRiskManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.PowerRiskManagerImpl">
+				 <property name="powerRiskDao" ref="powerRiskDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="recordApplyBasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.RecordApplyBasicManagerImpl">
+			 	<property name="recordApplyBasicDao" ref="recordApplyBasicDao"/>
+			</bean>
+		</property>
+	</bean>
+		<bean id="vapplyrecordbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.VapplyrecordbasicManagerImpl">
+			 	<property name="vapplyrecordbasicDao" ref="vapplyrecordbasicDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="punishRecordManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.PunishRecordManagerImpl">
+				<property name="punishRecordDao" ref="punishRecordDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="punishBasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.PunishBasicManagerImpl">
+				<property name="punishBasicDao" ref="punishBasicDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="recordBasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.RecordBasicManagerImpl">
+				<property name="recordBasicDao" ref="recordBasicDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="recordFileBasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.RecordFileBasicManagerImpl">
+				<property name="recordFileBasicDao" ref="recordFileBasicDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="recordFileStuffManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.RecordFileStuffManagerImpl">
+				<property name="recordFileStuffDao" ref="recordFileStuffDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="recordFileDepManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.RecordFileDepManagerImpl">
+				<property name="recordFileDepDao" ref="recordFileDepDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="vRecordFileBasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.powerbase.service.impl.VRecordFileBasicManagerImpl">
+				<property name="vRecordFileBasicDao" ref="vRecordFileBasicDao"/>
+			</bean>
+		</property>
+	</bean>
+</beans>

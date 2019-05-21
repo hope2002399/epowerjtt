@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="indicator" namespace="/indicator" extends="centitbsdfw">
+		<!-- 指标库  -->
+		<action name="pmIndicator" class="pmIndicatorAction">
+			<result name="indicatorList">/page/indicator/pmIndicatorList.jsp</result>
+			<result name="indicatorListJson" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="indicatorEdit">/page/indicator/pmIndicatorForm.jsp</result>
+			<result name="indicatorSave" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="indicatorView">/page/indicator/pmIndicatorView.jsp</result>
+		</action>
+		
+		<!-- 模版库  -->
+		<action name="pmTemplet" class="pmTempletAction">
+		    <result name="indicatorList">/page/indicator/pmIndicatorList.jsp</result>
+			<result name="templetList">/page/indicator/pmTempletList.jsp</result>
+			<result name="startOrStop">/page/indicator/pmTempletList.jsp</result>
+			<result name="templetEdit" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="templetSave" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="getVersionJson" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="temType" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="gotoCompose">/page/indicator/gotoCompose.jsp</result>
+			<result name="fileEditer">/page/indicator/fileEditer.jsp</result>
+		</action>
+		
+		<action name="pmIndexType" class="pmIndexTypeAction">
+			<result name="calType">/page/indicator/pmIndexTypeForm.jsp</result>
+			<result name="save" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="pmIndexExpression" class="pmIndexExpressionAction">
+			<result name="evlExpression" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">pmTemplet</param>
+				<param name="method">templetList</param>
+			</result>
+		</action>
+		
+		<action name="pmIndexEvluation" class="pmIndexEvluationAction">
+			<result name="list">/page/indicator/pmIndexEvluationList.jsp</result>
+			<result name="view">/page/indicator/pmIndexEvluationView.jsp</result>
+			<result name="edit">/page/indicator/pmIndexEvluationForm.jsp</result>
+		</action>
+		<action name="*" class="{1}Action">
+			<result name="list">/page/indicator/{1}List.jsp</result>
+			<result name="view">/page/indicator/{1}View.jsp</result>
+			<result name="edit">/page/indicator/{1}Form.jsp</result>
+			<result name="built" type="chain" />
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+	</package>
+</struts>

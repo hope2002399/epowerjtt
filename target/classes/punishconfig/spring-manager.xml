@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+	<bean id="pcdefManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PcdefManagerImpl">
+				<property name="pcdefDao" ref="pcdefDao" />
+				<property name="poradixbasicDao" ref="poradixbasicDao" />
+				<property name="pctypeDao" ref="pctypeDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="pctypeManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PctypeManagerImpl">
+				<property name="pctypeDao" ref="pctypeDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poapprovebasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoapprovebasicManagerImpl">
+				<property name="poapprovebasicDao" ref="poapprovebasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poapprovepersonManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoapprovepersonManagerImpl">
+				<property name="poapprovepersonDao" ref="poapprovepersonDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="podiscussbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PodiscussbasicManagerImpl">
+				<property name="podiscussbasicDao" ref="podiscussbasicDao" />
+				<property name="vPODiscussDao" ref="vPODiscussDao" />
+				<property name="potranslawbasicDao" ref="potranslawbasicDao" />
+				<property name="poradixbasicDao" ref="poradixbasicDao" />
+				<property name="popunishbasicDao" ref="popunishbasicDao" />
+				<property name="punishobjectbasicDao" ref="punishobjectbasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poenterpriseManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoenterpriseManagerImpl">
+				<property name="poenterpriseDao" ref="poenterpriseDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poexcucebasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoexcucebasicManagerImpl">
+				<property name="poexcucebasicDao" ref="poexcucebasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="pofinishbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PofinishbasicManagerImpl">
+				<property name="pofinishbasicDao" ref="pofinishbasicDao" />
+				<property name="punishobjectbasicDao" ref="punishobjectbasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poindagaterepbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoindagaterepbasicManagerImpl">
+				<property name="poindagaterepbasicDao" ref="poindagaterepbasicDao" />
+				<property name="popunishbasicDao" ref="popunishbasicDao" />
+				<property name="pcfreeumpiredegreeDao" ref="pcfreeumpiredegreeDao" />
+				<property name="pcfreeumpiretypeDao" ref="pcfreeumpiretypeDao" />
+				<property name="potranslawbasicDao" ref="potranslawbasicDao" />
+				<property name="poradixbasicDao" ref="poradixbasicDao" />
+				<property name="datadictionaryDao" ref="dictionaryDao" />
+				<property name="pcdefDao" ref="pcdefDao" />
+
+			</bean>
+		</property>
+	</bean>
+	<bean id="poindividualManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoindividualManagerImpl">
+				<property name="poindividualDao" ref="poindividualDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="pomovebackbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PomovebackbasicManagerImpl">
+				<property name="pomovebackbasicDao" ref="pomovebackbasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poprintdefManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoprintdefManagerImpl">
+				<property name="poprintdefDao" ref="poprintdefDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="popunishbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PopunishbasicManagerImpl">
+				<property name="popunishbasicDao" ref="popunishbasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poreceiptinfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoreceiptinfoManagerImpl">
+				<property name="poreceiptinfoDao" ref="poreceiptinfoDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poregisterbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoregisterbasicManagerImpl">
+				<property name="poregisterbasicDao" ref="poregisterbasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poresultbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoresultbasicManagerImpl">
+				<property name="poresultbasicDao" ref="poresultbasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="potranslawbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PotranslawbasicManagerImpl">
+				<property name="potranslawbasicDao" ref="potranslawbasicDao" />
+				<property name="vPotranslawbasicDao" ref="vPotranslawbasicDao" />
+				<property name="punishobjectbasicDao" ref="punishobjectbasicDao" />
+				<property name="popunishbasicDao" ref="popunishbasicDao" />
+				<property name="poradixbasicDao" ref="poradixbasicDao" />
+				<property name="pcfreeumpiretypeDao" ref="pcfreeumpiretypeDao" />
+				<property name="pcfreeumpiredegreeDao" ref="pcfreeumpiredegreeDao" />
+				<property name="pcpunishStandardDao" ref="pcpunishStandardDao" />
+				<property name="podiscussbasicDao"   ref="podiscussbasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poundertakebasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoundertakebasicManagerImpl">
+				<property name="poundertakebasicDao" ref="poundertakebasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="pounwitnessbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PounwitnessbasicManagerImpl">
+				<property name="pounwitnessbasicDao" ref="pounwitnessbasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="powitnessbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PowitnessbasicManagerImpl">
+				<property name="powitnessbasicDao" ref="powitnessbasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="punishobjectbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PunishobjectbasicManagerImpl">
+				<property name="punishobjectbasicDao" ref="punishobjectbasicDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="userTaskListCFManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.VUserTaskListCFManagerImpl">
+				<property name="userTaskListCFDao" ref="userTaskListCFDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poradixbasicManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoradixbasicManagerImpl">
+				<property name="poradixbasicDao" ref="poradixbasicDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="vporegisterbasicManager"
+		class="com.centit.punish.service.impl.VporegisterbasicManagerImpl">
+		<property name="vporegisterbasicDao" ref="vporegisterbasicDao" />
+	</bean>
+	<bean id="appindividualManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.AppindividualManagerImpl">
+				<property name="appindividualDao" ref="appindividualDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="appenterpriseManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.AppenterpriseManagerImpl">
+				<property name="appenterpriseDao" ref="appenterpriseDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="podetainwpbasicinfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PodetainwpbasicinfoManagerImpl">
+				<property name="podetainwpbasicinfoDao" ref="podetainwpbasicinfoDao" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="podetainwptransinfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PodetainwptransinfoManagerImpl">
+				<property name="podetainwptransinfoDao" ref="podetainwptransinfoDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="optNewlyIdeaManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.OptNewlyIdeaManagerImpl">
+				<property name="optNewlyIdeaDao" ref="optNewlyIdeaDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="podecisioninfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PodecisioninfoManagerImpl">
+				<property name="podecisioninfoDao" ref="podecisioninfoDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="poacceptinfoManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.PoacceptinfoManagerImpl">
+				<property name="poacceptinfoDao" ref="poacceptinfoDao" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="VPunishViewListManager" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.centit.punish.service.impl.VPunishViewListManagerImpl">
+				<property name="VPunishViewListDao" ref="VPunishViewListDao" />
+			</bean>
+		</property>
+	</bean>
+</beans>

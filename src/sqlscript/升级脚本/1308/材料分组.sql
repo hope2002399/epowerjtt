@@ -1,0 +1,1 @@
+alter  table SUPPOWERSTUFFINFO modify STUFF_TYPE VARCHAR2(4);

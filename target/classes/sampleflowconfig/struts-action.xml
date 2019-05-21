@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="sampleflow" namespace="/sampleflow" extends="centitbsdfw">
+		<action name="sampleFlowRelegate" class="sampleFlowRelegateAction">
+			<result name="list">/page/sampleflow/wfRoleRelegateList.jsp</result>
+			<result name="edit">/page/sampleflow/wfRoleRelegateForm.jsp</result>
+			<result name="RefreshList" type="redirectAction">
+				<param name="actionName">sampleFlowRelegate</param>
+				<param name="method">list</param>
+				<param name="grant">${grant}</param>
+				<param name="s_grant">${grant}</param>
+			</result>
+		</action>
+		<action name="flowUserTask" class="sampleFlowUserTaskAction">
+			<result name="listTaskMove">/page/sampleflow/wfTaskMoveList.jsp</result>
+			<result name="editMove">/page/sampleflow/wfTaskMoveForm.jsp</result>
+			<result name="SuspendNodes">/page/sampleflow/wfUserSuspendTaskList.jsp</result>
+			<result name="CompNodes">/page/sampleflow/wfUserCompleteTaskList.jsp</result>
+			<result name="UserTask">/page/sampleflow/wfUserTaskList.jsp</result>
+			<result name="NodeOpers">/page/sampleflow/wfNodeOperators.jsp</result>
+			<result name="TaskEdit">/page/sampleflow/wfActionTaskForm.jsp</result>
+			<result name="ListTasks">/page/sampleflow/wfActionTaskList.jsp</result>
+			<result name="gotoNext">/page/sampleflow/gotoNextStep.jsp</result>
+			<result name="haveDone">/page/sampleflow/haveDone.jsp</result>
+			<result name="todoWork"  type="redirect">
+				<param name="location">${nodeOptUrl}</param>
+			</result>
+
+			<result name="RefreshTasks" type="redirectAction">
+				<param name="actionName">sampleFlowManager</param>
+				<param name="method">listNodeInstTasks</param>
+				<param name="nodeInstId">${nodeInstId}</param>
+			</result>
+		</action>
+		<action name="sampleFlowDefine" class="sampleFlowDefineAction" > 
+			<result name="list">/page/sampleflow/flowdefineList.jsp</result>
+			<result name="edit">/page/sampleflow/flowdefineForm.jsp</result>
+			<result name="listFlowVersions">/page/sampleflow/flowVersionsList.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">sampleFlowDefine</param>
+				<param name="method">list</param>
+			</result>
+			<result name="xml">/page/workflow/vml/index.jsp</result>
+			<result name="svgxml">/page/workflow/svgworkflow/svgFlow.jsp</result>
+			<result name="view">/page/workflow/vml/flow_view.jsp</result>
+			<result name="*" type="json">				
+				<param name="root">result</param>  
+			</result>
+		</action>
+		<action name="sampleFlowManager" class="sampleFlowManagerAction">
+			<result name="AssignWorkTeam">/page/sampleflow/flowWorkTeamAssign.jsp</result>
+			<result name="teamList">/page/sampleflow/flowWorkTeamList.jsp</result>
+			<result name="UserAttach">/page/sampleflow/userAttachFlowInstList.jsp</result>
+			<result name="UserCreate">/page/sampleflow/userCreateFlowInstList.jsp</result>
+			<result name="UserFlow">/page/sampleflow/userFlowInstList.jsp</result>
+			<result name="UnitFlow">/page/sampleflow/userFlowManager.jsp</result>
+			<result name="UnitNode">/page/sampleflow/userNodeManager.jsp</result>
+			<result name="list">/page/sampleflow/flowInstanceList.jsp</result>
+			<result name="edit">/page/sampleflow/flowInstanceForm.jsp</result>
+			<result name="ListNodes">/page/sampleflow/nodeInstanceList.jsp</result>
+			<result name="ViewNodes">/page/sampleflow/viewFlowNodeInst.jsp</result>
+			<result name="NOptNodes">/page/sampleflow/nodeInstWithoutOptList.jsp</result>
+			<result name="ListTasks">/page/sampleflow/wfActionTaskList.jsp</result>
+			<result name="ListLogs">/page/sampleflow/wfActionLogList.jsp</result>
+			<result name="UserTask">/page/sampleflow/wfUserTaskList.jsp</result>
+			<result name="TaskEdit">/page/sampleflow/wfActionTaskForm.jsp</result>
+			<result name="viewxml">/page/workflow/vml/flow_view.jsp</result>
+			<result name="flowerror">/page/workflow/vml/flowerror.jsp</result>
+			<result name="nodeinfo" type="json">
+				<param name="root">nodeOptInfo</param>
+			</result>
+			<result name="RefreshFlowInst" type="redirectAction">
+				<param name="actionName">sampleFlowManager</param>
+				<param name="method">list</param>
+			</result>
+			<result name="RefreshNodes" type="redirectAction">
+				<param name="actionName">sampleFlowManager</param>
+				<param name="method">listFlowInstNodes</param>
+				<param name="flowInstId">${flowInstId}</param>
+			</result>
+			<result name="ListWorkTeam" type="redirectAction">
+				<param name="actionName">sampleFlowManager</param>
+				<param name="method">viewWorkTeam</param>
+				<param name="flowInstId">${flowInstId}</param>
+			</result>
+			<result name="listNodeInstTasks" type="redirectAction">
+				<param name="actionName">sampleFlowManager</param>
+				<param name="method">listNodeInstTasks</param>
+				<param name="nodeInstId">${nodeInstId}</param>
+			</result>
+		</action>
+
+		<action name="*" class="{1}Action">
+			<result name="input">/page/sampleflow/{1}List.jsp</result>
+			<result name="list">/page/sampleflow/{1}List.jsp</result>
+			<result name="view">/page/sampleflow/{1}View.jsp</result>
+			<result name="edit">/page/sampleflow/{1}Form.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

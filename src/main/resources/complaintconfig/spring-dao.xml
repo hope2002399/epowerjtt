@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none">
+	<bean id="complaintDao" class="com.centit.complaint.dao.ComplaintDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vComplaintDao" class="com.centit.complaint.dao.VComplaintDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="complaintsprocessDao" class="com.centit.complaint.dao.ComplaintsprocessDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="complaintsresultDao" class="com.centit.complaint.dao.ComplaintsresultDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+		<bean id="vusertasklistcomplaintDao" class="com.centit.complaint.dao.VUserTaskListComplaintDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

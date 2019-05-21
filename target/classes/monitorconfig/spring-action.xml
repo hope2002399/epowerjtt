@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd" default-lazy-init="true">
+	<bean name="applyAction" scope="request" class="com.centit.monitor.action.ApplyAction">
+		<property name="applyManager" ref="applyManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+		<property name="suppowerManager" ref="suppowerManager"/>
+		<property name="applyProcessManager" ref="applyProcessManager"/>
+		<property name="applyDocManager" ref="applyDocManager"/>
+		<property name="applyResultManager" ref="applyResultManager"/>
+		<property name="applyLogManager" ref="applyLogManager"/>
+		<property name="applyResultLogManager" ref="applyResultLogManager"/>
+		<property name="outwayManager" ref="outwayManager"/>
+		<property name="complaintManager" ref="complaintManager"/>
+		<property name="superviseBasicManager" ref="superviseBasicManager"/>
+		<property name="dispatchDocManager" ref="dispatchDocManager"/>
+		<property name="incomeDocManager" ref="incomeDocManager"/>
+		<property name="deptYwInfManager" ref="deptYwInfManager"/>
+	</bean>
+	<bean name="applyDocAction" scope="request" class="com.centit.monitor.action.ApplyDocAction">
+		<property name="applyDocManager" ref="applyDocManager"/>
+		<property name="applyManager" ref="applyManager"/>
+		<property name="applyProcessManager" ref="applyProcessManager"/>
+		<property name="applyResultManager" ref="applyResultManager"/>
+	</bean>
+	<bean name="applyLogAction" scope="request" class="com.centit.monitor.action.ApplyLogAction">
+		<property name="applyLogManager" ref="applyLogManager"/>
+	</bean>
+	<bean name="applyProcessAction" scope="request" class="com.centit.monitor.action.ApplyProcessAction">
+		<property name="applyProcessManager" ref="applyProcessManager"/>
+		<property name="applyDocManager" ref="applyDocManager"/>
+		<property name="outwayManager" ref="outwayManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+	</bean>
+	<bean name="applyResultAction" scope="request" class="com.centit.monitor.action.ApplyResultAction">
+		<property name="applyResultManager" ref="applyResultManager"/>
+		<property name="applyDocManager" ref="applyDocManager"/>
+	</bean>
+	<bean name="applyResultLogAction" scope="request" class="com.centit.monitor.action.ApplyResultLogAction">
+		<property name="applyResultLogManager" ref="applyResultLogManager"/>
+	</bean>
+	<bean name="punishAction" scope="request" class="com.centit.monitor.action.PunishAction">
+		<property name="punishManager" ref="punishManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+		<property name="suppowerManager" ref="suppowerManager"/>
+		<property name="punishDocManager" ref="punishDocManager"/>
+		<property name="punishProcessManager" ref="punishProcessManager"/>
+		<property name="punishResultManager" ref="punishResultManager"/>
+		<property name="punishLogManager" ref="punishLogManager"/>
+		<property name="punishResultLogManager" ref="punishResultLogManager"/>
+		<property name="outwayManager" ref="outwayManager"/>
+		<property name="complaintManager" ref="complaintManager"/>
+		<property name="superviseBasicManager" ref="superviseBasicManager"/>
+	</bean>
+	<bean name="punishDocAction" scope="request" class="com.centit.monitor.action.PunishDocAction">
+		<property name="punishDocManager" ref="punishDocManager"/>
+		<property name="punishManager" ref="punishManager"/>
+		<property name="punishProcessManager" ref="punishProcessManager"/>
+		<property name="punishResultManager" ref="punishResultManager"/>
+	</bean>
+	<bean name="punishLogAction" scope="request" class="com.centit.monitor.action.PunishLogAction">
+		<property name="punishLogManager" ref="punishLogManager"/>
+	</bean>
+	<bean name="punishProcessAction" scope="request" class="com.centit.monitor.action.PunishProcessAction">
+		<property name="punishProcessManager" ref="punishProcessManager"/>
+		<property name="punishDocManager" ref="punishDocManager"/>
+	</bean>
+	<bean name="punishResultAction" scope="request" class="com.centit.monitor.action.PunishResultAction">
+		<property name="punishResultManager" ref="punishResultManager"/>
+		<property name="punishDocManager" ref="punishDocManager"/>
+
+	</bean>
+	<bean name="punishResultLogAction" scope="request" class="com.centit.monitor.action.PunishResultLogAction">
+		<property name="punishResultLogManager" ref="punishResultLogManager"/>
+		<property name="punishDocManager" ref="punishDocManager"/>
+	</bean>
+	<bean name="trackLogAction" scope="request" class="com.centit.monitor.action.TrackLogAction">
+		<property name="trackLogManager" ref="trackLogManager"/>
+		<property name="punishManager" ref="punishManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+		<property name="applyManager" ref="applyManager"/>
+	</bean>
+	<bean name="paPerformanceResultAction" scope="request" class="com.centit.monitor.action.PaPerformanceResultAction">
+		<property name="paPerformanceResultManager" ref="paPerformanceResultManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+		<property name="paMonthCheckupMag" ref="paMonthCheckupManager"/>
+		<property name="pamonthpunishManager" ref="pamonthpunishManager"/>
+		<property name="pacheckupparamMag" ref="pacheckupparamManager"/>
+	</bean>
+	<bean name="paMonthCheckupAction" scope="request" class="com.centit.monitor.action.PaMonthCheckupAction">
+		<property name="paMonthCheckupManager" ref="paMonthCheckupManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+		<property name="suppowerManager" ref="suppowerManager"/>
+		<property name="punishManager" ref="punishManager" />
+		<property name="applyManager" ref="applyManager" />
+		<property name="outwayManager" ref="outwayManager"/>
+		<property name="superviseBasicManager" ref="superviseBasicManager"/>
+	</bean>
+	<bean name="pacheckupparamAction" scope="request" class="com.centit.monitor.action.PacheckupparamAction">
+		<property name="pacheckupparamManager" ref="pacheckupparamManager"/>
+	</bean>
+	<bean name="supervisorypersonnelAction" scope="request" class="com.centit.monitor.action.SupervisorypersonnelAction">
+		<property name="supervisorypersonnelManager" ref="supervisorypersonnelManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+	</bean>
+	<bean name="superviselogAction" class="com.centit.monitor.action.SuperviselogAction">
+		<property name="superviselogManager" ref="superviselogManager"/>
+	</bean>
+	<bean name="pamonthpunishAction" scope="request" class="com.centit.monitor.action.PamonthpunishAction">
+		<property name="pamonthpunishManager" ref="pamonthpunishManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+	</bean>
+	<bean name="outwayAction" class="com.centit.monitor.action.OutwayAction" scope="request">
+		<property name="outwayManager" ref="outwayManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+		<property name="superviseBasicMag" ref="superviseBasicManager"/>
+		<property name="outwayWarnpointManager" ref="outwayWarnpointManager"/>
+	</bean>
+	<bean name="outwayCJJCAction" class="com.centit.monitor.action.OutwayCJJCAction" scope="request">
+		<property name="outwayCJJCManager" ref="outwayCJJCManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+	</bean>
+	<bean name="outwayparamAction" scope="request" class="com.centit.monitor.action.OutwayparamAction">
+		<property name="outwayparamManager" ref="outwayparamManager"/>
+	</bean>
+	<bean name="outwaycalcAction" scope="request" class="com.centit.monitor.action.OutwaycalcAction">
+		<property name="outwaycalcManager" ref="outwaycalcManager"/>
+		<property name="outwayMag" ref="outwayManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+	</bean>
+	<bean name="incomeDocAction" scope="request" class="com.centit.monitor.action.IncomeDocAction">
+		<property name="incomeDocManager" ref="incomeDocManager"/>
+		<property name="applyManager" ref="applyManager"/>
+		<property name="applyDocManager" ref="applyDocManager"/>
+	</bean>
+	<bean name="dispatchDocAction" scope="request" class="com.centit.monitor.action.DispatchDocAction">
+		<property name="dispatchDocManager" ref="dispatchDocManager"/>
+	</bean>
+	<bean name="supDlfxOutwayAction" scope="request" class="com.centit.monitor.action.SupDlfxOutwayAction">
+		<property name="supDlfxOutwayManager" ref="supDlfxOutwayManager"/>
+		<property name="sysUserManager" ref="sysUserManager"/>
+		<property name="sysUnitManager" ref="sysUnitManager"/>
+	</bean>
+	<bean name="outwayWarnpointAction" scope="request" class="com.centit.monitor.action.OutwayWarnpointAction">
+		<property name="outwayWarnpointManager" ref="outwayWarnpointManager"/>
+		<property name="outwaycalcManager" ref="outwaycalcManager"/>
+	</bean>
+</beans>

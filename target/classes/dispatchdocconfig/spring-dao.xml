@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="dispatchDocDao" class="com.centit.dispatchdoc.dao.DispatchDocDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="docRelativeDao" class="com.centit.dispatchdoc.dao.DocRelativeDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="incomeDocDao" class="com.centit.dispatchdoc.dao.IncomeDocDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="dispatchDocTaskDao" class="com.centit.dispatchdoc.dao.DispatchDocTaskDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="incomeDocTaskDao" class="com.centit.dispatchdoc.dao.IncomeDocTaskDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="VIncomeDocListDao" class="com.centit.dispatchdoc.dao.VIncomeDocListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="vDispatchDocListDao" class="com.centit.dispatchdoc.dao.VDispatchDocListDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="ioDocArchiveNoDao" class="com.centit.dispatchdoc.dao.IODocArchiveNoDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+</beans>

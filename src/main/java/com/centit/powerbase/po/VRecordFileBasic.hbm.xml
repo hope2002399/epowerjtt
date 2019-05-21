@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+  <class name="com.centit.powerbase.po.VRecordFileBasic" table="V_RECORDFILEBASIC">
+  		<id name="recordCode" type="java.lang.String">
+			<column name="recordCode" precision="10" scale="0" />
+			<generator class="assigned" />
+		</id>
+		<property name="operatorID" type="java.lang.String">
+			<column name="operatorID" length="8" />
+		</property>
+		<property name="bookDate" type="java.util.Date">
+			<column name="bookDate" length="7" />
+		</property>
+		<property name="constituteDepName" type="java.lang.String">
+			<column name="constituteDepName" length="200" />
+		</property>
+		<property name="fileName" type="java.lang.String">
+			<column name="fileName" length="200" />
+		</property>
+		<property name="punishDate" type="java.util.Date">
+			<column name="punishDate" length="7" />
+		</property>
+		<property name="ownerDepID" type="java.lang.String">
+			<column name="ownerDepID" length="8" />
+		</property>
+		<property name="depFileNo" type="java.lang.String">
+			<column name="depFileNo"  length="50"/>
+		</property>
+		<property name="applyDate" type="java.util.Date">
+			<column name="applyDate" length="7" />
+		</property>
+		<property name="allFIleNo" type="java.lang.String">
+			<column name="allFIleNo" length="50" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="remark" length="2000" />
+		</property>
+		<property name="finishStatus" type="java.lang.String">
+			<column name="finishStatus" length="1" />
+		</property>
+		<property name="dealStep" type="java.lang.String">
+			<column name="dealStep" precision="1" scale="0" />
+		</property>
+		<property name="finishDate" type="java.util.Date">
+			<column name="finishDate" length="7" />
+		</property>
+		<property name="sortNo" type="java.lang.Integer">
+			<column name="sortNo" precision="6" scale="0" />
+		</property>
+		<property name="discussname" type="java.lang.String">
+			<column name="discussname" length="1" />
+		</property>
+  </class>
+</hibernate-mapping>

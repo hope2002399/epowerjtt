@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.centit.powerruntime.po.OptPickupMessage" table="OPT_PICKUP_MESSAGE">
+		<id name="pickupid" type="java.lang.String">
+			<column name="PICKUPID" length="32" />
+			<generator class="assigned" />
+		</id>
+		<property name="rcvname" type="java.lang.String">
+			<column name="RCVNAME" length="20" />
+		</property>
+		<property name="rcvprov" type="java.lang.String">
+			<column name="RCVPROV" length="10" />
+		</property>
+		<property name="rcvcity" type="java.lang.String">
+			<column name="RCVCITY" length="10" />
+		</property>
+		<property name="rcvcountry" type="java.lang.String">
+			<column name="RCVCOUNTRY" length="10" />
+		</property>
+		<property name="rcvstrect" type="java.lang.String">
+			<column name="RCVSTRECT" length="200" />
+		</property>
+		<property name="rcvphone" type="java.lang.String">
+			<column name="RCVPHONE" length="11" />
+		</property>
+		<property name="rcvcall" type="java.lang.String">
+			<column name="RCVCALL" length="30" />
+		</property>
+		<property name="rcvpostcode" type="java.lang.String">
+			<column name="RCVPOSTCODE" length="20" />
+		</property>
+		<property name="djid" type="java.lang.String">
+			<column name="DJID" length="32" />
+		</property>
+	</class>
+</hibernate-mapping>

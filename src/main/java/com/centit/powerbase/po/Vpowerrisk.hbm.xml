@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.centit.powerbase.po.Vpowerrisk" table="v_power_risk">
+<id name="itemId" type="java.lang.String" >
+	<column name="item_id" length="34"/>
+</id>
+<property name="riskType" type="java.lang.String">
+	<column name="RISK_TYPE" length="300"/>
+</property>
+<property name="riskDescrib" type="java.lang.String">
+	<column name="RISK_DESCRIB" length="2000"/>
+</property>
+<property name="riskControlWay" type="java.lang.String">
+	<column name="RISK_CONTROL_WAY"/>
+</property>
+<property name="remark" type="java.lang.String">
+	<column name="REMARK"/>
+</property>
+<property name="lastModifyDate" type="java.util.Date">
+	<column name="LAST_MODIFY_DATE"/>
+</property>
+<property name="itemName" type="java.lang.String">
+	<column name="item_name"/>
+</property>
+<property name="itemType" type="java.lang.String">
+	<column name="item_type"/>
+</property>
+<property name="orgId" type="java.lang.String">
+	<column name="org_id"/>
+</property>
+<property name="version" type="java.lang.String">
+	<column name="version"/>
+</property>
+</class>
+
+</hibernate-mapping>

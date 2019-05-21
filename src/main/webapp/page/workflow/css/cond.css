@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+#container{
+     width:90%;/*宽度*/
+     margin: 0 auto;/*边界auto为自动，这里用到了缩写形式意思为上下为0，
+                           左右自动*/
+     background-color: #FFFFF3;       
+     }
+
+#leftside{
+width:200px;
+float:left;/*该层位于外层的左边*/
+height:350px;
+ background-color: #FFFFF3;    
+
+}
+#rightside{
+width:400px;
+height:350px;
+float:right;/*该层位于外层的右边*/
+ background-color: #FFFFF3;    
+}
+#foot{
+width:600px;
+height:250px;
+margin:0 auto;
+ background-color: #FFFFF3;    
+	}
+	/*页面中间*/
+#midbody{
+width:600px;
+height: auto;
+height:auto;
+margin:0 auto;
+overflow:hidden;
+ background-color: #FFFFF3;    
+
+}

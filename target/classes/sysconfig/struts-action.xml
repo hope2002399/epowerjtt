@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="sys" namespace="/sys" extends="centitbsdfw">
+
+		<action name="dictionary" class="dictionaryAction">
+			<result name="list">/page/sys/dictionaryList.jsp</result>
+			<result name="view">/page/sys/dictionaryView.jsp</result>
+			<result name="edit">/page/sys/dictionaryForm.jsp</result>
+			<result name="built" type="redirectAction">
+				<param name="actionName">dictionary</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="redirectAction">
+				/dictionary!list.do?s_style=U
+			</result>
+			<result name="editDetail">/page/sys/dataDetailForm.jsp</result>
+			<result name="saveDetail" type="redirectAction">
+				/dictionary!view.do?catalogcode=${datadictionary.catalogcode}				
+			</result>
+			<result name="deleteDetail" type="redirectAction">
+				/dictionary!view.do?catalogcode=${id.catalogcode}				
+			</result>
+		</action>
+		<action name="importdata" class="importdataAction">
+			
+		</action>
+		
+		
+		<action name="export" class="exportExcel">
+			
+		</action>
+		<action name="exportSdbs" class="exportSdbs">
+			
+		</action>
+		<action name="exportwssb" class="exportWssbtj">
+			
+		</action>
+		<action name="exportwssbxs" class="exportwssbtjsx">
+			
+		</action>
+		<action name="exportwssbtjsxtraffic" class="exportwssbtjsxtraffic">
+			
+		</action>
+		<action name="exportNotMeetsx" class="exportNotMeetsx">
+		
+		</action>
+		<action name="exportBjxx" class="exportBjxx">
+		
+		</action>
+		<action name="exportBjxxAll" class="exportBjxxAll">
+		
+		</action>
+		<action name="exportYwHand" class="exportYwHand">
+		
+		</action>
+		<action name="exportZzxx" class="exportZzxx">
+		
+		</action>
+		<action name="exporterror" class="exporterror">
+		
+		</action>
+		<action name="exportLegarerror" class="exportLegarerror">
+		
+		</action>
+		<action name="exportovertime" class="exportovertime">
+		
+		</action>
+		<action name="exportZzxxPro" class="exportZzxxPro">
+		
+		</action>
+		<action name="userDef" class="userDefAction">
+			<result name="list">/page/sys/userDefList.jsp</result>
+			<result name="view">/page/sys/userDefView.jsp</result>
+			<result name="edit">/page/sys/userDefForm.jsp</result>
+			<result name="underUnit" type="redirectAction">
+				<param name="actionName">userDef</param>
+				<param name="method">listUserInfo</param>
+				<param name="s_byUnderUnit">thisunit</param>
+			</result>
+			<result name="editUserUnit">/page/sys/userunitForm.jsp</result>
+			<result name="editUserRole">/page/sys/userroleForm.jsp</result>
+			<result name="modifyPwdPage">/page/sys/modifyPassword.jsp</result>
+			<result name="registerPage">/page/frame/registerdialog.jsp
+			</result>
+			<result name="listUserInfo">/page/sys/userUnderUnit.jsp</result>
+			<result name="registerSuccess">/index.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">userDef</param>
+				<param name="method">list</param>
+			</result>
+			<result name="viewUnderUnit">/page/sys/viewUnderUnit.jsp</result>
+			<result name="built" type="redirectAction">
+				<param name="actionName">userDef</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="saveUserUnit" type="redirectAction">
+				<param name="actionName">userDef</param>
+				<param name="method">viewUnderUnit</param>
+				<param name="usercode">${userUnit.usercode}</param>
+			</result>
+			<result name="saveUserRole" type="redirectAction">			
+				 <param name="actionName">userDef</param>
+				<param name="method">viewUnderUnit</param>
+				<param name="usercode">${userrole.usercode}</param>
+			</result>
+			<result name="editAddressBook" type="redirectAction">
+				/addressBook!editindialog.do?addrbookid=${object.addrbookid}
+			</result>
+			<result name="captchaimage" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="map" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="modifypwd" type="centitui">
+				<param name="newWin">true</param>
+				<param name="forwardUrl">/index.do</param>
+			</result>
+			<result name="verify">/page/sys/userVerifyList.jsp</result>
+			<result name="verifyEdit">/page/sys/userDefFormSb.jsp</result>
+			<result name="verifySave" type="redirectAction">
+				/userDef!list.do?s_userState=0
+			</result>
+			<result name="pwdlist">/page/sys/resetpwd.jsp</result>
+		</action>
+
+
+	<action name="applyUser" class="applyUserAction">
+			<result name="list">/page/sys/applyUserList.jsp</result>
+			<result name="view">/page/sys/applyUserView.jsp</result>
+			<result name="edit">/page/sys/applyUserForm.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">applyUser</param>
+				<param name="method">list</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">stuffStream</param>
+				<param name="contentDisposition">attachment;filename="${object.filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+
+		<action name="addressBook" class="addressBookAction">
+			<result name="view">/page/sys/addressBookView.jsp</result>
+			<result name="list">/page/sys/addressBookList.jsp</result>
+			<result name="edit">/page/sys/addressBookForm.jsp</result>
+			<result name="editindialog">/page/sys/addressBookDialogForm.jsp</result>
+			<result name="returnuser" type="redirectAction">
+				/userDef!edit.do?usercode=${object.bodycode}
+			</result>
+			<result name="load" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="loadLabelFields" type="stream">
+				<param name="contentType">application/json</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">addressBook</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+
+		<action name="unit" class="unitAction">
+			<result name="list">/page/sys/unitList.jsp</result>
+			<result name="edit">/page/sys/unitForm.jsp</result>
+			<result name="view">/page/sys/unitView.jsp</result>
+			<result name="built" type="redirectAction">
+				<param name="actionName">unit</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="underUnit" type="redirectAction">
+				<param name="actionName">deptManager</param>
+				<param name="method">listunit</param>
+			</result>
+			<result type="redirectAction" name="success">
+				/sys/unit!list.do
+			</result>
+			<result name="reView" type="redirectAction">
+				<param name="actionName">unit</param>
+				<param name="method">view</param>
+				<param name="unitcode">${userunit.unitcode}</param>
+			</result>
+			<result name="editUnitPower">/page/sys/unitpowerForm.jsp</result>
+			<result name="editUnitUser">/page/sys/unituserForm.jsp</result>
+			<result name="editAddressBook" type="redirectAction">
+				/addressBook!editindialog.do?addrbookid=${object.addrbookid}
+			</result>
+			<result name="unituser" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<action name="optInfo" class="optInfoAction">
+			<result name="list">/page/sys/optInfoList.jsp</result>
+			<result name="edit">/page/sys/optInfoForm.jsp</result>
+			<result name="success" type="chain">
+				<param name="actionName">optInfo</param>
+				<param name="method">list</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">optInfo</param>
+				<param name="method">edit</param>
+			</result>
+		</action>
+		
+		<action name="dataStat" class="dataStatistics">
+			<result name="list">/page/jtt2xyb/data_statistics.jsp</result>
+			<result name="listSdbs">/page/jtt2xyb/data_statisticsSdbs.jsp</result>
+			<result name="errorList">/page/jtt2xyb/showPermitTake.jsp</result>
+			<result name="drxkwj">/page/jtt2xyb/permit_TakeIn.jsp</result>
+			<result name="drcfwj">/page/jtt2xyb/punish_TakeIn.jsp</result>
+		</action>
+		<action name="jttWssbtj" class="jttWssbtj">
+			<result name="list">/page/jttWssbtj/wssbtj.jsp</result>
+			<result name="errorList">/page/jtt2xyb/showPermitTake.jsp</result>
+		</action>
+		<action name="jttWssbtjsx" class="jttWssbtjsx">
+			<result name="list">/page/jttWssbtj/wssbtjsx.jsp</result>
+			<result name="ywInfHadCount">/page/jttWssbtj/wssbtjYwHand.jsp</result>
+			<result name="errorlist">/page/jttWssbtj/wssbtjerror.jsp</result>
+			<result name="legalerrorlist">/page/jttWssbtj/wssbtjlegalerror.jsp</result>
+			<result name="overTimeErrorlist">/page/jttWssbtj/wssbtjoverTime.jsp</result>
+			<result name="nonErrorlist">/page/jttWssbtj/wssbtjNonError.jsp</result>
+			<result name="showNotMeet">/page/jttWssbtj/wssbtjMeet.jsp</result>
+			<result name="dzzzByDep">/page/jttWssbtj/wssbtjDzzz.jsp</result>
+			<result name="dzzzByDepAll">/page/jttWssbtj/wssbtjDzzzAll.jsp</result>
+			<result name="zzxxByDep">/page/jttWssbtj/wssbtjZzxx.jsp</result>
+			<result name="zzxxByDepPro">/page/jttWssbtj/wssbtjZzxxpro.jsp</result>
+			<result name="traffic">/page/jttWssbtj/wssbtjTraffic.jsp</result>
+			<result name="detail">/page/jttWssbtj/wssbtjsxDetails.jsp</result>
+			<result name="detailAll">/page/jttWssbtj/wssbtjsxAllDetails.jsp</result>
+		</action>
+		<action name="optDef" class="optDefAction">
+			<result name="list">/page/sys/optDefList.jsp</result>
+			<result name="edit">/page/sys/optDefForm.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">optDef</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">optDef</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		<action name="roleDef" class="roleDefAction">
+			<result name="list">/page/sys/roleDefList.jsp</result>
+			<result name="edit">/page/sys/roleDefForm.jsp</result>
+			<result name="newEdit">/page/sys/roleDefNewForm.jsp</result>
+			<!-- <result name="treeEdit">/page/sys/roleMenuTree.jsp</result> -->
+			<result name="success" type="redirectAction">
+				<param name="actionName">roleDef</param>
+				<param name="method">list</param>
+			</result>
+			<result name="built" type="chain">
+				<param name="actionName">roleDef</param>
+				<param name="method">newEdit</param>
+			</result>
+
+		</action>
+
+		<action name="optVar" class="optVariableAction">
+			<result name="list">/page/sys/optVarList.jsp</result>
+			<result name="edit">/page/sys/optVarForm.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">optVar</param>
+				<param name="method">list</param>
+				<param name="s_OPTID">${object.optid}</param>
+			</result>
+			<result name="built">/page/sys/optVarForm.jsp</result>
+		</action>
+
+
+		<action name="deptManager" class="deptManagerAction">
+			<result name="listuser">/page/sys/deptUserList.jsp</result>
+			<result name="listunit">/page/sys/deptUnitList.jsp</result>
+			<result name="listrole">/page/sys/deptRoleList.jsp</result>
+			<result name="editDeptPower">/page/sys/deptpowerForm.jsp</result>
+			<result name="editDeptRole">/page/sys/deptroleForm.jsp</result>
+			<result name="viewUserRole">/page/sys/deptuserroleView.jsp</result>
+			<result name="editUserRole">/page/sys/deptuserroleForm.jsp</result>
+			<result name="saveUserRole" type="redirectAction">
+				<param name="actionName">userDef</param>
+				<param name="method">viewUnderUnit</param>
+				<param name="usercode">${userrole.usercode}</param>
+				<param name="underUnit">T</param>
+			</result>
+			<result name="saveDeptRole" type="redirectAction">
+				<param name="actionName">deptManager</param>
+				<param name="method">listrole</param>
+			</result>
+			<result name="saveDeptPower" type="chain">
+				<param name="actionName">deptManager</param>
+				<param name="method">listunit</param>
+			</result>
+		</action>
+
+		<action name="mainFrame" class="mainFrameAction">
+			<result name="MainPage">/page/frame/MainPage.jsp</result>
+			<result name="firstPage" type="redirect">${userFirstPage}</result>
+			<result name="dashboard">/page/frame/dashboard.jsp</result>
+			<result name="login">/page/frame/login.jsp</result>
+			<result name="loginError">/page/frame/login.jsp?error=true</result>
+			<result name="loginSuccess" type="redirect">/index.do</result>
+			<result name="loginInDialog">/page/frame/logindialog.jsp</result>
+			<result name="newFirstPage">/page/frame/firstpage.jsp</result>
+			<result name="firstPageMap">/page/frame/firstpage-map.jsp</result>
+			
+			<result name="firstPageMapForCity" type="redirect">/echarts/doc/example/map20.jsp</result>
+			<result name="firstPageLine2">/page/frame/firstpage-line2.jsp</result>
+			<result name="firstPageLine">/page/frame/firstpage-line.jsp</result>
+			<result name="firstPageBar">/page/frame/firstpage-bar.jsp</result>
+			<result name="loginResInDialog" type="centitui">
+				<param name="newWin">true</param>
+				<param name="forwardUrl">/index.do</param>
+			</result>
+		</action>
+
+
+		<action name="userSetting" class="userSettingAction" >
+			<result name="find" type="redirectAction">/sys/userSetting!list.do?s_usercode=${uinfo.usercode}</result>	
+			<result name="list">/page/sys/userSettingForm.jsp</result>			
+			<result name="edit">/page/sys/userSettingForm.jsp</result>		
+			<result name="success" type="chain">
+				<param name="actionName">userSetting</param>
+				<param name="method">find</param>
+			</result>		
+		</action>
+
+		<action name="*" class="{1}Action">
+			<result name="list">/page/sys/{1}List.jsp</result>
+			<result name="view">/page/sys/{1}View.jsp</result>
+			<result name="edit">/page/sys/{1}Form.jsp</result>
+			<result name="built" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">edit</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="actionName">{1}</param>
+				<param name="method">list</param>
+			</result>
+		</action>
+		<action name="jttWssbxzxk" class="jttWssbxzxk">
+			<!-- <result name="list">/page/jttWssbxzxk/wssbxzxk.jsp</result> -->
+			<result name="list">/page/jttWssbxzxk/wssbxzxk.jsp</result>
+		</action>
+		<action name="exportBxzxk" class="exportBxzxk">
+		
+		</action>
+		<action name="jttWssbxzcf" class="jttWssbxzcf">
+			<result name="list">/page/jttWssbxzxk/wssbxzcf.jsp</result>
+		</action>
+		<action name="exportBxzcf" class="exportBxzcf">
+		
+		</action>
+	</package>
+
+</struts>

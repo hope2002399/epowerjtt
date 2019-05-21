@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-lazy-init="true">
+	<bean name="superviseBasicAction" class="com.centit.supervise.action.SuperviseBasicAction"
+		scope="request">
+		<property name="superviseBasicManager" ref="superviseBasicManager" />
+		<property name="functionManager" ref="functionManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="applyManager" ref="applyManager" />
+		<property name="punishManager" ref="punishManager" />
+		<property name="complaintManager" ref="complaintManager" />
+		<property name="outwayManager" ref="outwayManager" />
+		<property name="superviseReplyManager" ref="superviseReplyManager" />
+		<property name="superviseResultManager" ref="superviseResultManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="workCalendar" ref="workCalendar" />
+	</bean>
+	<bean name="supInfoBasicDlfxAction" class="com.centit.supervise.action.SupInfoBasicDlfxAction"
+		scope="request">
+		<property name="supInfoBasicDlfxManager" ref="supInfoBasicDlfxManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+	<bean name="superviseResultAction" class="com.centit.supervise.action.SuperviseResultAction"
+		scope="request">
+		<property name="superviseResultManager" ref="superviseResultManager" />
+	</bean>
+	<bean name="superviseReplyAction" class="com.centit.supervise.action.SuperviseReplyAction"
+		scope="request">
+		<property name="superviseReplyManager" ref="superviseReplyManager" />
+	</bean>
+	<bean name="superviseTasksExecuteAction"
+		class="com.centit.supervise.action.SuperviseTasksExecuteAction" scope="request">
+		<property name="superviseReplyManager" ref="superviseReplyManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="superviseBasicManager" ref="superviseBasicManager" />
+		<property name="superviseResultManager" ref="superviseResultManager" />
+		<property name="complaintsprocessManager" ref="complaintsprocessManager" />
+		<property name="complaintsresultManager" ref="complaintsresultManager" />
+
+	</bean>
+	<bean name="VUserTaskListSuperviseAction"
+		class="com.centit.supervise.action.VUserTaskListSuperviseAction"
+		scope="request">
+		<property name="VUserTaskListSuperviseManager" ref="VUserTaskListSuperviseManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+	</bean>
+	<bean name="epowerCommonBizAction" scope="request"
+		class="com.centit.complaint.action.EpowerCommonBizAction">
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+	</bean>
+	<bean name="superviseOnworkAction" class="com.centit.supervise.action.SuperviseOnworkAction"
+		scope="request">
+		<property name="superviseOnworkManager" ref="superviseOnworkManager" />
+		<property name="superviseBasicManager" ref="superviseBasicManager" />
+		<property name="superviseResultManager" ref="superviseResultManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+	<bean name="reconsiderAction" class="com.centit.supervise.action.ReconsiderAction"
+		scope="request">
+		<property name="functionManager" ref="functionManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="reconsiderManager" ref="reconsiderManager" />
+		<property name="applyManager" ref="applyManager" />
+		<property name="applyresultManager" ref="applyResultManager" />
+		<property name="punishresultManager" ref="punishResultManager" />
+		<property name="reconsiderprocessManager" ref="reconsiderprocessManager" />
+		<property name="punishManager" ref="punishManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+	<bean name="reconsiderprocessAction" class="com.centit.supervise.action.ReconsiderprocessAction"
+		scope="request">
+		<property name="reconsiderprocessManager" ref="reconsiderprocessManager" />
+	</bean>
+	<bean name="reconsiderresultAction" class="com.centit.supervise.action.ReconsiderresultAction"
+		scope="request">
+		<property name="reconsiderresultManager" ref="reconsiderresultManager" />
+	</bean>
+	<bean name="reconsiderTasksExecuteAction"
+		class="com.centit.supervise.action.ReconsiderTasksExecuteAction"
+		scope="request">
+		<property name="reconsiderprocessManager" ref="reconsiderprocessManager" />
+		<property name="generalModuleParamManager" ref="generalModuleParamManager" />
+		<property name="flowEngine" ref="flowEngine" />
+		<property name="flowManager" ref="flowManager" />
+		<property name="reconsiderManager" ref="reconsiderManager" />
+		<property name="reconsiderresultManager" ref="reconsiderresultManager" />
+	</bean>
+	<bean name="VUserTaskListReconsiderAction"
+		class="com.centit.supervise.action.VUserTaskListReconsiderAction"
+		scope="request">
+		<property name="VUserTaskListReconsiderManager" ref="VUserTaskListReconsiderManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+	<bean name="superviseCJJCAction" class="com.centit.supervise.action.SuperviseCJJCAction"
+		scope="request">
+		<property name="outwayCJJCManager" ref="outwayCJJCManager" />
+		<property name="superviseCJJCManager" ref="superviseCJJCManager" />
+		<property name="sysUnitManager" ref="sysUnitManager" />
+		<property name="sysUserManager" ref="sysUserManager" />
+	</bean>
+</beans>

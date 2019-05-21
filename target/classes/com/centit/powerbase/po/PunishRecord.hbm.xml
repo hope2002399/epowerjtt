@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.centit.powerbase.po.PunishRecord" table="S_punish_record">
+		<id name="org_id" type="java.lang.String">
+			<column name="org_id" length="100"/>
+			<generator class="assigned"/>
+		</id>
+		<property name="bookOperatorID" type="java.lang.String">
+			<column name="bookOperatorID" length="8"/>
+		</property>
+		<property name="bookDate" type="java.util.Date">
+			<column name="bookDate" length="7"/>
+		</property>
+		<property name="modifyDate" type="java.util.Date">
+			<column name="modifyDate" length="7"/>
+		</property>
+		<property name="depKind" type="java.lang.String">
+			<column name="depKind"/>
+		</property>
+		<property name="personNum" type="java.lang.Long">
+			<column name="personNum" length="8" scale="0"/>
+		</property>
+		<property name="corpNum" type="java.lang.Long">
+			<column name="corpNum" length="8" scale="0"/>
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="remark" length="2000"/>
+		</property>
+		<property name="lawbasic" type="java.lang.String">
+			<column name="lawbasic" length="2000"/>
+		</property>
+		<property name="personNumBusiness" type="java.lang.Long">
+			<column name="PERSONNUM_BUSINESS" length="8" scale="0"/>
+		</property>
+		<property name="corpNumBusiness" type="java.lang.Long">
+			<column name="CORPNUM_BUSINESS" length="8" scale="0"/>
+		</property>
+	</class>
+</hibernate-mapping>
